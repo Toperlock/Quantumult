@@ -24,8 +24,7 @@ hostname = plxk.fhlium.com,xdk.coegcj.com,xuoa.vwymyr.com
 
 ******************************************/
 
-var obfuscator = "";
-const _0x2fb9 = [
+var _0x2fb9 = [
     "jqhdGSomW6y",
     "WPDxuKHw",
     "WPvgDuft",
