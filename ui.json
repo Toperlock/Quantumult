@@ -1,8 +1,8 @@
 {
 
-    "name":"UI 脚本合集",
+    "name":"UI 脚本合集+汇率监控",
 
-    "description":"UI-Interaction Script Gallery by Shawn、fmz200、I-am-R-E",
+    "description":"UI-Interaction Script Gallery by Shawn、fmz200、I-am-R-E、Peng-YM",
 
     "task":[
 
@@ -34,7 +34,9 @@
         
         "event-interaction https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/TaskLocal/NeteaseMusicUnlockCheck.js, tag=网易音乐查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Unlock.png, enabled=true",
         
-        "event-network network-direct.js, tag=Direct 策略切换, img-url=switch.2.system"
+        "event-network network-direct.js, tag=Direct 策略切换, img-url=switch.2.system",
+        
+        "0 9 * * * https://raw.githubusercontent.com/Toperlock/QuanX/master/Tasks/exchange.js, tag=汇率监控, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/exchangerate.png, enabled=true"
 
     ]
 
