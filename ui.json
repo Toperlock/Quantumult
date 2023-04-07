@@ -36,7 +36,7 @@
         
         "event-network network-direct.js, tag=Direct 策略切换, img-url=switch.2.system",
         
-        "0 9 * * * https://raw.githubusercontent.com/Toperlock/QuanX/master/Tasks/exchange.js, tag=汇率监控, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/exchangerate.png, enabled=true"
+        "0 9 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/exchange.js, tag=汇率监控, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/exchangerate.png, enabled=true"
 
     ]
 
