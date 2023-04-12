@@ -2,54 +2,7 @@
 README：https://github.com/yichahucha/surge/tree/master
  */
 
-let isQuantumultX = $task !== undefined;
-let isSurge = $httpClient !== undefined;
-
-var $task = isQuantumultX ? $task : {};
-var $httpClient = isSurge ? $httpClient : {};
-
-if (isQuantumultX) {
-    var errorInfo = {
-        error: ''
-    };
-    $httpClient = {
-        get: (url, cb) => {
-            var urlObj;
-            if (typeof (url) == 'string') {
-                urlObj = {
-                    url: url
-                }
-            } else {
-                urlObj = url;
-            }
-            $task.fetch(urlObj).then(response => {
-                cb(undefined, response, response.body)
-            }, reason => {
-                errorInfo.error = reason.error;
-                cb(errorInfo, response, '')
-            })
-        },
-        post: (url, cb) => {
-            var urlObj;
-            if (typeof (url) == 'string') {
-                urlObj = {
-                    url: url
-                }
-            } else {
-                urlObj = url;
-            }
-            url.method = 'POST';
-            $task.fetch(urlObj).then(response => {
-                cb(undefined, response, response.body)
-            }, reason => {
-                errorInfo.error = reason.error;
-                cb(errorInfo, response, '')
-            })
-        }
-    }
-}
-
-const console_log = true
+const console_log = false
 const url = $request.url
 const body = $response.body
 
@@ -76,8 +29,9 @@ if (true) {
                 const result = history_price_item(data.single)
                 const tbitems = result[1]
                 service.items = service.items.concat(nonService.items)
-                historyItem.desc = lower_price
-                service.items.push(historyItem)
+                historyItem.desc = lower_price[0]
+                historyItem.title = lower_price[1]
+                service.items.unshift(historyItem)
                 nonService.title = "价格走势"
                 nonService.items = tbitems
             }
@@ -98,7 +52,9 @@ function lower_price_msg(data) {
     const lower_date = changeDateFormat(data.lowerDateyh);
     const lower_msg = "历史最低到手价:   ¥" + String(lower) + "   " + lower_date
     const curret_msg = (data.currentPriceStatus ? "   当前价格" + data.currentPriceStatus : "") + "   (仅供参考)";
-    return lower_msg + curret_msg;
+    const lower1 = lower_msg + curret_msg
+    const lower2 = "历史最低¥" + String(lower)
+    return [lower1,lower2];
 }
 
 function history_price_item(data) {
@@ -136,6 +92,7 @@ function history_price_item(data) {
 
 function request_hsitory_price(share_url, callback) {
     const options = {
+        method: "POST",
         url: "https://apapia-history.manmanbuy.com/ChromeWidgetServices/WidgetServices.ashx",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -143,15 +100,15 @@ function request_hsitory_price(share_url, callback) {
         },
         body: "methodName=getBiJiaInfo_wxsmall&p_url=" + encodeURIComponent(share_url)
     }
-    $httpClient.post(options, function (error, response, data) {
-        if (!error) {
-            callback(JSON.parse(data));
-            if (console_log) console.log("Data:\n" + data);
-        } else {
-            callback(null, null);
-            if (console_log) console.log("Error:\n" + error);
-        }
-    })
+    $task.fetch(options).then(response => {
+        // response.statusCode, response.headers, response.body
+        callback(JSON.parse(response.body));
+        if (console_log) $notify("Body", "", response.body); // Success!
+    }, reason => {
+        // reason.error
+        callback(null, null);
+        if (console_log) $notify("Error", "", reason.error); // Error!
+    });
 }
 
 function changeDateFormat(cellval) {
