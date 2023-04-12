@@ -2,7 +2,7 @@
 README：https://github.com/yichahucha/surge/tree/master
  */
 
-const $tool = new Tool()
+const $tool = new tool()
 const consoleLog = false
 const url = $request.url
 const path1 = "/amdc/mobileDispatch"
@@ -163,25 +163,42 @@ function add(arg1, arg2) {
     return typeof d === "number" ? Number((result).toFixed(d)) : result;
 }
 
-function requestPrice(share_url, callback) {
-    const options = {
-        url: "https://apapia-history.manmanbuy.com/ChromeWidgetServices/WidgetServices.ashx",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
-            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 - mmbWebBrowse - ios"
-        },
-        body: "methodName=getHistoryTrend&p_url=" + encodeURIComponent(share_url)
-    }
-    $tool.post(options, function (error, response, data) {
-        if (!error) {
-            callback(JSON.parse(data));
-            if (consoleLog) console.log("Data:\n" + data);
-        } else {
-            callback(null, null);
-            if (consoleLog) console.log("Error:\n" + error);
-        }
-    })
+function request_history_price(share_url) {
+    return new Promise((resolve) => {
+        let options = {
+            url: "https://apapia-history.manmanbuy.com/ChromeWidgetServices/WidgetServices.ashx",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+                "User-Agent":
+                    "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 - mmbWebBrowse - ios",
+            },
+            body: "methodName=getHistoryTrend&p_url=" + encodeURIComponent(share_url),
+        };
+        $tool.post(options, function (error, response, data) {
+            if (!error) {
+                data = JSON.parse(data);
+                console.log("Data:\n" + data);
+                if (data.ok == 1 && data.single) {
+                    const lower = lowerMsgs(data.single);
+                    const detail = priceSummary(data);
+                    const tip = data.PriceRemark.Tip;
+                    let r = {};
+                    r.lower_tip = `${lower} ${tip}`;
+                    r.historydetail = `${detail.substr(1)}`;
+                    resolve(r);
+                }
+                if (data.ok == 0 && data.msg.length > 0) {
+                    let e = `⚠️ ${data.msg}`;
+                    resolve(e);
+                }
+            } else {
+                console.log("TB History Error:\n" + error);
+                resolve();
+            }
+        });
+    });
 }
+
 
 function dateFormat(cellval) {
     const date = new Date(parseInt(cellval.replace("/Date(", "").replace(")/", ""), 10));
@@ -225,81 +242,132 @@ Date.prototype.format = function (fmt) {
         "m+": this.getMinutes(),
         "s+": this.getSeconds(),
         "q+": Math.floor((this.getMonth() + 3) / 3),
-        "S+": this.getMilliseconds()
+        "S+": this.getMilliseconds(),
     };
     for (var k in o) {
         if (new RegExp("(" + k + ")").test(fmt)) {
             if (k == "y+") {
                 fmt = fmt.replace(RegExp.$1, ("" + o[k]).substr(4 - RegExp.$1.length));
-            }
-            else if (k == "S+") {
+            } else if (k == "S+") {
                 var lens = RegExp.$1.length;
                 lens = lens == 1 ? 3 : lens;
                 fmt = fmt.replace(RegExp.$1, ("00" + o[k]).substr(("" + o[k]).length - 1, lens));
-            }
-            else {
-                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            } else {
+                fmt = fmt.replace(
+                    RegExp.$1,
+                    RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)
+                );
             }
         }
     }
     return fmt;
-}
+};
 
-function Tool() {
-    _node = (() => {
+function tool() {
+    const isSurge = typeof $utils != "undefined";
+    const isLoon = typeof $loon != "undefined";
+    const isQuanX = typeof $task != "undefined";
+    const node = (() => {
         if (typeof require == "function") {
-            const request = require('request')
-            return ({ request })
+            const request = require("request");
+            return { request };
         } else {
-            return (null)
+            return null;
         }
-    })()
-    _isSurge = typeof $httpClient != "undefined"
-    _isQuanX = typeof $task != "undefined"
-    this.isSurge = _isSurge
-    this.isQuanX = _isQuanX
-    this.isResponse = typeof $response != "undefined"
-    this.notify = (title, subtitle, message) => {
-        if (_isQuanX) $notify(title, subtitle, message)
-        if (_isSurge) $notification.post(title, subtitle, message)
-        if (_node) console.log(JSON.stringify({ title, subtitle, message }));
-    }
-    this.write = (value, key) => {
-        if (_isQuanX) return $prefs.setValueForKey(value, key)
-        if (_isSurge) return $persistentStore.write(value, key)
-    }
-    this.read = (key) => {
-        if (_isQuanX) return $prefs.valueForKey(key)
-        if (_isSurge) return $persistentStore.read(key)
-    }
-    this.get = (options, callback) => {
-        if (_isQuanX) {
-            if (typeof options == "string") options = { url: options }
-            options["method"] = "GET"
-            $task.fetch(options).then(response => { callback(null, _status(response), response.body) }, reason => callback(reason.error, null, null))
-        }
-        if (_isSurge) $httpClient.get(options, (error, response, body) => { callback(error, _status(response), body) })
-        if (_node) _node.request(options, (error, response, body) => { callback(error, _status(response), body) })
-    }
-    this.post = (options, callback) => {
-        if (_isQuanX) {
-            if (typeof options == "string") options = { url: options }
-            options["method"] = "POST"
-            $task.fetch(options).then(response => { callback(null, _status(response), response.body) }, reason => callback(reason.error, null, null))
-        }
-        if (_isSurge) $httpClient.post(options, (error, response, body) => { callback(error, _status(response), body) })
-        if (_node) _node.request.post(options, (error, response, body) => { callback(error, _status(response), body) })
-    }
-    _status = (response) => {
-        if (response) {
-            if (response.status) {
-                response["statusCode"] = response.status
-            } else if (response.statusCode) {
-                response["status"] = response.statusCode
+    })();
+    const notify = (title, subtitle, content, open_url) => {
+        if (isSurge) {
+            let opts = {};
+            if (open_url) opts["url"] = open_url;
+            if (JSON.stringify(opts) == "{}") {
+                $notification.post(title, subtitle, content);
+            } else {
+                $notification.post(title, subtitle, content, opts);
             }
         }
-        return response
-    }
+        if (isQuanX) {
+            let opts = {};
+            if (open_url) opts["open-url"] = open_url;
+            if (JSON.stringify(opts) == "{}") {
+                $notify(title, subtitle, content);
+            } else {
+                $notify(title, subtitle, content, opts);
+            }
+        }
+        if (isLoon) {
+            let opts = {};
+            if (open_url) opts["openUrl"] = open_url;
+            if (JSON.stringify(opts) == "{}") {
+                $notification.post(title, subtitle, content);
+            } else {
+                $notification.post(title, subtitle, content, opts);
+            }
+        }
+        if (node) {
+            let content_Node = content + (open_url == undefined ? "" : `\n\n跳转链接：${open_url}`);
+            console.log(`${title}\n${subtitle}\n${content_Node}\n\n`);
+        }
+    };
+    const setCache = (value, key) => {
+        if (isQuanX) return $prefs.setValueForKey(value, key);
+        if (isSurge) return $persistentStore.write(value, key);
+    };
+    const getCache = (key) => {
+        if (isQuanX) return $prefs.valueForKey(key);
+        if (isSurge) return $persistentStore.read(key);
+    };
+    const adapterStatus = (response) => {
+        if (response.status) {
+            response["statusCode"] = response.status;
+        } else if (response.statusCode) {
+            response["status"] = response.statusCode;
+        }
+        return response;
+    };
+    const get = (options, callback) => {
+        if (isQuanX) {
+            if (typeof options == "string") options = { url: options };
+            options["method"] = "GET";
+            $task.fetch(options).then(
+                (response) => {
+                    callback(null, adapterStatus(response), response.body);
+                },
+                (reason) => callback(reason.error, null, null)
+            );
+        }
+        if (isSurge)
+            $httpClient.get(options, (error, response, body) => {
+                callback(error, adapterStatus(response), body);
+            });
+        if (node) {
+            node.request(options, (error, response, body) => {
+                callback(error, adapterStatus(response), body);
+            });
+        }
+    };
+    const post = (options, callback) => {
+        if (isQuanX) {
+            if (typeof options == "string") options = { url: options };
+            options["method"] = "POST";
+            $task.fetch(options).then(
+                (response) => {
+                    callback(null, adapterStatus(response), response.body);
+                },
+                (reason) => callback(reason.error, null, null)
+            );
+        }
+        if (isSurge) {
+            $httpClient.post(options, (error, response, body) => {
+                callback(error, adapterStatus(response), body);
+            });
+        }
+        if (node) {
+            node.request.post(options, (error, response, body) => {
+                callback(error, adapterStatus(response), body);
+            });
+        }
+    };
+    return { isQuanX, isSurge, notify, setCache, getCache, get, post };
 }
 
 function Base64() {
