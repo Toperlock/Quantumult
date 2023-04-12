@@ -1,13 +1,13 @@
 /*
 README：https://github.com/yichahucha/surge/tree/master
-2023.4.12
+2023.4.10
  */
 
 const $tool = new tool()
 const consoleLog = false
 const url = $request.url
 const path1 = "/amdc/mobileDispatch"
-const path2 = "/gw/mtop.taobao.detail.data.get"
+const path2 = "/gw/mtop.taobao.detail.getdetail"
 
 if (url.indexOf(path1) != -1) {
     if ($tool.isResponse) {
