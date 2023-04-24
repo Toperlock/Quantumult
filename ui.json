@@ -28,7 +28,7 @@
 
         "event-interaction https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/server_info.js, tag=节点家宽查询, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Back.png, enabled=true",
 
-        "event-interaction https://api.343.re/freedom/rule/quanx/script/ipinfo.js, tag=节点信息查询, img-url=star.circle.system, enabled=true",
+        "event-interaction https://api.343.re/freedom/rule/quanx/script/ipinfo.js, tag=节点信息查询, img-url=star.circle.system",
 
         "event-interaction https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/NodeLinkCheck/Script/NodeLinkCheck.js, tag=代理链路检测, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Stack.png, enabled=true",
         
