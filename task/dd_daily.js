@@ -1,5 +1,7 @@
 /*
-每日打卡提醒（每日壹句（有道词典）+ 跳转钉钉打卡页面
+ * 钉钉打卡提醒
+ * @author: yyn618
+ * 更新地址：https://raw.githubusercontent.com/yyn618/QuantumultX-Script/master/Task/dd_daily.js
 */
 const $tool = new Tool()
 $tool.get('不要忘记打卡啦！', function (error, response, data) {
