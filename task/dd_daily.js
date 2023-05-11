@@ -8,10 +8,10 @@ $tool.get(function (error, response, data) {
     let obj = JSON.parse(data);
     let date = new Date();
     let isAM = date.getHours() < 12 ? true : false;
-    let title = 'Clock' + (isAM ? ' in' : ' out') + (isAM ? ' ☀️' : ' 🌙');
+    let title = '钉钉打卡' + (isAM ? ' in' : ' out') + (isAM ? ' ☀️' : ' 🌙');
     let subtitle = '';
     let scheme = 'dingtalk://dingtalkclient/page/link?url=https://attend.dingtalk.com/attend/index.html';
-    let content = "该打卡了";
+    let content = "不要忘记打卡了！";
     let option = {"open-url" : scheme};
     if (!error) {
         if (obj && obj.length > 1) {
