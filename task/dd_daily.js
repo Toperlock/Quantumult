@@ -2,6 +2,7 @@
  * 钉钉打卡提醒
  * @author: yyn618
  * 更新地址：https://raw.githubusercontent.com/yyn618/QuantumultX-Script/master/Task/dd_daily.js
+ * 修改内容：去除有道每日一言
 */
 const $tool = new Tool()
 $tool.get('', function (error, response, data) {
