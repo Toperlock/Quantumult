@@ -4,14 +4,14 @@
  * 更新地址：https://raw.githubusercontent.com/yyn618/QuantumultX-Script/master/Task/dd_daily.js
 */
 const $tool = new Tool()
-$tool.get('不要忘记打卡啦！', function (error, response, data) {
+$tool.get(function (error, response, data) {
     let obj = JSON.parse(data);
     let date = new Date();
     let isAM = date.getHours() < 12 ? true : false;
     let title = 'Clock' + (isAM ? ' in' : ' out') + (isAM ? ' ☀️' : ' 🌙');
     let subtitle = '';
     let scheme = 'dingtalk://dingtalkclient/page/link?url=https://attend.dingtalk.com/attend/index.html';
-    let content = "该打卡了👉"+scheme;
+    let content = "该打卡了";
     let option = {"open-url" : scheme};
     if (!error) {
         if (obj && obj.length > 1) {
