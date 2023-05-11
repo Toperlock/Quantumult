@@ -4,7 +4,7 @@
  * 更新地址：https://raw.githubusercontent.com/yyn618/QuantumultX-Script/master/Task/dd_daily.js
 */
 const $tool = new Tool()
-$tool.get(function (error, response, data) {
+$tool.get('', function (error, response, data) {
     let obj = JSON.parse(data);
     let date = new Date();
     let isAM = date.getHours() < 12 ? true : false;
