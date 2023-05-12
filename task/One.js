@@ -12,10 +12,9 @@ $tool.get('https://dict.youdao.com/infoline/style/cardList?mode=publish&client=m
     let isAM = date.getHours() < 12 ? true : false;
     let title = '每日' + (isAM ? '一言' : '一言') + (isAM ? ' ☀️' : ' 🌙');
     let subtitle = '';
-    #let scheme = 'alipay://platformapi/startapp?appId=60000002';
-    let scheme = '';
-    let content = ""+scheme;
-    let option = {"open-url" : scheme};
+    let scheme = 'alipay://platformapi/startapp?appId=60000002';
+    let content = "";
+    let option = {};
     if (!error) {
         if (obj && obj.length > 1) {
             let yi = obj[1];
