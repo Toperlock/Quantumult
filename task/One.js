@@ -22,7 +22,7 @@ $tool.get('https://dict.youdao.com/infoline/style/cardList?mode=publish&client=m
             option["media-url"] = yi.image[0];
         }
     }
-    $tool.notify(title, subtitle, option);
+    $tool.notify(title, subtitle, content, option);
     $done();
 })
 
