@@ -2,7 +2,7 @@
  * 每日一言（有道词典）
  * @author: githubdulong
  * 更新地址：https://raw.githubusercontent.com/githubdulong/Script/master/One.js
- * 修改内容：添加图片
+ * 修改内容：添加图片，去除支付宝蚂蚁能量跳转
 */
 
 const $tool = new Tool()
@@ -12,7 +12,8 @@ $tool.get('https://dict.youdao.com/infoline/style/cardList?mode=publish&client=m
     let isAM = date.getHours() < 12 ? true : false;
     let title = '每日' + (isAM ? '一言' : '一言') + (isAM ? ' ☀️' : ' 🌙');
     let subtitle = '';
-    let scheme = 'alipay://platformapi/startapp?appId=60000002';
+    #let scheme = 'alipay://platformapi/startapp?appId=60000002';
+    let scheme = '';
     let content = ""+scheme;
     let option = {"open-url" : scheme};
     if (!error) {
