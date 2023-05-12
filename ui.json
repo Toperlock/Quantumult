@@ -1,37 +1,19 @@
 {
-
     "name":"UI Task脚本合集",
-
     "description":"收集脚本出处见鸣谢",
-
     "task":[
-
         "event-interaction https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/Node_detection_tool/CloudflareSpeedtest.js, tag=Speed测速, img-url=bolt.square.fill.system",
-
         "event-interaction https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/script/txt/ipinfo.txt, tag=节点位置查询, img-url=https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/cartoon/Cute/3icon.png",
-        
-        "event-interaction https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/server_info.js, tag=节点家宽查询, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Back.png"
-        
+        "event-interaction https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/server_info.js, tag=节点家宽查询, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Back.png",
         "event-network network-direct.js, tag=Direct 策略切换, img-url=switch.2.system",
-        
-        "0 9 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/exchange.js, tag=汇率监控, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/exchangerate.png"
-        
-        "0 9 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/One.js, tag=每日一言, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/one.png"
-        
-        "30 7 * * * https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/wnCalendar.js, tag=今日黄历, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/YellowCalendar_2.png"
-        
-        "55 7 * * 1-6 https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/dd_daily.js, tag=上班打卡, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png"
-        
-        "0 18 * * 1-6 https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/dd_daily.js, tag=下班打卡, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png"
-        
-        "0 10 * * * https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"
-        
-        "5 0 * * * https://raw.githubusercontent.com/unknowntokyo/surge-list/master/X/dns-clear-cache.js, tag=𝑫𝒏𝒔 𝑪𝒍𝒆𝒂𝒓 𝑪𝒂𝒄𝒉𝒆, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png"
-        
-        "5 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/box/scripts/boxjs.revert.usercfgs.httpbackend.js, tag=𝑩𝒐𝒙𝑱𝒔 𝑪𝒍𝒆𝒂𝒓 𝑪𝒂𝒄𝒉𝒆, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png"
-        
+        "0 9 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/exchange.js, tag=汇率监控, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/exchangerate.png",
+        "0 9 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/One.js, tag=每日一言, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/one.png",
+        "30 7 * * * https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/wnCalendar.js, tag=今日黄历, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/YellowCalendar_2.png",
+        "55 7 * * 1-6 https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/dd_daily.js, tag=上班打卡, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png",
+        "0 18 * * 1-6 https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/dd_daily.js, tag=下班打卡, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png",
+        "0 10 * * * https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png",
+        "5 0 * * * https://raw.githubusercontent.com/unknowntokyo/surge-list/master/X/dns-clear-cache.js, tag=𝑫𝒏𝒔 𝑪𝒍𝒆𝒂𝒓 𝑪𝒂𝒄𝒉𝒆, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png",
+        "5 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/box/scripts/boxjs.revert.usercfgs.httpbackend.js, tag=𝑩𝒐𝒙𝑱𝒔 𝑪𝒍𝒆𝒂𝒓 𝑪𝒂𝒄𝒉𝒆, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png",
         "5 0 * * * https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/scripts/revert.js, tag=𝑺𝒖𝒃-𝑺𝒕𝒐𝒓𝒆 𝑪𝒍𝒆𝒂𝒓 𝑪𝒂𝒄𝒉𝒆, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png"
-
     ]
-
 }
