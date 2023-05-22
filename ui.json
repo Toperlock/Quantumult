@@ -8,6 +8,7 @@
         "0 9 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/exchange.js, tag=汇率监控, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/exchangerate.png",
         "0 9 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/One.js, tag=每日一言, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/one.png",
         "30 7 * * * https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/JavaScript/Surge/wnCalendar.js, tag=今日黄历, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/YellowCalendar_2.png",
+        "55 7,17 * * 1-6 https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/dd_daily.js, tag=钉钉打卡, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png"
         "55 7 * * 1-6 https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/dd_daily.js, tag=上班打卡, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png",
         "0 18 * * 1-6 https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/dd_daily.js, tag=下班打卡, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png",
         "0 10 * * * https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png",
