@@ -1,7 +1,7 @@
 /*
  * 钉钉打卡提醒
- * @author: yyn618
- * 更新地址：https://raw.githubusercontent.com/yyn618/QuantumultX-Script/master/Task/dd_daily.js
+ * @author: yichahucha
+ * 更新地址：https://raw.githubusercontent.com/yichahucha/surge/master/clock_in.js
  * 修改内容：去除有道每日一言
 */
 const $tool = new Tool()
@@ -34,19 +34,25 @@ function Tool() {
             return (null)
         }
     })()
-    _isSurge = typeof $httpClient != "undefined"
+    _isLoon = typeof $loon !== "undefined";
+    _isSurge = typeof $httpClient != "undefined" && !_isLoon;
     _isQuanX = typeof $task != "undefined"
+    this.isSurge = _isSurge
     this.isQuanX = _isQuanX
     this.isResponse = typeof $response != "undefined"
     this.notify = (title, subtitle, message, option) => {
         if (_isQuanX) $notify(title, subtitle, message, option)
+        if (_isSurge) $notification.post(title, subtitle, message, {"url":option["open-url"]})
+        if (_isLoon) $notification.post(title, subtitle, message, option["open-url"])
         if (_node) console.log(JSON.stringify({ title, subtitle, message }));
     }
     this.write = (value, key) => {
         if (_isQuanX) return $prefs.setValueForKey(value, key)
+        if (_isSurge) return $persistentStore.write(value, key)
     }
     this.read = (key) => {
         if (_isQuanX) return $prefs.valueForKey(key)
+        if (_isSurge) return $persistentStore.read(key)
     }
     this.get = (options, callback) => {
         if (_isQuanX) {
@@ -54,6 +60,7 @@ function Tool() {
             options["method"] = "GET"
             $task.fetch(options).then(response => { callback(null, _status(response), response.body) }, reason => callback(reason.error, null, null))
         }
+        if (_isSurge) $httpClient.get(options, (error, response, body) => { callback(error, _status(response), body) })
         if (_node) _node.request(options, (error, response, body) => { callback(error, _status(response), body) })
     }
     this.post = (options, callback) => {
@@ -62,6 +69,7 @@ function Tool() {
             options["method"] = "POST"
             $task.fetch(options).then(response => { callback(null, _status(response), response.body) }, reason => callback(reason.error, null, null))
         }
+        if (_isSurge) $httpClient.post(options, (error, response, body) => { callback(error, _status(response), body) })
         if (_node) _node.request.post(options, (error, response, body) => { callback(error, _status(response), body) })
     }
     _status = (response) => {
