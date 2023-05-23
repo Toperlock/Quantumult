@@ -35,7 +35,6 @@ function Tool() {
             return (null)
         }
     })()
-    #_isLoon = typeof $loon !== "undefined";
     _isSurge = typeof $httpClient != "undefined";
     _isQuanX = typeof $task != "undefined"
     this.isSurge = _isSurge
@@ -44,7 +43,6 @@ function Tool() {
     this.notify = (title, subtitle, message, option) => {
         if (_isQuanX) $notify(title, subtitle, message, option)
         if (_isSurge) $notification.post(title, subtitle, message, option)
-        #if (_isLoon) $notification.post(title, subtitle, message, option)
         if (_node) console.log(JSON.stringify({ title, subtitle, message }));
     }
     this.write = (value, key) => {
