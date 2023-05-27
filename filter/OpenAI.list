@@ -6,7 +6,6 @@ host,challenges.cloudflare.com,OpenAI
 # >> OpenAI Related
 host-suffix,ai.com,OpenAI
 host-suffix,openai.com,OpenAI
-host-suffix,sentry.io,OpenAI
 host-suffix,intercom.io,OpenAI
 host-suffix,identrust.com,OpenAI
 
