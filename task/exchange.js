@@ -43,7 +43,7 @@ $.http.get({
                         target[0]
                     }\n`;
                 } else {
-                    line = `${target[1]} 1${target[0]}      \t兑${roundNumber(1 / rate, digits)}${
+                    line = `${target[1]} 1${target[0]}    \t兑${roundNumber(1 / rate, digits)}${
                         source[0]
                     }\n`;
                 }
