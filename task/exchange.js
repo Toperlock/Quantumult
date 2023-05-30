@@ -5,7 +5,7 @@
  * 配置方法：
  * 1. 设置基准货币，默认人民币(CNY)。
  * 2. 设置保留几位小数。
- * @update ：YangZhaocool 
+ * @update ：YangZhaocool
  */
 
 const base = "CNY"; // 基准货币，可以改成其他币种
@@ -23,7 +23,6 @@ const currencyNames = {
     RUB: ["卢布（₽）", "🇷🇺"],
     TRY: ["里拉（₺）", "🇹🇷"],
     BRL: ["雷亚尔（R$）", "🇧🇷"],
-    
 };
 
 
@@ -40,11 +39,11 @@ $.http.get({
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} 1${source[0]}兑${roundNumber(rate, digits)}${
+                    line = `${target[1]} 1${source[0]}\t兑${roundNumber(rate, digits)}${
                         target[0]
                     }\n`;
                 } else {
-                    line = `${target[1]} 1${target[0]}兑${roundNumber(1 / rate, digits)}${
+                    line = `${target[1]} 1${target[0]}\t兑${roundNumber(1 / rate, digits)}${
                         source[0]
                     }\n`;
                 }
