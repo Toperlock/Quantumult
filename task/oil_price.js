@@ -46,7 +46,7 @@ $task.fetch(myRequest).then(response => {
         const adjust_value_re2 = /[\d\.]+元\/吨/;
         const adjust_value_match = adjust_value.match(adjust_value_re);
         if (adjust_value_match && adjust_value_match.length === 3) {
-            adjust_value = `预计`+ `${adjust_value_match[1]}-${adjust_value_match[2]}元/L`;
+            adjust_value = `${adjust_value_match[1]}-${adjust_value_match[2]}元/L`;
         } else {
             const adjust_value_match2 = adjust_value.match(adjust_value_re2);
             if (adjust_value_match2) {
@@ -58,7 +58,7 @@ $task.fetch(myRequest).then(response => {
     const now = new Date();
     const localTime = now.toLocaleString();
     
-    const friendly_tips = `${adjust_date} ${adjust_trend} ${adjust_value}`;
+    const friendly_tips = `${adjust_date}`+`预计` `${adjust_trend} ${adjust_value}`;
     if (prices.length !== 4) {
         console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`);
         $notify("油价查询", "解析失败", "请检查脚本或反馈给开发者");
