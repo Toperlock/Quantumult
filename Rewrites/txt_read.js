@@ -11,20 +11,24 @@ hostname = github.com, raw.githubusercontent.com, gitlab.com, gist.githubusercon
 
 let req = $request.url.replace(/\.t_read\.txt$/, '');
 
-$httpClient.get(req, (error, response, data) => {
-  if (error) {
-    $notification.post(`${error}`, '', '');
+$task.fetch({ url: req }).then(response => {
+  if (response.error) {
+    $notification.post(`${response.error}`, '', '');
     $done();
   } else {
     $done({
       response: {
         status: 200,
-        body: data,
+        body: response.body,
         headers: {
           'Content-Type': 'text/plain; charset=utf-8'
         }
       }
     });
   }
+}, reason => {
+  $notify(`${reason}`, '', '');
+  $done();
 });
+
 
