@@ -29,7 +29,7 @@ const region_pref = $persistentStore.read("gas_price");
 
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`
 
-$httpClient.get(
+$.http.get(
     {
         url: query_addr,
         headers: {
