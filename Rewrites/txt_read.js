@@ -8,7 +8,6 @@
 hostname = github.com, raw.githubusercontent.com, gitlab.com, gist.githubusercontent.com, gitlab.com
 ****************************/
 
-let req = $request.url.replace(/\.t_read\.txt$/, '');
 
 let req = $request.url.replace(/\.t_read\.txt$/, '');
 
