@@ -9,6 +9,10 @@
  *   - v1.0.3 支持油价调整趋势提示
  *   - v1.0.4 修复油价趋势解析
  *   - 兼容surge loon
+[Panel]
+gas_price = script-name=gas_price,update-interval=43200
+[Script]
+gas_price = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/yj.js,argument=shanxi-3/xian
  */
 
 // 指定查询地区，可通过argument或persistentStore设置，后者优先级高
@@ -29,7 +33,7 @@ const region_pref = $persistentStore.read("gas_price");
 
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`
 
-$.http.get(
+$httpClient.get(
     {
         url: query_addr,
         headers: {
