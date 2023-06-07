@@ -1,18 +1,15 @@
-/*
-[task_local]
-0 0 8 ? * * https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/main/js/oil.js, tag=每日油价, enabled=true
-*/
+var region = 'shanxi-3/xian';
+const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
 
-//var region = 'fujian'
-const query_addr = `http://m.qiyoujiage.com/fujian.shtml`;
-
-$task.fetch({
+const myRequest = {
     url: query_addr,
     headers: {
-        'Referer': 'http://m.qiyoujiage.com/',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
+        'referer': 'http://m.qiyoujiage.com/',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
     }
-}).then(response => {
+};
+
+$task.fetch(myRequest).then(response => {
     const data = response.body;
     const reg_price = /<dl>[\s\S]+?<dt>(.*油)<\/dt>[\s\S]+?<dd>(.*)\(元\)<\/dd>/gm;
     var prices = [];
@@ -27,7 +24,7 @@ $task.fetch({
             value: `${m[2]} 元/L`
         });
     }
-    // 解析油价调整趋势
+
     var adjust_date = '';
     var adjust_trend = '';
     var adjust_value = '';
@@ -49,18 +46,20 @@ $task.fetch({
             }
         }
     }
+
     const friendly_tips = `${adjust_date} ${adjust_trend} ${adjust_value}`;
     if (prices.length !== 4) {
-    console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`)
-    $done();
-    }
-    else {
-        body = {
+        console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`);
+        $done({});
+    } else {
+        const body = {
             title: "实时油价信息",
             content: `${prices[0].name}  ${prices[0].value}\n${prices[1].name}  ${prices[1].value}\n${prices[2].name}  ${prices[2].value}\n${prices[3].name}  ${prices[3].value}\n${friendly_tips}`,
             icon: "fuelpump.fill"
-        }
-        $notify(body);
-        $done();
+        };
+        $done(body);
     }
-  });
+}, reason => {
+    console.log(`解析油价信息失败, 请反馈至 @RS0485: URL=${query_addr}`);
+    $done({});
+});
