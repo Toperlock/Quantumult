@@ -1,13 +1,5 @@
 // 指定查询地区，可通过argument或persistentStore设置，后者优先级高
 var region = 'fujian';
-if ($request.arguments && $request.arguments.region) {
-    region = $request.arguments.region;
-} else {
-    var region_pref = $persistentStore.read("gas_price");
-    if (region_pref) {
-        region = region_pref;
-    }
-}
 
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
 $task.fetch({
