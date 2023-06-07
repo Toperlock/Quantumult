@@ -1,6 +1,11 @@
-const region = 'fujian';
+/*
+[task_local]
+0 0 8 ? * * https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/main/js/oil.js, tag=每日油价, enabled=true
+*/
 
+var region = 'fujian'
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
+
 $task.fetch({
     url: query_addr,
     headers: {
@@ -46,15 +51,16 @@ $task.fetch({
     }
     const friendly_tips = `${adjust_date} ${adjust_trend} ${adjust_value}`;
     if (prices.length !== 4) {
-        console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`);
-        $notification.post('脚本运行失败', '', '解析油价信息失败，请检查日志并反馈给开发者');
-    } else {
-        const content = `${prices[0].name}  ${prices[0].value}\n${prices[1].name}  ${prices[1].value}\n${prices[2].name}  ${prices[2].value}\n${prices[3].name}  ${prices[3].value}\n${friendly_tips}`;
-        $notification.post('实时油价信息', '', content);
+    console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`)
+    $done();
     }
-    $done();
-}, reason => {
-    console.log(`解析油价信息失败, 请反馈至 @RS0485: URL=${query_addr}`);
-    $notification.post('脚本运行失败', '', '请求油价信息失败，请检查日志并反馈给开发者');
-    $done();
-});
+    else {
+        body = {
+            title: "实时油价信息",
+            content: `${prices[0].name}  ${prices[0].value}\n${prices[1].name}  ${prices[1].value}\n${prices[2].name}  ${prices[2].value}\n${prices[3].name}  ${prices[3].value}\n${friendly_tips}`,
+            icon: "fuelpump.fill"
+        }
+        $notify(body);
+        $done();
+    }
+  });
