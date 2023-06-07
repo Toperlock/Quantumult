@@ -1,5 +1,4 @@
-// 指定查询地区，可通过argument或persistentStore设置，后者优先级高
-var region = 'fujian';
+const region = 'fujian';
 
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
 $task.fetch({
@@ -50,12 +49,14 @@ $task.fetch({
         console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`);
         $done({});
     } else {
-        body = {
+        const body = {
             title: "实时油价信息",
             content: `${prices[0].name}  ${prices[0].value}\n${prices[1].name}  ${prices[1].value}\n${prices[2].name}  ${prices[2].value}\n${prices[3].name}  ${prices[3].value}\n${friendly_tips}`,
             icon: "fuelpump.fill"
-        }
+        };
         $done(body);
     }
-}
+}, reason => {
+    console.log(`解析油价信息失败, 请反馈至 @RS0485: URL=${query_addr}`);
+    $done({});
 });
