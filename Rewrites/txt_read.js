@@ -10,27 +10,22 @@ hostname = github.com, raw.githubusercontent.com, gitlab.com, gist.githubusercon
 
 let req = $request.url.replace(/\.t_read\.txt$/, '');
 
-!(async () => {
-  let body = await http(req);
-  $done({
-    response: {
-      status: 200,
-      body: body,
-      headers: {
-        'Content-Type': 'text/plain; charset=utf-8'
+let req = $request.url.replace(/\.t_read\.txt$/, '');
+
+$httpClient.get(req, (error, response, data) => {
+  if (error) {
+    $notification.post(`${error}`, '', '');
+    $done();
+  } else {
+    $done({
+      response: {
+        status: 200,
+        body: data,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8'
+        }
       }
-    }
-  });
-})()
-.catch((e) => {
-  $notification.post(`${e}`, '', '');
-  $done();
+    });
+  }
 });
 
-function http(req) {
-  return new Promise((resolve, reject) => {
-    $httpClient.get(req, (err, resp, data) => {
-      resolve(data);
-    });
-  });
-}
