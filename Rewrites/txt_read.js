@@ -5,8 +5,7 @@
 ^https?://.*\.t_read\.txt$ url script-response-body https://raw.githubusercontent.com/Toperlock/Quantumult/main/Rewrites/txt_read.js
 
 [MITM]
-
-hostname = github.com,raw.githubusercontent.com,gitlab.com,gist.githubusercontent.com,gitlab.com
+hostname = github.com, raw.githubusercontent.com, gitlab.com, gist.githubusercontent.com, gitlab.com
 ****************************/
 
 let req = $request.url.replace(/\.t_read\.txt$/, '');
