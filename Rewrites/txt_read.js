@@ -28,14 +28,12 @@ http(req)
 
 function http(req) {
   return new Promise((resolve, reject) => {
-    $httpClient.get(req, (err, resp, data) => {
-      if (err) {
-        reject(err);
+    $httpClient.get(req, (error, response, data) => {
+      if (error) {
+        reject(error);
       } else {
         resolve(data);
       }
     });
   });
 }
-
-
