@@ -47,16 +47,14 @@ $task.fetch({
     const friendly_tips = `${adjust_date} ${adjust_trend} ${adjust_value}`;
     if (prices.length !== 4) {
         console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`);
-        $done({});
+        $notification.post('脚本运行失败', '', '解析油价信息失败，请检查日志并反馈给开发者');
     } else {
-        const body = {
-            title: "实时油价信息",
-            content: `${prices[0].name}  ${prices[0].value}\n${prices[1].name}  ${prices[1].value}\n${prices[2].name}  ${prices[2].value}\n${prices[3].name}  ${prices[3].value}\n${friendly_tips}`,
-            icon: "fuelpump.fill"
-        };
-        $done(body);
+        const content = `${prices[0].name}  ${prices[0].value}\n${prices[1].name}  ${prices[1].value}\n${prices[2].name}  ${prices[2].value}\n${prices[3].name}  ${prices[3].value}\n${friendly_tips}`;
+        $notification.post('实时油价信息', '', content);
     }
+    $done();
 }, reason => {
     console.log(`解析油价信息失败, 请反馈至 @RS0485: URL=${query_addr}`);
-    $done({});
+    $notification.post('脚本运行失败', '', '请求油价信息失败，请检查日志并反馈给开发者');
+    $done();
 });
