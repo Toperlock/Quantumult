@@ -31,8 +31,6 @@ $task.fetch(myRequest).then(response => {
             value: `${m[2]} 元/L`
         });
     }
-
-    var time = obj.result.time;
     
     var adjust_date = '';
     var adjust_trend = '';
@@ -64,7 +62,7 @@ $task.fetch(myRequest).then(response => {
         $done({});
     } else {
         const content = `${prices[0].name}  ${prices[0].value}\n${prices[1].name}  ${prices[1].value}\n${prices[2].name}  ${prices[2].value}\n${prices[3].name}  ${prices[3].value}\n${friendly_tips}`;
-        $notify("油价查询", time, content);
+        $notify("油价查询", data, content);
         $done({});
     }
 }, reason => {
