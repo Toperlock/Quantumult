@@ -3,8 +3,8 @@
 0 0 8 ? * * https://raw.githubusercontent.com/deezertidal/shadowrocket-rules/main/js/oil.js, tag=每日油价, enabled=true
 */
 
-var region = 'fujian'
-const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
+//var region = 'fujian'
+const query_addr = `http://m.qiyoujiage.com/fujian.shtml`;
 
 $task.fetch({
     url: query_addr,
