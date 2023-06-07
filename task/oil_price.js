@@ -1,10 +1,10 @@
 //转自https://raw.githubusercontent.com/RS0485/network-rules/main/scripts/gas-price.js
 /*
 [task_local]
-0 8 ? * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/oil_price.js, tag=今日油价, enabled=true
+0 8 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/oil_price.js, tag=今日油价, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oil.png, enabled=true
 */
-
 //把'fujian'修改为其他地区拼音，支持省/市/区'fujian/fuzhou/gulou'
+
 var region = 'fujian';
 
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
