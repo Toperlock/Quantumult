@@ -3,6 +3,7 @@
 [task_local]
 0 8 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/oil_price.js, tag=今日油价, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oil.png, enabled=true
 */
+//qx修改地区不方便，自行建个仓库修改地区，或者把文件保存到本地修改执行
 //把'fujian'修改为其他地区拼音，支持省/市/区'fujian/fuzhou/gulou'
 
 var region = 'fujian';
