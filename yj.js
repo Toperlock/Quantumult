@@ -9,7 +9,7 @@
 var region = "shanxi-3/xian";
 
 const $ = API("yj");
-const qxdq = $persistentStore.read("地区");
+const qxdq = $.read("地区");
 if (qxdq !== undefined) {
   region = qxdq;
 }
