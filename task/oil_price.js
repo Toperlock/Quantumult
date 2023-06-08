@@ -1,5 +1,5 @@
 //转自https://raw.githubusercontent.com/RS0485/network-rules/main/scripts/gas-price.js
-//感谢@chavyleung的Env.min.js
+//感谢@chavyleung，@Keywos
 //qx修改地区不方便，自行建个仓库修改地区，或者把文件保存到本地修改执行
 //把'fujian'修改为其他地区拼音，支持省/市/区'fujian/fuzhou/gulou'
 //已支持通过BoxJs修改地区。在BoxJs的数据查看器输入“地区”，数据编辑器输入地区拼音
