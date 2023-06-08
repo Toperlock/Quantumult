@@ -13,7 +13,10 @@ var region = "shanxi-3/xian";
 const qxdq = $.getdata("地区");
 if (qxdq !== undefined) {
   region = qxdq;
+} else {
+  region = region;
 }
+  
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
 $.http.get(
   {
