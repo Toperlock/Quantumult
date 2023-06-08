@@ -57,13 +57,13 @@ $task.fetch(myRequest).then(response => {
         }
     }
     
-    const friendly_tips = `${adjust_date}\t${adjust_trend} ${adjust_value}`;
+    const friendly_tips = `下次${adjust_date}预计\t${adjust_trend} ${adjust_value}`;
     if (prices.length !== 4) {
         console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`);
         $notify("油价查询", "解析失败", "请检查脚本或反馈给开发者");
         $done({});
     } else {
-        const content = `${prices[0].name}\t${prices[0].value}\n${prices[1].name}\t${prices[1].value}\n${prices[2].name}\t${prices[2].value}\n${prices[3].name}\t${prices[3].value}`;
+        const content = `${prices[0].name}\t\t\t${prices[0].value}\n${prices[1].name}\t\t\t${prices[1].value}\n${prices[2].name}\t\t\t${prices[2].value}\n${prices[3].name}\t\t\t${prices[3].value}`;
         $notify("油价查询", `${friendly_tips}`, content);
         $done({});
     }
