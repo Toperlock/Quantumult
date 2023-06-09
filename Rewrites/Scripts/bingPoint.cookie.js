@@ -3,7 +3,7 @@
 作者：    @MCdasheng
 操作步骤: web访问 https://rewards.bing.com 登录即可
 [rewrite local]
-^https\:\/\/rewards\.bing\.com url script-request-header https://raw.githubusercontent.com/Toperlock/QuantumultX/main/Rewrites/Scripts/bingPoint.cookie.js
+^https\:\/\/rewards\.bing\.com url script-request-header https://raw.githubusercontent.com/Toperlock/Quantumult/main/Rewrites/Scripts/bingPoint.cookie.js
 [MITM]
 hostname = rewards.bing.com
 */
