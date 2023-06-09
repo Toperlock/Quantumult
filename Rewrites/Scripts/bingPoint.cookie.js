@@ -1,6 +1,6 @@
 /* 
 脚本功能: 获取 bing面板cookie,用于lowking脚本
-作者：    @MCdasheng
+作者:     @MCdasheng
 操作步骤: web访问 https://rewards.bing.com 登录即可
 [rewrite local]
 ^https\:\/\/rewards\.bing\.com url script-request-header https://raw.githubusercontent.com/Toperlock/Quantumult/main/Rewrites/Scripts/bingPoint.cookie.js
