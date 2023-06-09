@@ -3,7 +3,9 @@
 作者:     @MCdasheng
 设置每天10点整每10秒就执行，执行6分钟，确保刷满
 请抓取bing cookie再开启任务！！！
-BoxJs订阅地址: https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.json
+Reward cookie:  https://raw.githubusercontent.com/Toperlock/Quantumult/main/Rewrites/Scripts/bingPoint.cookie.js
+Search cookie:  https://raw.githubusercontent.com/Toperlock/Quantumult/main/Rewrites/Scripts/bingSearch.cookie.js
+BoxJs订阅地址:  https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.json
 **************/
 /*
 [task_local]
