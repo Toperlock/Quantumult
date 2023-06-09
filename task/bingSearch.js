@@ -1,12 +1,13 @@
 /**************
 脚本功能: 🏆BingSearch Task
 作者:     @MCdasheng
-因为设置每4秒就执行，所以请手动开启任务，做完请关闭task，不然会一直每4秒执行
+设置每天10点整每10秒就执行，执行6分钟，确保刷满
+请抓取bing cookie再开启任务！！！
 BoxJs订阅地址: https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.json
 **************/
 /*
 [task_local]
-0-59/4 * * * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/bingSearch.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png, enabled=false
+0-59/4 0-6 10 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/bingSearch.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png, enabled=false
 */
 
 mbSearch();
