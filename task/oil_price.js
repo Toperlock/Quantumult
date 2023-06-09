@@ -12,6 +12,7 @@
 */
 
 const $ = new Env("查询油价");
+// 默认福建
 var region = $.getdata("地区") || "fujian";
 
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
@@ -65,7 +66,7 @@ $task.fetch(myRequest).then(response => {
     
     const friendly_tips = `下次${adjust_date}预计\t${adjust_trend} ${adjust_value}`;
     if (prices.length !== 4) {
-        console.log(`解析油价信息失败, 数量=${prices.length}, 请反馈至 @RS0485: URL=${query_addr}`);
+        console.log(`解析油价信息失败, URL=${query_addr}`);
         $notify("油价查询", "解析失败", "请检查脚本或反馈给开发者");
         $done({});
     } else {
@@ -74,7 +75,7 @@ $task.fetch(myRequest).then(response => {
         $done({});
     }
 }, reason => {
-    console.log(`解析油价信息失败, 请反馈至 @RS0485: URL=${query_addr}`);
+    console.log(`查询油价信息失败, URL=${query_addr}`);
     $notify("油价查询", "请求失败", "请检查网络或反馈给开发者");
     $done({});
 });
