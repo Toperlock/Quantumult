@@ -5,7 +5,7 @@
 //因为陕西和山西拼音一样，陕西需要改为"shanxi-3"
 /*******
 2023-6-8更新
-已支持通过BoxJs修改地区。在BoxJs的数据查看器输入“地区”，数据编辑器输入地区拼音
+已支持通过BoxJs修改地区。无需订阅直接在BoxJs的数据查看器输入“地区”，数据编辑器输入地区拼音
 BoxJs重写链接：https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf
 BoxJs网址：https://boxjs.com 或者新版：https://dompling.github.io/boxjs.react
 *******/
