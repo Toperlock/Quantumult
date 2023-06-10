@@ -1,6 +1,6 @@
 {
     "name":"UI Task脚本合集",
-    "description":"收集脚本出处见鸣谢",
+    "description":"收集脚本出处作者已标注",
     "task":[
         "event-interaction https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/Node_detection_tool/CloudflareSpeedtest.js, tag=Speed测速, img-url=bolt.square.fill.system",
         "event-interaction https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/script/txt/ipinfo.txt, tag=节点位置查询, img-url=https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/cartoon/Cute/3icon.png",
