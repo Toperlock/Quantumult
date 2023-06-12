@@ -1,10 +1,6 @@
-/*
-本脚本是QuanmutultX假日倒计时
-author: @zqzess
-仓库地址：https://github.com/zqzess/rule_for_quantumultX
-原脚本地址：https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/js/Mine/wnCalendar/DaysMatter.js
-修改: @Toperlock
-*/
+//本脚本是QuanmutultX假日倒计时
+//@author: @zqzess, @GN006
+
 /***************
 [task_local]
 # 节假提醒
