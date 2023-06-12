@@ -17,14 +17,12 @@ let tnowf =
   tnow.getFullYear() + "-" + (tnow.getMonth() + 1) + "-" + tnow.getDate();
 
 function dateDiff(startDateString, endDateString) {
-  var separator = "-"; 
+  var separator = "-";
   var startDates = startDateString.split(separator);
   var endDates = endDateString.split(separator);
   var startDate = new Date(startDates[0], startDates[1] - 1, startDates[2]);
   var endDate = new Date(endDates[0], endDates[1] - 1, endDates[2]);
-  return parseInt(
-    (endDate - startDate) / 1000 / 60 / 60 / 24
-  ).toString();
+  return parseInt((endDate - startDate) / 1000 / 60 / 60 / 24).toString();
 }
 
 function tnumcount(num) {
@@ -53,9 +51,16 @@ function today(day) {
 }
 
 function datenotice() {
-  if ($persistentStore.read("timecardpushed") != tlist[nowlist][1] && tnow.getHours() >= 6) {
+  if (
+    $persistentStore.read("timecardpushed") != tlist[nowlist][1] &&
+    tnow.getHours() >= 6
+  ) {
     $persistentStore.write(tlist[nowlist][1], "timecardpushed");
-    $notification.post("假日祝福", "", "今天是" + tlist[nowlist][1] + "日 " + tlist[nowlist][0] + "   🎉");
+    $notification.post(
+      "假日祝福",
+      "",
+      "今天是" + tlist[nowlist][1] + "日 " + tlist[nowlist][0] + "   🎉"
+    );
   } else if ($persistentStore.read("timecardpushed") == tlist[nowlist][1]) {
     //console.log("当日已通知");
   }
@@ -73,14 +78,24 @@ function icon_now(num) {
   }
 }
 
-$done({
-  title: title_random(tnumcount(Number(nowlist))),
-  icon: icon_now(tnumcount(Number(nowlist))),
-  content: tlist[nowlist][0] + ":" + today(tnumcount(nowlist)) + "," + tlist[Number(nowlist) + Number(1)][0] + ":" + tnumcount(Number(nowlist) + Number(1)) + "天," + tlist[Number(nowlist) + Number(2)][0] + ":" + tnumcount(Number(nowlist) + Number(2)) + "天"
+$task.fetch({}).then(response => {
+    content = tlist[nowlist][0] + ": " + today(tnumcount(nowlist)) + ", " +
+                  tlist[Number(nowlist) + 1][0] + ": " + tnumcount(Number(nowlist) + 1) + "天, " +
+                  tlist[Number(nowlist) + 2][0] + ": " + tnumcount(Number(nowlist) + 2) + "天";
+    $notification.post({
+        title: title_random(tnumcount(Number(nowlist))),
+        icon: icon_now(tnumcount(Number(nowlist))),
+        content: content
+    });
+    $done();
+}), reason => {
+    console.log(`请求失败`);
+    $notify("假日提醒", "请求失败");
+    $done();
 });
 
 function title_random(num) {
-  let r = Math.floor((Math.random() * 10) + 1);
+  let r = Math.floor((Math.random()*10)+1);
   let dic = {
     1: "距离放假，还要摸鱼多少天？",
     2: "坚持住，就快放假啦！",
