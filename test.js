@@ -84,5 +84,13 @@ const title_random = (num) => {
   };
   return num === 0 ? "节日快乐，万事大吉" : dic[r];
 };
-
-$notification.post("节假日提醒", title_random(tnumcount(Number(nowlist))), tlist[nowlist][0] + ":" + today(tnumcount(nowlist)) + "," + tlist[Number(nowlist) + Number(1)][0] + ":" + tnumcount(Number(nowlist) + Number(1)) + "天," + tlist[Number(nowlist) + Number(2)][0] + ":" + tnumcount(Number(nowlist) + Number(2)) + "天");
+$task.fetch(title_random).then(response => {
+  console.log(response.body);
+  const content = `tlist[nowlist][0] + ":" + today(tnumcount(nowlist)) + "," + tlist[Number(nowlist) + Number(1)][0] + ":" + tnumcount(Number(nowlist) + Number(1)) + "天," + tlist[Number(nowlist) + Number(2)][0] + ":" + tnumcount(Number(nowlist) + Number(2)) + "天"`
+  $notify("节假日提醒", title_random(tnumcount(Number(nowlist))), content); // Success!
+  $done({});
+}, reason => {
+  console.log(reason.error);
+  $notify("节假日提醒", "错误", "请检查脚本"); // Error!
+  $done({});
+});
