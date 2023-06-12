@@ -11,26 +11,6 @@ author: @zqzess
 0 8 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/TimeCard.js, tag=节假提醒, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png, enabled=true
 ***************/
 
-var tlist = {
-    1: ["元旦", "2023-01-01"],
-    2: ["除夕", "2023-01-21"],
-    3: ["春节", "2023-01-22"],
-    4: ["元宵节", "2023-02-05"],
-    5: ["清明节", "2023-04-05"],
-    6: ["劳动节", "2023-05-01"],
-    7: ["母亲节", "2023-05-14"],
-    8: ["父亲节", "2023-06-18"],
-    9: ["端午节", "2023-06-22"],
-    10: ["七夕", "2023-08-22"],
-    11: ["中秋节", "2023-09-29"],
-    12: ["国庆节", "2023-10-01"],
-    13: ["重阳节", "2023-10-23"],  
-    14: ["冬至", "2023-12-22"],
-    15: ["元旦", "2024-01-01"],
-    16: ["除夕", "2024-02-09"],
-    17: ["春节", "2024-02-10"],
-    18: ["元宵节", "2024-02-24"]
-};
 const $ = new Env('DaysMatter', true)
 let title = '📅 倒数日'
 // let url = 'https://raw.githubusercontent.com/zqzess/openApiData/main/calendar/cnholiday2.json'
