@@ -85,28 +85,4 @@ const title_random = (num) => {
   return num === 0 ? "节日快乐，万事大吉" : dic[r];
 };
 
-const url = "https://example.com/";
-const method = "POST";
-const headers = { "Field": "test-header-param" };
-const data = {
-  title: title_random(tnumcount(Number(nowlist))),
-  icon: icon_now(tnumcount(Number(nowlist))),
-  content: tlist[nowlist][0] + ":" + today(tnumcount(nowlist)) + "," + tlist[Number(nowlist) + Number(1)][0] + ":" + tnumcount(Number(nowlist) + Number(1)) + "天," + tlist[Number(nowlist) + Number(2)][0] + ":" + tnumcount(Number(nowlist) + Number(2)) + "天"
-};
-
-const myRequest = {
-  url: url,
-  method: method, // Optional, default GET.
-  headers: headers, // Optional.
-  body: JSON.stringify(data) // Optional.
-};
-
-$task.fetch(myRequest).then(response => {
-  console.log(response.body);
-  $notify("节假日提醒", "成功", response.body); // Success!
-  $done();
-}, reason => {
-  console.log(reason.error);
-  $notify("节假日提醒", "错误", reason.error); // Error!
-  $done();
-});
+$notification.post("节假日提醒", title_random(tnumcount(Number(nowlist))), tlist[nowlist][0] + ":" + today(tnumcount(nowlist)) + "," + tlist[Number(nowlist) + Number(1)][0] + ":" + tnumcount(Number(nowlist) + Number(1)) + "天," + tlist[Number(nowlist) + Number(2)][0] + ":" + tnumcount(Number(nowlist) + Number(2)) + "天");
