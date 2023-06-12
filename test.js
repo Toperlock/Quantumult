@@ -79,13 +79,10 @@ function icon_now(num) {
 }
 
 $task.fetch({}).then(response => {
-    content = tlist[nowlist][0] + ": " + today(tnumcount(nowlist)) + ", " +
-                  tlist[Number(nowlist) + 1][0] + ": " + tnumcount(Number(nowlist) + 1) + "天, " +
-                  tlist[Number(nowlist) + 2][0] + ": " + tnumcount(Number(nowlist) + 2) + "天";
-    $notification.post({
-        title: title_random(tnumcount(Number(nowlist))),
-        icon: icon_now(tnumcount(Number(nowlist))),
-        content: content
+    const content = `tlist[nowlist][0]+":"+today(tnumcount(nowlist))+","+tlist[Number(nowlist) + Number(1)][0] +":"+ tnumcount(Number(nowlist) + Number(1))+ "天,"+tlist[Number(nowlist) + Number(2)][0]+":"+tnumcount(Number(nowlist) + Number(2))+"天"`
+    const title = title_random(tnumcount(Number(nowlist)))
+    const icon = icon_now(tnumcount(Number(nowlist)))
+    $$notify("假日提醒", `title`, content);
     });
     $done();
 }), reason => {
