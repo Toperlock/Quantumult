@@ -1,6 +1,6 @@
 //本脚本是QuanmutultX假日倒计时
 //@author: @zqzess, @GN006
-
+//本地修改你想要的日期，或者自己建库
 /***************
 [task_local]
 # 节假提醒
