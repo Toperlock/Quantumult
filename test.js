@@ -1,4 +1,4 @@
-const tlist = {
+var tlist = {
   1: ["中秋", "2022-09-10"],
   2: ["国庆", "2022-10-01"],
   3: ["元旦", "2023-01-01"],
@@ -12,33 +12,38 @@ const tlist = {
   11: ["元旦", "2024-01-01"]
 };
 
-const tnow = new Date();
-const tnowf = tnow.getFullYear() + "-" + (tnow.getMonth() + 1) + "-" + tnow.getDate();
+let tnow = new Date();
+let tnowf =
+  tnow.getFullYear() + "-" + (tnow.getMonth() + 1) + "-" + tnow.getDate();
 
 function dateDiff(startDateString, endDateString) {
-  const separator = "-"; //日期分隔符
-  const startDates = startDateString.split(separator);
-  const endDates = endDateString.split(separator);
-  const startDate = new Date(startDates[0], startDates[1] - 1, startDates[2]);
-  const endDate = new Date(endDates[0], endDates[1] - 1, endDates[2]);
-  return parseInt((endDate - startDate) / 1000 / 60 / 60 / 24).toString();
+  var separator = "-"; 
+  var startDates = startDateString.split(separator);
+  var endDates = endDateString.split(separator);
+  var startDate = new Date(startDates[0], startDates[1] - 1, startDates[2]);
+  var endDate = new Date(endDates[0], endDates[1] - 1, endDates[2]);
+  return parseInt(
+    (endDate - startDate) / 1000 / 60 / 60 / 24
+  ).toString();
 }
 
 function tnumcount(num) {
-  const dnum = num;
+  let dnum = num;
   return dateDiff(tnowf, tlist[dnum][1]);
 }
 
 function now() {
-  for (let i = 1; i <= Object.getOwnPropertyNames(tlist).length; i++) {
+  for (var i = 1; i <= Object.getOwnPropertyNames(tlist).length; i++) {
     if (Number(dateDiff(tnowf, tlist[i.toString()][1])) >= 0) {
       return i;
     }
   }
 }
 
+let nowlist = now();
+
 function today(day) {
-  const daythis = day;
+  let daythis = day;
   if (daythis == "0") {
     datenotice();
     return "🎉";
@@ -48,9 +53,11 @@ function today(day) {
 }
 
 function datenotice() {
-  if ($persistentStore.read("timecardpushed") !== tlist[nowlist][1] && tnow.getHours() >= 6) {
+  if ($persistentStore.read("timecardpushed") != tlist[nowlist][1] && tnow.getHours() >= 6) {
     $persistentStore.write(tlist[nowlist][1], "timecardpushed");
     $notification.post("假日祝福", "", "今天是" + tlist[nowlist][1] + "日 " + tlist[nowlist][0] + "   🎉");
+  } else if ($persistentStore.read("timecardpushed") == tlist[nowlist][1]) {
+    //console.log("当日已通知");
   }
 }
 
@@ -66,11 +73,15 @@ function icon_now(num) {
   }
 }
 
-const nowlist = now();
+$done({
+  title: title_random(tnumcount(Number(nowlist))),
+  icon: icon_now(tnumcount(Number(nowlist))),
+  content: tlist[nowlist][0] + ":" + today(tnumcount(nowlist)) + "," + tlist[Number(nowlist) + Number(1)][0] + ":" + tnumcount(Number(nowlist) + Number(1)) + "天," + tlist[Number(nowlist) + Number(2)][0] + ":" + tnumcount(Number(nowlist) + Number(2)) + "天"
+});
 
-const title_random = (num) => {
-  const r = Math.floor((Math.random() * 10) + 1);
-  const dic = {
+function title_random(num) {
+  let r = Math.floor((Math.random() * 10) + 1);
+  let dic = {
     1: "距离放假，还要摸鱼多少天？",
     2: "坚持住，就快放假啦！",
     3: "上班好累呀，下顿吃啥？",
@@ -82,15 +93,5 @@ const title_random = (num) => {
     9: "摸鱼中，期待下一个假日",
     10: "小乌龟慢慢爬"
   };
-  return num === 0 ? "节日快乐，万事大吉" : dic[r];
-};
-$task.fetch(title_random).then(response => {
-  console.log(response.body);
-  const content = `tlist[nowlist][0] + ":" + today(tnumcount(nowlist)) + "," + tlist[Number(nowlist) + Number(1)][0] + ":" + tnumcount(Number(nowlist) + Number(1)) + "天," + tlist[Number(nowlist) + Number(2)][0] + ":" + tnumcount(Number(nowlist) + Number(2)) + "天"`
-  $notify("节假日提醒", title_random(tnumcount(Number(nowlist))), content); // Success!
-  $done({});
-}, reason => {
-  console.log(reason.error);
-  $notify("节假日提醒", "错误", "请检查脚本"); // Error!
-  $done({});
-});
+  return num == 0 ? "节日快乐，万事大吉" : dic[r];
+}
