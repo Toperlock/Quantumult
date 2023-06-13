@@ -9,7 +9,7 @@ BoxJs订阅地址:  https://raw.githubusercontent.com/MCdasheng/QuantumultX/main
 **************/
 /*
 [task_local]
-0-59/4 0-6 10 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/bingSearch.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png, enabled=false
+0-59/10 0-6 10 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/bingSearch.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png, enabled=false
 */
 
 mbSearch();
