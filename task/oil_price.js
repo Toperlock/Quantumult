@@ -8,6 +8,8 @@
 已支持通过BoxJs修改地区。无需订阅直接在BoxJs的数据查看器输入“地区”，数据编辑器输入地区拼音
 BoxJs重写链接：https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf
 BoxJs网址：https://boxjs.com 或者新版：https://dompling.github.io/boxjs.react
+2023-6-13更新
+添加日志显示
 *******/
 
 /*
@@ -76,6 +78,7 @@ $task.fetch(myRequest).then(response => {
     } else {
         const content = `${prices[0].name}\t\t\t${prices[0].value}\n${prices[1].name}\t\t\t${prices[1].value}\n${prices[2].name}\t\t\t${prices[2].value}\n${prices[3].name}\t\t\t${prices[3].value}`;
         $notify("油价查询", `${friendly_tips}`, content);
+        console.log(`油价查询结果：\n${friendly_tips}\n${content}`);
         $done({});
     }
 }, reason => {
