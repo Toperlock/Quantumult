@@ -1,0 +1,358 @@
+{
+  "name": "Toperlock Doraemon",
+  "description": "Doraemon图标订阅",
+  "icons": [
+    {
+      "name": "Doraemon-1",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-1.png"
+    },
+    {
+      "name": "Doraemon-2",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-2.png"
+    },
+    {
+      "name": "Doraemon-3",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-3.png"
+    },
+    {
+      "name": "Doraemon-4",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-4.png"
+    },
+    {
+      "name": "Doraemon-5",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-5.png"
+    },
+    {
+      "name": "Doraemon-6",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-6.png"
+    },
+    {
+      "name": "Doraemon-7",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-7.png"
+    },
+    {
+      "name": "Doraemon-8",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-8.png"
+    },
+    {
+      "name": "Doraemon-9",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-9.png"
+    },
+    {
+      "name": "Doraemon-10",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-10.png"
+    },
+    {
+      "name": "Doraemon-11",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-11.png"
+    },
+    {
+      "name": "Doraemon-12",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-12.png"
+    },
+    {
+      "name": "Doraemon-13",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-13.png"
+    },
+    {
+      "name": "Doraemon-14",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-14.png"
+    },
+    {
+      "name": "Doraemon-15",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-15.png"
+    },
+    {
+      "name": "Doraemon-16",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-16.png"
+    },
+    {
+      "name": "Doraemon-17",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-17.png"
+    },
+    {
+      "name": "Doraemon-18",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-18.png"
+    },
+    {
+      "name": "Doraemon-19",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-19.png"
+    },
+    {
+      "name": "Doraemon-20",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-20.png"
+    },
+    {
+      "name": "Doraemon-21",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-21.png"
+    },
+    {
+      "name": "Doraemon-22",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-22.png"
+    },
+    {
+      "name": "Doraemon-23",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-23.png"
+    },
+    {
+      "name": "Doraemon-24",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-24.png"
+    },
+    {
+      "name": "Doraemon-25",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-25.png"
+    },
+    {
+      "name": "Doraemon-26",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-26.png"
+    },
+    {
+      "name": "Doraemon-27",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-27.png"
+    },
+    {
+      "name": "Doraemon-28",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-28.png"
+    },
+    {
+      "name": "Doraemon-29",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-29.png"
+    },
+    {
+      "name": "Doraemon-30",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-30.png"
+    },
+    {
+      "name": "Doraemon-31",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-31.png"
+    },
+    {
+      "name": "Doraemon-32",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-32.png"
+    },
+    {
+      "name": "Doraemon-33",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-33.png"
+    },
+    {
+      "name": "Doraemon-34",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-34.png"
+    },
+    {
+      "name": "Doraemon-35",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-35.png"
+    },
+    {
+      "name": "Doraemon-36",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-36.png"
+    },
+    {
+      "name": "Doraemon-37",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-37.png"
+    },
+    {
+      "name": "Doraemon-38",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-38.png"
+    },
+    {
+      "name": "Doraemon-39",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-39.png"
+    },
+    {
+      "name": "Doraemon-40",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-40.png"
+    },
+    {
+      "name": "Doraemon-41",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-41.png"
+    },
+    {
+      "name": "Doraemon-42",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-42.png"
+    },
+    {
+      "name": "Doraemon-43",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-43.png"
+    },
+    {
+      "name": "Doraemon-44",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-44.png"
+    },
+    {
+      "name": "Doraemon-45",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-45.png"
+    },
+    {
+      "name": "Doraemon-46",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-46.png"
+    },
+    {
+      "name": "Doraemon-47",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-47.png"
+    },
+    {
+      "name": "Doraemon-48",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-48.png"
+    },
+    {
+      "name": "Doraemon-49",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-49.png"
+    },
+    {
+      "name": "Doraemon-50",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-50.png"
+    },
+    {
+      "name": "Doraemon-51",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-51.png"
+    },
+    {
+      "name": "Doraemon-52",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-52.png"
+    },
+    {
+      "name": "Doraemon-53",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-53.png"
+    },
+    {
+      "name": "Doraemon-54",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-54.png"
+    },
+    {
+      "name": "Doraemon-55",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-55.png"
+    },
+    {
+      "name": "Doraemon-56",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-56.png"
+    },
+    {
+      "name": "Doraemon-57",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-57.png"
+    },
+    {
+      "name": "Doraemon-58",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-58.png"
+    },
+    {
+      "name": "Doraemon-59",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-59.png"
+    },
+    {
+      "name": "Doraemon-60",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-60.png"
+    },
+    {
+      "name": "Doraemon-61",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-61.png"
+    },
+    {
+      "name": "Doraemon-62",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-62.png"
+    },
+    {
+      "name": "Doraemon-63",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-63.png"
+    },
+    {
+      "name": "Doraemon-64",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-64.png"
+    },
+    {
+      "name": "Doraemon-65",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-65.png"
+    },
+    {
+      "name": "Doraemon-66",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-66.png"
+    },
+    {
+      "name": "Doraemon-67",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-67.png"
+    },
+    {
+      "name": "Doraemon-68",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-68.png"
+    },
+    {
+      "name": "Doraemon-69",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-69.png"
+    },
+    {
+      "name": "Doraemon-70",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-70.png"
+    },
+    {
+      "name": "Doraemon-71",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-71.png"
+    },
+    {
+      "name": "Doraemon-72",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-72.png"
+    },
+    {
+      "name": "Doraemon-73",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-73.png"
+    },
+    {
+      "name": "Doraemon-74",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-74.png"
+    },
+    {
+      "name": "Doraemon-75",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-75.png"
+    },
+    {
+      "name": "Doraemon-76",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-76.png"
+    },
+    {
+      "name": "Doraemon-77",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-77.png"
+    },
+    {
+      "name": "Doraemon-78",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-78.png"
+    },
+    {
+      "name": "Doraemon-79",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-79.png"
+    },
+    {
+      "name": "Doraemon-80",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-80.png"
+    },
+    {
+      "name": "Doraemon-81",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-81.png"
+    },
+    {
+      "name": "Doraemon-82",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-82.png"
+    },
+    {
+      "name": "Doraemon-83",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-83.png"
+    },
+    {
+      "name": "Doraemon-84",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-84.png"
+    },
+    {
+      "name": "Doraemon-85",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-85.png"
+    },
+    {
+      "name": "Doraemon-86",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-86.png"
+    },
+    {
+      "name": "Doraemon-87",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-87.png"
+    },
+    {
+      "name": "Doraemon-88",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Doraemon/Doraemon-88.png"
+    }
+  ]
+}
