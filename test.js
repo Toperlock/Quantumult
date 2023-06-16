@@ -37,10 +37,7 @@ var hnDel = urlArg.search(/\?hndel=|&hndel=/) != -1 ? (urlArg.split(/\?hndel=|&h
 var delNoteSc = urlArg.indexOf("del=") != -1 ? true : false;
 
 //随机图标开关，不传入参数默认为开
-async function getIcon() {
-    const iconStatus = $persistentStore.read("启用插件随机图标");
-    const iconLibrary = $persistentStore.read("插件随机图标合集") ?? "Doraemon";
-  
+async function getIcon() { 
     if (iconStatus === "禁用") {
       icon = "";
     } else {
