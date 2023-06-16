@@ -68,22 +68,27 @@ if (isShadowrocket || isLooniOS ||isSurgeiOS || isLanceX || isEgern){
 	desc = "desc: " + decodeURIComponent(desc);
 };
 
+
+//随机图标开关，不传入参数默认为开
 async function getIcon() {
-    if (iconStatus === "禁用") {
+    const iconFolderURL = "https://github.com/Toperlock/Quantumult/raw/main/icon/" + iconLibrary;
+    const iconListResponse = await fetch(iconFolderURL);
+    const iconListHTML = await iconListResponse.text();
+    const iconListMatches = iconListHTML.match(/<a href="([^"]+)">/g);
+    const stickerSum = iconListMatches ? iconListMatches.length - 1 : 0;
+  
+    // 随机图标开关，不传入参数默认为开
+    if (iconStatus == "禁用") {
       icon = "";
     } else {
-      const stickerStartNum = 1001;
-      const iconFolderURL = "https://github.com/Toperlock/Quantumult/raw/main/icon/" + iconLibrary + "/";
-      const response = await fetch(iconFolderURL);
-      const htmlText = await response.text();
-      const stickerSum = (htmlText.match(/<a href=".+?">/g) || []).length;
-  
+      const stickerStartNum = 1000;
       let randomStickerNum = parseInt(stickerStartNum + Math.random() * stickerSum).toString();
-      icon = "#!icon=" + iconFolderURL + iconLibrary + "-" + randomStickerNum + ".png";
+      icon = "#!icon=" + iconFolderURL + "/" + iconLibrary + "-" + randomStickerNum + ".png";
     }
   }
-  
+
 getIcon();
+
 !(async () => {
   let body = await http(req);
 //判断是否断网
