@@ -85,9 +85,10 @@ async function getIcon() {
       let randomStickerNum = parseInt(stickerStartNum + Math.random() * stickerSum).toString();
       icon = "#!icon=" + iconFolderURL + "/" + iconLibrary + "-" + randomStickerNum + ".png";
     }
+    return icon;
   }
 
-getIcon();
+const icon = await getIcon();
 
 !(async () => {
   let body = await http(req);
