@@ -22,3 +22,10 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 其它人通过任何方式登陆本网站或直接、间接使用 Toperlock 项目相关资源，均应仔细阅读本声明，一旦使用、转载 Toperlock 项目任何相关教程或资源，即被视为您已接受此免责声明。
 
 </details>
+
+Doraemon图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/main/D-icons.json
+![Doraemon](https://github.com/Toperlock/Quantumult/assets/86833913/f4afbbe1-bf94-48d4-a985-351ace1bfac2)
+
+Shin-chan图标订阅https://raw.githubusercontent.com/Toperlock/Quantumult/main/Shin-icons.json
+![Shin-chan](https://github.com/Toperlock/Quantumult/assets/86833913/340adeaf-3f12-496d-a516-826a7574b3ff)
+
