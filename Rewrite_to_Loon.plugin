@@ -1,0 +1,23 @@
+#!name=QX或Surge重写&规则集转Loon
+#!desc=使用方法，在QX重写链接末尾加上qx  在surge模块链接末尾加上sg 规则集链接末尾加r_parser.list 支持解析QX & Clash规则集，点击下方链接查看使用手册
+#!homepage=https://t.me/h5683577
+#!author=@小白脸 @chengkongyiban
+#!openurl=https://github.com/chengkongyiban/stash/tree/main/Rewrite_Parser_Wiki
+#!icon=https://github.com/chengkongyiban/shadowrocket/raw/main/584047B7-4D53-4429-9065-4D822D99E992.jpeg
+#!select=启用插件随机图标,启用,禁用
+#!select=替换原始插件图标,启用,禁用
+#!select=插件随机图标合集,Doraemon,Shin-chan
+
+[Script]
+http-request \/[^/]+\.[^/]+qx$|qx\?(jsc|hnadd|hndel|n|y|x|del|i)= script-path=https://raw.githubusercontent.com/Toperlock/Quantumult/main/test.js, requires-body=true, timeout=10, tag=QX转化Loon
+
+http-request \/[^/]+\.[^/]+sg$|sg\?(jsc|hnadd|hndel|n|y|x|del|i)= script-path=https://github.com/chengkongyiban/stash/raw/main/js/Surge_Rewrite_Parser.js, requires-body=true, timeout=10, tag=Surge转化Loon
+
+http-request \/[^/]+\.[^/]+loon$|loon\?(hndel|hnadd|n|y|x|del)= script-path=https://raw.githubusercontent.com/Toperlock/Quantumult/main/test.js, requires-body=true, tag=Loon插件控制器
+
+http-request r_parser.list$|r_parser.list\?.* script-path=https://raw.githubusercontent.com/chengkongyiban/stash/main/js/rule_parser.js, requires-body=true, tag=规则集转换
+
+http-request _script-converter-(stash|surge|loon|shadowrocket)\.js$ script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/script-converter/script-converter.js, requires-body=true, tag=脚本转换
+
+[MITM]
+hostname = github.com,raw.githubusercontent.com,gist.githubusercontent.com,gitlab.com,yfamily.ml
