@@ -1,0 +1,118 @@
+{
+  "name": "Toperlock Mixed",
+  "description": "Mixed图标订阅",
+  "icons": [
+    {
+      "name": "60s",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/60s.png"
+    },
+    {
+      "name": "ChatGPT-2",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/ChatGPT-2.png"
+    },
+    {
+      "name": "ChatGPT-3",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/ChatGPT-3.png"
+    },
+    {
+      "name": "Pixiv",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Pixiv.png"
+    },
+    {
+      "name": "Pixiv_2",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Pixiv_2.png"
+    },
+    {
+      "name": "SMBC",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/SMBC.png"
+    },
+    {
+      "name": "V-preca",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/V-preca.png"
+    },
+    {
+      "name": "YellowCalendar",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/YellowCalendar.png"
+    },
+    {
+      "name": "YellowCalendar_2",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/YellowCalendar_2.png"
+    },
+    {
+      "name": "boa",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/boa.png"
+    },
+    {
+      "name": "daily",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/daily.png"
+    },
+    {
+      "name": "date",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png"
+    },
+    {
+      "name": "dingtalk",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png"
+    },
+    {
+      "name": "fire",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/fire.png"
+    },
+    {
+      "name": "heiliao",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/heiliao.png"
+    },
+    {
+      "name": "maya",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/maya.png"
+    },
+    {
+      "name": "meituan",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/meituan.png"
+    },
+    {
+      "name": "miao",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/miao.png"
+    },
+    {
+      "name": "miao_2",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/miao_2.png"
+    },
+    {
+      "name": "oil",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oil.png"
+    },
+    {
+      "name": "oldubil",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oldubil.png"
+    },
+    {
+      "name": "one",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/one.png"
+    },
+    {
+      "name": "ozan",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/ozan.png"
+    },
+    {
+      "name": "tieba",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/tieba.png"
+    },
+    {
+      "name": "uni",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/uni.png"
+    },
+    {
+      "name": "wise",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/wise.png"
+    },
+    {
+      "name": "wm_meituan",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/wm_meituan.png"
+    },
+    {
+      "name": "xiaohongshu",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/xiaohongshu.png"
+    }
+  ]
+}
