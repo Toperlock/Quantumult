@@ -55,6 +55,10 @@
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/dingtalk.png"
     },
     {
+      "name": "douban",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/douban.png"
+    },
+    {
       "name": "fire",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/fire.png"
     },
@@ -93,6 +97,10 @@
     {
       "name": "ozan",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/ozan.png"
+    },
+    {
+      "name": "soul",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/soul.png"
     },
     {
       "name": "tieba",
