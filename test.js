@@ -51,10 +51,10 @@ let tnow = new Date()
 let tnowf = tnow.getFullYear() + "-" + (tnow.getMonth() + 1) + "-" + tnow.getDate()
 let dateDiffArray = []
 
-setHoliDayData()
 startWork()
 
 async function startWork() {
+    await setHoliDayData()
     let nowlist = now();
     $.log('距离最近的节日：' + daysData[nowlist].name)
     let notifyContent = dateDiffArray[0].name + ":" + today(tnumCount(0)) + "," + dateDiffArray[Number(0) + Number(1)].name + ":" + tnumCount(Number(0) + Number(1)) + "天," + dateDiffArray[Number(0) + Number(2)].name + ":" + tnumCount(Number(0) + Number(2)) + "天"
