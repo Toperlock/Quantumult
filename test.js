@@ -25,7 +25,7 @@ let userDaysName = $.getdata('@DaysMatter.userDaysName')
 let userDays2 = $.getdata('@DaysMatter.userDays2') // 用户浮动假日
 let userDaysName2 = $.getdata('@DaysMatter.userDaysName2')
 let userDaysData = $.getjson('@DaysMatter.userDaysData', {'list': []}) // 备用变量
-// 节日集合，包含法定节假日，内置假日，用户假日（固定+浮动）
+// 内置假日
 let defaultDaysData =
     [
         {'date': '2023-1-1', 'name': '元旦'},
@@ -51,6 +51,7 @@ let tnow = new Date()
 let tnowf = tnow.getFullYear() + "-" + (tnow.getMonth() + 1) + "-" + tnow.getDate()
 let dateDiffArray = []
 
+setHoliDayData()
 startWork()
 
 async function startWork() {
