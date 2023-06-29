@@ -3,9 +3,14 @@
 作者:     @MCdasheng
 设置每天10点整每10秒就执行，执行7分钟，确保刷满
 请抓取bing cookie再开启任务！！！
+这里只抓取大陆的cookie，只做大陆的任务
 Reward cookie:  https://raw.githubusercontent.com/Toperlock/Quantumult/main/Rewrites/Scripts/bingPoint.cookie.js
 Search cookie:  https://raw.githubusercontent.com/Toperlock/Quantumult/main/Rewrites/Scripts/bingSearch.cookie.js
 BoxJs订阅地址:  https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.json
+注意事项:
+  Bing每天只能在一个地区进行积分任务or搜索任务,注意配置分流
+  Bing跨区执行任务可能导致积分无法兑换     (别乱换区啊，好几千积分兑换不了了555)
+  Bing搜索任务刷新时间以做任务时间为准,24h后刷新,最好每天定时完成
 **************/
 /*
 [task_local]
