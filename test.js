@@ -18,8 +18,15 @@ let option = {
 let nowDate = new Date().toLocaleDateString()
 let year = nowDate.split('/')[0]
 // 各日期区分开方便日后区分放假通知与倒数日通知
+let holidayData = $.getjson('@DaysMatter.holidayData', null) // 法定节假日，放假的那种
+let daysData = [] // 节日集合，包含法定节假日，内置假日，用户假日（固定+浮动）
+let userDays = $.getdata('@DaysMatter.userDays') // 用户固定假日
+let userDaysName = $.getdata('@DaysMatter.userDaysName')
+let userDays2 = $.getdata('@DaysMatter.userDays2') // 用户浮动假日
+let userDaysName2 = $.getdata('@DaysMatter.userDaysName2')
+let userDaysData = $.getjson('@DaysMatter.userDaysData', {'list': []}) // 备用变量
 // 节日集合，包含法定节假日，内置假日，用户假日（固定+浮动）
-let daysData =
+let defaultDaysData =
     [
         {'date': '2023-1-1', 'name': '元旦'},
         {'date': '2023-1-21', 'name': '除夕'},
@@ -64,6 +71,88 @@ async function startWork() {
     $.msg(title, '', notifyContent)
     $.log('\n面板显示内容：\n' + notifyContent)
     $.isSurge || $.isStash ? $.done(body) : $.done()
+}
+
+async function setHoliDayData() {
+    if (holidayData === null || holidayData.year !== year) {
+        await $.http.get(option).then(function (response) {
+            let jsonObj = JSON.parse(response.body)
+            let result = jsonObj.data[0].holiday
+            result.forEach(function (i) {
+                if (i.year === year) {
+                    holidayData = i
+                    $.setjson(i, '@DaysMatter.holidayData')
+                }
+            })
+        })
+    }
+    daysData = daysData.concat(holidayData.list) // 法定节假日并入假日集合
+    let clearFlag = false
+    // 如果用户填写了固定日期，就解析并入节日集合，如公历生日，每年都是一样的，所以填入月和日即可，3-1。会自动解析并加入当前年份
+    if (userDays !== '' && userDays !== undefined && userDays !== null && userDaysName !== '' && userDaysName !== undefined && userDaysName !== null) {
+        userDays = userDays.replace(/，/g, ',')
+        userDaysName = userDaysName.replace(/，/g, ',')
+        let userDaysArray = userDays.split(',')
+        let userDaysNameArray = userDaysName.split(',')
+        if (userDaysArray.length !== userDaysNameArray.length) {
+            $.msg(title, '❌错误', '用户填写的固定日期和名称没有对应')
+        } else {
+            userDaysData = []
+            for (let i in userDaysArray) {
+                userDaysArray[i] = userDaysArray[i].replace(/\./g, '-').replace(/\//g, '-').replace(/。/g, '-').replace(/年/g, '-').replace(/月/g, '-').replace(/日/g, '').replace(/号/g, '')
+                // 如果用户填写的是浮动日期，此处与下面的重复了，目前设计是浮动日期和固定日期分开填写，后期可视情况合并（删除下面）
+                if (userDaysArray[i].split('-').length > 2) {
+                    daysData.push({'date': userDaysArray[i], 'name': userDaysNameArray[i]})
+                    userDaysData.push({'date': userDaysArray[i], 'name': userDaysNameArray[i]}) // 此变量备用
+                } else if (userDaysArray[i].split('-').length === 2) { // 用户填写的是固定日期
+                    daysData.push({'date': year + '-' + userDaysArray[i], 'name': userDaysNameArray[i]})
+                    userDaysData.push({'date': year + '-' + userDaysArray[i], 'name': userDaysNameArray[i]}) // 此变量备用
+                }
+            }
+            $.setjson(userDaysData, '@DaysMatter.userDaysData')
+            clearFlag = true
+        }
+    }
+
+    // 如果用户填写了浮动日期，如母亲节每年5月第二个星期日这种，需要填入年份2024-5-4
+    if (userDays2 !== '' && userDays2 !== undefined && userDays2 !== null && userDaysName2 !== '' && userDaysName2 !== undefined && userDaysName2 !== null) {
+        userDays2 = userDays2.replace(/，/g, ',')
+        userDaysName2 = userDaysName2.replace(/，/g, ',')
+        let userDaysArray = userDays2.split(',')
+        let userDaysNameArray = userDaysName2.split(',')
+        if (userDaysArray.length !== userDaysNameArray.length) {
+            $.msg(title, '❌错误', '用户填写的浮动日期和名称没有对应')
+        } else {
+            if (!clearFlag) {
+                userDaysData = []
+            }
+            for (let i in userDaysArray) {
+                // 如果用户填写的是浮动日期
+                userDaysArray[i] = userDaysArray[i].replace(/\./g, '-').replace(/\//g, '-').replace(/。/g, '-').replace(/年/g, '-').replace(/月/g, '-').replace(/日/g, '').replace(/号/g, '')
+                console.log(userDaysArray[i])
+                if (userDaysArray[i].split('-').length > 2) {
+                    daysData.push({'date': userDaysArray[i], 'name': userDaysNameArray[i]})
+                    userDaysData.push({'date': userDaysArray[i], 'name': userDaysNameArray[i]}) // 此变量备用
+                }
+            }
+            $.setjson(userDaysData, '@DaysMatter.userDaysData')
+        }
+    }
+    if (defaultDaysData.length > 0) {
+        defaultDaysData.forEach(function (day){
+            day.date = day.date.replace(/\./g, '-').replace(/\//g, '-').replace(/。/g, '-').replace(/年/g, '-').replace(/月/g, '-').replace(/日/g, '').replace(/号/g, '')
+            if(day.date.split('-').length === 2)
+            {
+                day.date = year + '-' + day.date
+            }
+        })
+        daysData = daysData.concat(defaultDaysData)
+    }
+    console.log('节日集合: ')
+    daysData.forEach(function (i) {
+        console.log(i)
+    })
+    // console.log(daysData)
 }
 
 /* 计算2个日期相差的天数，不包含今天，如：2016-12-13到2016-12-15，相差2天
