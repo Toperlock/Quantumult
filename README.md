@@ -29,3 +29,26 @@ Doraemon图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/ma
 Shin-chan图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/main/Shin-icons.json
 ![Shin-chan](https://github.com/Toperlock/Quantumult/assets/86833913/340adeaf-3f12-496d-a516-826a7574b3ff)
 
+Weslie-Wolffy图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/main/Wolffy-icons.json
+![1](https://github.com/Toperlock/Quantumult/assets/86833913/120743ca-eb2f-4366-b318-a52799ab56a1)
+
+Tom-Jerry图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/main/T-J-icons.json
+![2](https://github.com/Toperlock/Quantumult/assets/86833913/8efcb8b8-4bfd-4b37-898f-f8fe6ea6d184)
+
+Genshin图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/main/Genshin-icons.json
+![3](https://github.com/Toperlock/Quantumult/assets/86833913/06a4609c-3893-4021-bfe0-0d193208cf38)
+
+Shin-Miya图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/main/ShinMiya-icons.json
+![4](https://github.com/Toperlock/Quantumult/assets/86833913/716b28f6-8de8-4ca1-8781-e342fd1c4872)
+
+OnePiece图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/main/OnePiece-icons.json
+![5](https://github.com/Toperlock/Quantumult/assets/86833913/40b25370-75a2-4ced-bc67-13622c160381)
+
+Stitch图标订阅：https://raw.githubusercontent.com/Toperlock/Quantumult/main/Stitch-icons.json
+![6](https://github.com/Toperlock/Quantumult/assets/86833913/17370780-da36-46a2-b355-9c36255f13c1)
+
+
+
+
+
+
