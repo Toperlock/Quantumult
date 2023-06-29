@@ -8,7 +8,7 @@
 /*******
  * 2023-6-8: 已支持通过BoxJs修改地区。无需订阅直接在BoxJs的数据查看器输入“地区”，数据编辑器输入地区拼音
  * 2023-6-13: 添加日志显示
- * 2023-6-29: 可订阅BoxJS修改地区 https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.json
+ * 2023-6-29: 可订阅BoxJS修改地区 https://raw.githubusercontent.com/Toperlock/Quantumult/main/boxjs.json
 *******/
 
 /*
