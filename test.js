@@ -1,645 +1,185 @@
-/****************************
-支持将Loon重写解析至Loon Stash Surge Shadowrocket
-说明
-原脚本作者@小白脸 脚本修改@chengkongyiban
-感谢@xream 提供的echo-response.js
-插件图标用的 @Keikinn 的 StickerOnScreen项目 以及 @Toperlock 的图标库项目，感谢
-***************************/
-const isStashiOS = 'undefined' !== typeof $environment && $environment['stash-version'];
-const isSurgeiOS = 'undefined' !== typeof $environment && $environment['surge-version'];
-const isShadowrocket = 'undefined' !== typeof $rocket;
-const isLooniOS = 'undefined' != typeof $loon;
-const iconStatus = $persistentStore.read("启用插件随机图标");
-const iconReplace = $persistentStore.read("替换原始插件图标");
-const iconLibrary = $persistentStore.read("插件随机图标合集") ?? "Doraemon";
+//本脚本是QuanmutultX假日倒计时
+//@author: @zqzess, @GN006
+//本地修改你想要的日期，或者自己建库
+/***************
+[task_local]
+# 节假提醒
+0 8 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/TimeCard.js, tag=节假提醒, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png, enabled=true
+***************/
 
-var name = "";
-var desc = "";
-var req
-var urlArg
-if (isLooniOS || isSurgeiOS || isShadowrocket){
-    req = $request.url.replace(/loon$|loon\?.*/,'');
-    if ($request.url.indexOf("loon?") != -1){
-        urlArg = "?" + $request.url.split("loon?")[1];
-    }else{urlArg = ""};
-    
-}else if (isStashiOS){
-    req = $request.url.replace(/loon\.stoverride$|loon\.stoverride\?.*/,'');
-    if ($request.url.indexOf("loon.stoverride?") != -1){
-        urlArg = "?" + $request.url.split("loon.stoverride?")[1];
-    }else{urlArg = ""};
-};
-var original = [];//用于获取原文行号
-var Pin0 = urlArg.search(/\?y=|&y=/) != -1 ? (urlArg.split(/\?y=|&y=/)[1].split("&")[0].split("+")).map(decodeURIComponent) : null;
-var Pout0 = urlArg.search(/\?x=|&x=/) != -1 ? (urlArg.split(/\?x=|&x=/)[1].split("&")[0].split("+")).map(decodeURIComponent) : null;
-var hnAdd = urlArg.search(/\?hnadd=|&hnadd=/) != -1 ? (urlArg.split(/\?hnadd=|&hnadd=/)[1].split("&")[0].replace(/%20/g,"").split(",")) : null;
-var hnDel = urlArg.search(/\?hndel=|&hndel=/) != -1 ? (urlArg.split(/\?hndel=|&hndel=/)[1].split("&")[0].replace(/%20/g,"").split(",")) : null;
-var delNoteSc = urlArg.indexOf("del=") != -1 ? true : false;
+const $ = new Env('DaysMatter', true)
+let title = '📅 倒数日'
+let url = 'https://raw.githubusercontent.com/zqzess/openApiData/main/calendar/cnholiday2.json'
+// let url = ''
+let option = {
+    url: url,
+    headers: {}
+}
+let nowDate = new Date().toLocaleDateString()
+let year = nowDate.split('/')[0]
+// 各日期区分开方便日后区分放假通知与倒数日通知
+// 节日集合，包含法定节假日，内置假日，用户假日（固定+浮动）
+let daysData =
+    [
+        {'date': '2023-1-1', 'name': '元旦'},
+        {'date': '2023-1-21', 'name': '除夕'},
+        {'date': '2023-1-22', 'name': '春节'},
+        {'date': '2023-4-5', 'name': '清明节'},
+        {'date': '2023-5-1', 'name': '劳动节'},
+        {'date': '2023-5-14', 'name': '母亲节'},
+        {'date': '2023-6-18', 'name': '父亲节'},
+        {'date': '2023-6-22', 'name': '端午节'},
+        {'date': '2023-7-30', 'name': '生日'},
+        {'date': '2023-8-22', 'name': '七夕'},
+        {'date': '2023-9-29', 'name': '中秋节'},
+        {'date': '2023-10-1', 'name': '国庆节'},
+        {'date': '2023-12-24', 'name': '平安夜'},
+        {'date': '2024-1-18', 'name': '腊八节'},
+        {'date': '2024-2-2', 'name': '小年'},
+        {'date': '2024-2-9', 'name': '除夕'},
+        {'date': '2024-2-10', 'name': '春节'}
+    ]
 
-//随机图标开关，不传入参数默认为开
-async function getIcon() { 
-    if (iconStatus === "禁用") {
-      icon = "";
-    } else {
-      const stickerStartNum = 1001;
-      const iconFolderURL = "https://github.com/Toperlock/Quantumult/raw/main/icon/" + iconLibrary + "/";
-      const response = await fetch(iconFolderURL);
-      const htmlText = await response.text();
-      const stickerSum = (htmlText.match(/<a href=".+?">/g) || []).length;
-  
-      let randomStickerNum = parseInt(stickerStartNum + Math.random() * stickerSum).toString();
-      icon = "#!icon=" + iconFolderURL + iconLibrary + "-" + randomStickerNum + ".png";
+let tnow = new Date()
+let tnowf = tnow.getFullYear() + "-" + (tnow.getMonth() + 1) + "-" + tnow.getDate()
+let dateDiffArray = []
+
+startWork()
+
+async function startWork() {
+    let nowlist = now();
+    $.log('距离最近的节日：' + daysData[nowlist].name)
+    let notifyContent = dateDiffArray[0].name + ":" + today(tnumCount(0)) + "," + dateDiffArray[Number(0) + Number(1)].name + ":" + tnumCount(Number(0) + Number(1)) + "天," + dateDiffArray[Number(0) + Number(2)].name + ":" + tnumCount(Number(0) + Number(2)) + "天"
+    $.isSurge() ? body = {
+        title: title_random(tnumCount(Number(0))),
+        content: notifyContent,
+        icon: icon_now(tnumCount(Number(0))),
+        'icon-color': '#5AC8FA'
+    } : body = {
+        title: title_random(tnumCount(Number(0))),
+        content: notifyContent,
+        icon: icon_now(tnumCount(Number(0))),
+        backgroundColor: '#339900'
     }
-  }
-getIcon();
-const pluginIcon = icon;
-console.log(pluginIcon);
-
-!(async () => {
-  let body = await http(req);
-//判断是否断网
-if(body == null){if(isStashiOS){
-    console.log("Loon转换：未获取到body的链接为" + $request.url)
-	$notification.post("Loon转换：未获取到body","请检查网络及节点是否畅通\n" + "源链接为" + $request.url,"认为是bug?点击通知反馈",{url:"https://t.me/zhangpeifu"})
- $done({ response: { status: 404 ,body:{} } });}else{
-    console.log("Loon转换：未获取到body的链接为" + $request.url)
-    $notification.post("Loon转换：未获取到body","请检查网络及节点是否畅通\n" + "源链接为" + $request.url,"认为是bug?点击通知反馈","https://t.me/zhangpeifu")
- $done({ response: { status: 404 ,body:{} } });
-}//识别客户端通知
-}else{//以下开始重写及脚本转换
-
-original = body.replace(/^ *(#|;|\/\/)/g,'#').replace(/ _ reject/g,' - reject').replace(/(^[^#].+)\x20+\/\/.+/g,"$1").split(/(\r\n)/);
-
-if (body.match(/\/\*+\n[\s\S]*\n\*+\/\n/)){
-body = body.replace(/[\s\S]*(\/\*+\n[\s\S]*\n\*+\/\n)[\s\S]*/,"$1").match(/[^\r\n]+/g);
-}else{
-    body = body.match(/[^\r\n]+/g);};
-
-let pluginDesc = [];
-let httpFrame = "";
-let General = [];
-let rules = [];
-let script = [];
-let URLRewrite = [];
-let HeaderRewrite = [];
-let MapLocal = [];
-let cron = [];
-let providers = [];
-let MITM = "";
-let others = [];          //不支持的内容
-
-body.forEach((x, y, z) => {
-	x = x.replace(/^ *(#|;|\/\/)/,'#').replace(/ (_|-) reject/i,' - reject').replace(' reject',' - reject').replace(' - - reject',' - reject').replace(/(^[^#].+)\x20+\/\/.+/,"$1").replace(/(hostname|force-http-engine-hosts|skip-proxy|always-real-ip)\x20*=/,'$1=').replace(/ *, *enabled *= *false/,"");
-//去掉注释
-if(Pin0 != null)	{
-	for (let i=0; i < Pin0.length; i++) {
-  const elem = Pin0[i];
-	if (x.indexOf(elem) != -1){
-		x = x.replace(/^#/,"")
-	}else{};
-};//循环结束
-}else{};//去掉注释结束
-
-//增加注释
-if(Pout0 != null){
-	for (let i=0; i < Pout0.length; i++) {
-  const elem = Pout0[i];
-	if (x.indexOf(elem) != -1 && x.search(/^(hostname|force-http-engine-hosts|skip-proxy|always-real-ip)=/) == -1){
-		x = x.replace(/(.+)/,"#$1")
-	}else{};
-};//循环结束
-}else{};//增加注释结束
-
-//添加主机名
-if (hnAdd != null){
-	if (x.search(/^hostname=/) != -1){
-		x = x.replace(/\x20/g,"").replace(/(.+)/,`$1,${hnAdd}`).replace(/,{2,}/g,",");
-	}else{};
-}else{};//添加主机名结束
-
-//删除主机名
-if (hnDel != null && x.search(/^hostname=/) != -1){
-    x = x.replace(/\x20/g,"").replace(/^hostname=/,"").replace(/%.*%/,"").replace(/,{2,}/g,",").split(",");
-	for (let i=0; i < hnDel.length; i++) {
-  const elem = hnDel[i];
-if (x.indexOf(elem) != -1){
-  let hnInNum = x.indexOf(elem);
-  delete x[hnInNum];
-}else{};
-  };//循环结束
-x = "hostname=" + x;
-}else{};//删除主机名结束
-
-if (delNoteSc === true && x.match(/^#/) && x.indexOf("#!") == -1){
-		x = x.replace(/(.+)/g,'')
-};
-
-	let type = x.match(
-		/http-re|\x20header-|cron |\x20-\x20reject|^hostname|^#!|^force-http-engine-hosts|^skip-proxy|^real-ip|\x20(302|307|header)($|\x20)|^#?(URL-REGEX|USER-AGENT|IP-CIDR|GEOIP|IP-ASN|DOMAIN)/
-	)?.[0];
-//判断注释
-if (isLooniOS || isSurgeiOS || isShadowrocket){
-	
-	if (x.match(/^[^#]/)){
-	var noteK = "";
-	}else{
-	var noteK = "#";
-	};
-}else if (isStashiOS){
-	if (x.match(/^[^#]/)){
-	var noteKn8 = "\n        ";
-	var noteKn6 = "\n      ";
-	var noteKn4 = "\n    ";
-	var noteK4 = "    ";
-	var noteK2 = "  ";
-	}else{
-	var noteKn8 = "\n#        ";
-	var noteKn6 = "\n#      ";
-	var noteKn4 = "\n#    ";
-	var noteK4 = "#    ";
-	var noteK2 = "#  ";
-	};
-};//判断注释结束
-	
-	if (type) {
-		switch (type) {
-			case "#!":
-            if (isStashiOS){
-                x = x.replace(/#![^nd].+/,"").replace(/#!/,"").replace(/(name|desc) *= *(.+)/,'$1: "$2"');
-                pluginDesc.push(x);
-            }else if (isLooniOS && iconReplace == "启用"){
-            pluginDesc.push(x.replace(
-                /^#! *icon *= *.*/,pluginIcon));
-            }else{
-            pluginDesc.push(x);
-            };
-            
-            break;
-            
-			case "http-re":		
-
-				if (x.match(/http-(response|request)\x20/)){
-//脚本
-				let ptn = x.replace(/\x20{2,}/g," ").split(" ")[1].replace(/"/gi,'');
-
-				if (isSurgeiOS){
-					ptn = ptn.replace(/(.+,.+)/,'"$1"');};
-					
-				let js = x.replace(/\x20/gi,"").split("script-path=")[1].split(",")[0];
-					
-				let sctype = x.match('http-response') ? 'response' : 'request';
-					
-				let scname = js.substring(js.lastIndexOf('/') + 1, js.lastIndexOf('.') );
-					
-				let arg = [];
-				
-			if (isSurgeiOS ||isShadowrocket){
-					if (x.match(/,\x20*argument\x20*=.+/)){
-						if (x.match(/,\x20*argument\x20*=\x20*"+.*?,.*?"+/)
-	){
-				arg = ', argument=' + x.match(/,\x20*argument\x20*=\x20*("+.*?,.*?"+)/)[1];
-	}else{
-				arg = ", argument=" +  x.replace(/,\x20*argument\x20*=/gi,",argument=").split(",argument=")[1].split(",")[0];}
-				}else{};
-
-				}else if (isStashiOS){
-					if (x.match(/,\x20*argument\x20*=.+/)){
-						if (x.match(/,\x20*argument\x20*=\x20*"+.*?,.*?"+/)
-	){
-				arg = x.match(/,\x20*argument\x20*=\x20*("+.*?,.*?"+)/)[1];
-				
-				if (arg.match(/^".+"$/)){
-				arg = `${noteKn6}argument: |-${noteKn8}` + arg.replace(/^"(.+)"$/,'$1');};
-	}else{
-				arg = `${noteKn6}argument: |-${noteKn8}` + x.replace(/,\x20*argument\x20*=/gi,",argument=").split(",argument=")[1].split(",")[0];}
-				
-				}else{};
-
-				};
-                
-				if (isLooniOS){
-				
-				z[y - 1]?.match(/^#/) && script.push(z[y - 1]);
-
-				script.push(x);
-
-				}else if (isSurgeiOS || isShadowrocket){
-				
-				z[y - 1]?.match(/^#/) && script.push(z[y - 1]);
-
-				let proto = x.replace(/\x20/gi,'').match('binary-body-mode=(true|1)') ? ', binary-body-mode=true' : '';
-				
-				let rebody = x.replace(/\x20/gi,'').match('requires-body=(true|1)') ? ', requires-body=true' : '';
-				
-				let size = x.replace(/\x20/g,'').match('requires-body=(true|1)') ? ', max-size=3145728' : '';
-
-				script.push(
-					`${noteK}${scname}_${y} = type=http-${sctype}, pattern=${ptn}, script-path=${js}${rebody}${size}${proto}, timeout=30${arg}`);
-
-				}else if (isStashiOS){
-
-				let proto = x.replace(/\x20/g,'').match('binary-body-mode=(true|1)') ? 'binary-mode: true' : '';
-
-				let rebody = x.replace(/\x20/g,'').match('requires-body=(true|1)') ? 'require-body: true' : '';
-				
-				let size = x.replace(/\x20/g,'').match('requires-body=(true|1)') ? 'max-size: 3145728' : '';
-
-				script.push(
-					`${noteKn4}- match: ${ptn}${noteKn6}name: ${scname}_${y}${noteKn6}type: ${sctype}${noteKn6}timeout: 30${noteKn6}${rebody}${noteKn6}${size}${arg}${noteKn6}${proto}`
-			);
-			providers.push(
-					`${noteK2}${scname}_${y}:${noteKn4}url: ${js}${noteKn4}interval: 86400`
-			);
-				};
-
-				}else{
-let lineNum = (original.indexOf(x) + 2)/2;
-others.push(lineNum + "行" + x)};//整个http-re结束
-				
-				break;
-				
-//HeaderRewrite				
-			case " header-":
-					
-					if (isLooniOS){
-				z[y - 1]?.match(/^#/) &&  URLRewrite.push(z[y - 1]);
-			URLRewrite.push(x)
-					
-					}else if (isStashiOS){
-
-				z[y - 1]?.match(/^#/) &&  HeaderRewrite.push("    " + z[y - 1]);
-				
-				HeaderRewrite.push(`${noteK4}- ` + x.replace(/\x20header-/,`\x20request-`).replace(/^#/,""))
-					}else if (isSurgeiOS){
-
-				z[y - 1]?.match(/^#/) &&  HeaderRewrite.push(z[y - 1]);
-				
-				HeaderRewrite.push(`${noteK}http-request ` + x.replace(/^#/,""))
-					}else if (isShadowrocket){
-                        let lineNum = (original.indexOf(x) + 2)/2;
-others.push(lineNum + "行" + x)
-                    };//HeaderRewrite结束
-				
-				break;
-
-//定时任务
-			case "cron ":
-
-            let cronExp = x.split('"')[1];
-            
-				let croName = x.replace(/\x20/g,"").split("tag=")[1].split(",")[0];
-				
-				let cronJs = x.replace(/\x20/gi,"").split("script-path=")[1].split(",")[0];
-                
-				if (isLooniOS){
-				
-				script.push(x);
-                
-                }else if (isStashiOS){
-				
-				cronExp = cronExp.replace(/[^\s]+ ([^\s]+ [^\s]+ [^\s]+ [^\s]+ [^\s]+)/,'$1');
-				
-				cron.push(
-						`${noteKn4}- name: ${croName}${noteKn6}cron: "${cronExp}"${noteKn6}timeout: 60`
-				);
-				providers.push(
-						`${noteK2}${croName}:${noteKn4}url: ${cronJs}${noteKn4}interval: 86400`
-				);
-                    
-                }else if (isSurgeiOS || isShadowrocket){
-                    script.push(
-                        `${noteK}${croName} = type=cron, cronexp="${cronExp}", script-path=${cronJs}, timeout=60`
-                        )
-                };
-				break;
-
-//REJECT
-
-			case " - reject":
-            
-            let rejectType = x.split(" - ")[1].toLowerCase().replace(/video/,"img");
-            
-            if (isLooniOS){
-                
-				z[y - 1]?.match(/^#/) && URLRewrite.push(z[y - 1]);
-                
-				URLRewrite.push(x);
-                
-            }else if (isStashiOS){
-                
-				z[y - 1]?.match(/^#/) && URLRewrite.push("    " + z[y - 1]);
-				
-				URLRewrite.push(x.replace(/\x20{2,}/g," ").replace(/(^#)?(.+?)\x20-\x20reject.*/, `${noteKn4}- $2 - ${rejectType}`));
-                
-            }else if (isShadowrocket){
-                
-				z[y - 1]?.match(/^#/) && URLRewrite.push(z[y - 1]);
-				
-				URLRewrite.push(x.replace(/\x20{2,}/g," ").replace(/(^#)?(.+?)\x20-\x20reject.*/, `${noteK}$2 - ${rejectType}`));
-                
-            }else if (isSurgeiOS){
-                
-                if (rejectType.match("-")){
-//reject-                    
-                
-				z[y - 1]?.match(/^#/) && MapLocal.push(z[y - 1]);
-                    
-				if (rejectType.match(/dict$/)){
-					rejectType = "https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-				}else if (rejectType.match(/array$/)){
-					rejectType = "https://raw.githubusercontent.com/mieqq/mieqq/master/reject-array.json"
-				}else if (rejectType.match(/200$/)){
-					rejectType = "https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-				}else if (rejectType.match(/img$/)){
-					rejectType = "https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
-				};
-                MapLocal.push(x.replace(/(^#)?(.+?)\x20-\x20reject.*/,`$2 data="${rejectType}"`));
-                    
-                }else{//reject
-                
-				z[y - 1]?.match(/^#/) && URLRewrite.push(z[y - 1]);
-				
-				URLRewrite.push(x.replace(/\x20{2,}/g," ").replace(/(^#)?(.+?)\x20-\x20reject$/, `${noteK}$2 - reject`));
-                    
-                }
-                
-            };
-				break;
-				
-//hostname				
-			case "hostname":
-            
-            if (isLooniOS){
-                MITM = "[MITM]\n\n" + x.replace(/ *= */," = ").replace(/= ,+/,"= ");
-            }else if (isSurgeiOS || isShadowrocket){
-                MITM = x.replace(/%.*%/g,"").replace(/\x20/g,"").replace(/,{2,}/g,",").replace(/,*\x20*$/,"").replace(/hostname=(.*)/, `[MITM]\n\nhostname = %APPEND% $1`).replace(/%\x20,+/,"% ");
-            }else if (isStashiOS){
-                MITM = x.replace(/%.*%/g,"").replace(/\x20/g,"").replace(/,{2,}/g,",").replace(/,*\x20*$/,"").replace(/hostname=(.*)/, `t&2;mitm:\nt&hn;"$1"`).replace(/",+/,'"');
-            };
-				break;
-
-//general          
-
-            case "force-http-engine-hosts":
-            
-            if (isLooniOS){
-                General.push(x);
-            }else if(isSurgeiOS || isShadowrocket){
-                General.push(x.replace(/\x20/g,"").replace(/=/," = %APPEND% "))
-            }else if (isStashiOS){
-                General.push(x.replace(/%.*%/g,"").replace(/\x20/g,"").replace(/,{2,}/g,",").replace(/,*\x20*$/,"").replace(/force-http-engine-hosts=(.*)/, `t&2;force-http-engine:\nt&hn;"$1"`).replace(/",+/,'"'))
-            };
-				break;
-                                
-            case "skip-proxy":
-            
-            if (isLooniOS){
-                General.push(x.replace(/%.*%/g,"").replace(/ *= */," = "));
-            }else if(isSurgeiOS || isShadowrocket){
-                General.push(x.replace(/\x20/g,"").replace(/=/," = %APPEND% "))
-            }else if (isStashiOS){};
-				break;
-           
-            case "real-ip":
-            
-            if (isLooniOS){
-                General.push(x.replace(/%.*%/g,"").replace(/ *= */," = "));
-            }else if(isSurgeiOS || isShadowrocket){
-                General.push(x.replace(/\x20/g,"").replace(/=/," = %APPEND% "));
-            }else if (isStashiOS){
-                General.push(x.replace(/%.*%/g,"").replace(/\x20/g,"").replace(/,{2,}/g,",").replace(/,*\x20*$/,"").replace(/always-real-ip=(.*)/, `t&2;fake-ip-filter:\nt&hn;"$1"`).replace(/",+/,'"'))
-            };
-				break;
-
-			default:
-//重定向
-				if (type.match(/ 302|307|header/)){
-                    let rewType = x.match(/302|307|header/);
-                    if (isLooniOS){
-                        z[y - 1]?.match(/^#/)  && URLRewrite.push(z[y - 1]);
-				
-					URLRewrite.push(x);
-                    
-                    }else if (isStashiOS){
-                        
-                      z[y - 1]?.match(/^#/)  && URLRewrite.push("    " + z[y - 1]);
-				
-					URLRewrite.push(`${noteKn4}- ` + x.replace(/^#/,"").replace(/ (302|307|header) */," ").replace(/(.+)/,`$1 ${rewType}`).replace(/\x20{2,}/g," "));
-                    }else if(isSurgeiOS || isShadowrocket){
-                      z[y - 1]?.match(/^#/)  && URLRewrite.push(z[y - 1]);
-				
-					URLRewrite.push(x.replace(/ (302|307|header) */," ").replace(/(.+)/,`$1 ${rewType}`).replace(/\x20{2,}/g," "));
-                        
-                    };
-				
-				}else{
-                    
-                    if (isLooniOS){
-                    z[y - 1]?.match(/^#/)  && rules.push(z[y - 1]);
-					rules.push(x);
-                    
-                    }else if (isSurgeiOS || isShadowrocket){
-                    if (x.match(/^#?(DOM|USER|URL|IP|GEO)[^,]+,[^,]+$/i) || x.match(/proxy$/i)){
-	x = "";}else{rules.push(x.replace(/, *REJECT.*/i,",REJECT"));};
-                        
-                    }else if(isStashiOS){
-                        
-                        if (type.match(/URL-REGEX/i) && x.match(/,\x20*REJECT/i)){
-                
-                    z[y - 1]?.match(/^#/) && URLRewrite.push("    " + z[y - 1]);
-                x = x.replace(/\x20/,"");
-                
-				let Urx2Reject
-                
-                if (x.match(/DICT$/i)){
-                    Urx2Reject = '-dict';
-                }else if (x.match(/ARRAY$/i)){
-                    Urx2Reject = '-array';
-                }else if (x.match(/DROP$/i)){
-                    Urx2Reject = '-200';
-                }else if (x.match(/IMG$|VIDEO$/i)){
-                    Urx2Reject = '-img';
-                }else if (x.match(/REJECT$/i)){
-                    Urx2Reject = '';
-                };
-				
-				URLRewrite.push(
-					x.replace(/.*URL-REGEX,([^\s]+),[^,]+/,
-					`${noteKn4}- $1 - reject${Urx2Reject}`)
-				);       
-                        }else if (x.match(/^#?(DOM|USER|URL|IP|GEO)[^,]+,[^,]+$/i) || x.match(/proxy$/i)){ x = "";}else if(type.match(/^#?(USER-AGENT|IP-CIDR|GEOIP|IP-ASN|DOMAIN)/)){
-                            z[y - 1]?.match(/^#/)  && rules.push("    " + z[y - 1]);
-					
-					rules.push(x.replace(/\x20/g,"").replace(/.*DOMAIN-SET.+/,"").replace(/,REJECT.+/,",REJECT").replace(/^#?(.+)/,`${noteK2}- $1`))    
-                        }else{
-let lineNum = (original.indexOf(x) + 2)/2;
-others.push(lineNum + "行" + x)};
-                    }//Stash rules处理完毕
-                }//rules处理完毕
-		} //switch结束
-	}
-}); //循环结束
-
-if (isLooniOS){
-    pluginDesc = (pluginDesc[0] || '') && `${pluginDesc.join("\n")}`;
-    
-    General = (General[0] || '') && `[General]\n\n${General.join("\n\n")}`;
-    
-    script = (script[0] || '') && `[Script]\n\n${script.join("\n\n")}`;
-
-URLRewrite = (URLRewrite[0] || '') && `[Rewrite]\n\n${URLRewrite.join("\n")}`;
-
-//URLRewrite = URLRewrite.replace(/"/gi,'')
-
-rules = (rules[0] || '') && `[Rule]\n\n${rules.join("\n")}`;
-
-others = (others[0] || '') && `${others.join("\n")}`;
-
-body = `${pluginDesc}
-
-
-${General}
-
-
-${rules}
-
-
-${URLRewrite}
-
-
-${script}
-
-
-${MITM}`
-		.replace(/t&zd;/g,',')
-		.replace(/(#.+\n)\n+(?!\[)/g,'$1')
-		.replace(/\n{2,}/g,'\n\n')
-}else if (isStashiOS){
-    pluginDesc = (pluginDesc[0] || '') && `${pluginDesc.join("\n")}`;
-    
-    General = (General[0] || '') && `${General.join("\n")}`;
-    
-    rules = (rules[0] || '') && `rules:\n${rules.join("\n")}`;
-
-script = (script[0] || '') && `  script:\n${script.join("\n\n")}`;
-
-providers = (providers[0] || '') && `script-providers:\n${providers.join("\n")}`;
-
-cron = (cron[0] || '') && `cron:\n  script:\n${cron.join("\n")}`;
-
-URLRewrite = (URLRewrite[0] || '') && `  rewrite:\n${URLRewrite.join("\n")}`;
-
-URLRewrite = URLRewrite.replace(/"/gi,'')
-
-HeaderRewrite = (HeaderRewrite[0] || '') && `  header-rewrite:\n${HeaderRewrite.join("\n")}`;
-
-HeaderRewrite = HeaderRewrite.replace(/"/gi,'')
-
-others = (others[0] || '') && `${others.join("\n")}`;
-
-General = General.replace(/t&2;/g,'  ')
-           .replace(/t&hn;/g,'    - ')
-           .replace(/\,/g,'"\n    - "')
-
-MITM = MITM.replace(/t&2;/g,'  ')
-           .replace(/t&hn;/g,'    - ')
-           .replace(/\,/g,'"\n    - "')
-
-    if (URLRewrite != "" || script != "" || HeaderRewrite != "" || MITM != "" || General != ""){
-httpFrame = `http:
-${General}
-
-${HeaderRewrite}
-
-${URLRewrite}
-
-${script}
-
-${MITM}`
-};
-
-
-
-body = `${pluginDesc}
-
-${rules}
-
-${httpFrame}
-
-${cron}
-
-${providers}`
-		.replace(/t&zd;/g,',')
-		.replace(/script-providers:\n+$/g,'')
-		.replace(/#      \n/gi,'\n')
-		.replace(/      \n/g,"")
-		.replace(/(#.+\n)\n+(?!\[)/g,'$1')
-		.replace(/\n{2,}/g,'\n\n')
-        
-}else if (isSurgeiOS || isShadowrocket){
-    pluginDesc = (pluginDesc[0] || '') && `${pluginDesc.join("\n")}`;
-    
-    General = (General[0] || '') && `[General]\n\n${General.join("\n\n")}`;
-    
-    rules = (rules[0] || '') && `[Rule]\n\n${rules.join("\n")}`;
-    
-	script = (script[0] || '') && `[Script]\n\n${script.join("\n\n")}`;
-	
-	HeaderRewrite = (HeaderRewrite[0] || '') && `[Header Rewrite]\n\n${HeaderRewrite.join("\n")}`;
-	
-	URLRewrite = (URLRewrite[0] || '') && `[URL Rewrite]\n\n${URLRewrite.join("\n")}`;
-	
-	MapLocal = (MapLocal[0] || '') && `[Map Local]\n\n${MapLocal.join("\n\n")}`;
-	
-	others = (others[0] || '') && `${others.join("\n\n")}`;
-
-body = `${pluginDesc}
-
-
-${General}
-
-
-${rules}
-
-
-${HeaderRewrite}
-
-
-${URLRewrite}
-
-
-${script}
-
-
-${MapLocal}
-
-
-${MITM}`
-		.replace(/(#.+\n)\n+(?!\[)/g,'$1')
-		.replace(/\n{2,}/g,'\n\n')
+    $.msg(title, '', notifyContent)
+    $.log('\n面板显示内容：\n' + notifyContent)
+    $.isSurge || $.isStash ? $.done(body) : $.done()
+}
+
+/* 计算2个日期相差的天数，不包含今天，如：2016-12-13到2016-12-15，相差2天
+ * @param startDateString
+ * @param endDateString
+ * @returns
+ */
+function dateDiff(startDateString, endDateString) {
+    let separator = "-"; //日期分隔符
+    let startDates = startDateString.split(separator);
+    let endDates = endDateString.split(separator);
+    let startDate = new Date(startDates[0], startDates[1] - 1, startDates[2]);
+    let endDate = new Date(endDates[0], endDates[1] - 1, endDates[2]);
+    return parseInt((endDate - startDate) / 1000 / 60 / 60 / 24).toString();
+}
+
+//计算输入序号对应的时间与现在的天数间隔
+function tnumCount(num) {
+    return dateDiff(tnowf, dateDiffArray[num].date);
+}
+
+//获取最接近的日期
+function now() {
+    let tmp = 400
+    let res = 0
+    for (let i = 0; i < daysData.length; i++) {
+        let key = Number(dateDiff(tnowf, daysData[i].date))
+        if (key >= 0) {
+            dateDiffArray.push({'date': daysData[i].date, 'name': daysData[i].name, 'key': key})
+        }
+        if (key >= 0 && tmp > key) {
+            // 上面的思路是对差值数组排序，选出最小值，即日期差最小
+            tmp = key
+            res = i
+        }
+    }
+    dateDiffArray = mergeSort(dateDiffArray) // 对集合排序
+    return res
+}
+
+// 归并排序，速度更快
+function mergeSort(list) {
+    const rec = arr => {
+        if (arr.length === 1) return arr
+        const mid = arr.length >> 1
+        const left = arr.slice(0, mid)
+        const right = arr.slice(mid)
+        const arr1 = rec(left)
+        const arr2 = rec(right)
+        let i = 0, j = 0
+        let res = []
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i].key < arr2[j].key) {
+                res.push(arr1[i++])
+            } else {
+                res.push(arr2[j++])
+            }
+        }
+        if (i < arr1.length) res = res.concat(arr1.slice(i))
+        if (j < arr2.length) res = res.concat(arr2.slice(j))
+        return res
+    }
+    return rec(list)
 }
 
 
-if (isStashiOS || isSurgeiOS) {
-           others !="" && $notification.post("不支持的类型已跳过","第" + others,"点击查看原文，长按可展开查看跳过行",{url:req});
-        } else if (isLooniOS || isShadowrocket) {
-       others !="" && $notification.post("不支持的类型已跳过","第" + others,"点击查看原文，长按可展开查看跳过行",req);};
-
- $done({ response: { status: 200 ,body:body ,headers: {'Content-Type': 'text/plain; charset=utf-8'} } });
-}//判断是否断网的反括号
-
-
-})()
-.catch((e) => {
-		$notification.post(`${e}`,'','');
-		$done()
-	})
-
-
-function http(req) {
-  return new Promise((resolve, reject) =>
-    $httpClient.get(req, (err, resp,data) => {
-  resolve(data)
-  })
-)
+function today(day) {
+    let daythis = day;
+    if (daythis === "0") {
+        datenotice();
+        return "🎉";
+    } else {
+        return daythis + "天";
+    }
 }
+
+function datenotice() {
+    if ($.getdata("@DaysMatter.DaysMatterPushed") !== dateDiffArray[0].date && tnow.getHours() >= 6) {
+        $.setdata(dateDiffArray[0].date, "@DaysMatter.DaysMatterPushed");
+        $.msg("假日祝福", "", "今天是" + dateDiffArray[0].date + "日 " + dateDiffArray[0].name + "   🎉")
+    } else if ($.getdata("@DaysMatter.DaysMatterPushed") === dateDiffArray[0].date) {
+        //console.log("当日已通知");
+    }
+}
+
+//>图标依次切换乌龟、兔子、闹钟、礼品盒
+function icon_now(num) {
+    if (num <= 7 && num > 3) {
+        return "hare"
+    } else if (num <= 3 && num > 0) {
+        return "timer"
+    } else if (num === 0) {
+        return "gift"
+    } else {
+        return "tortoise"
+    }
+}
+
+function title_random(num) {
+    let r = Math.floor((Math.random() * 10) + 1);
+    let dic = {
+        1: "距离放假，还要摸鱼多少天？",
+        2: "坚持住，就快放假啦！",
+        3: "上班好累呀，下顿吃啥？",
+        4: "努力，我还能加班24小时！",
+        5: "今日宜：吃饭饭  忌：减肥",
+        6: "躺平中，等放假",
+        7: "只有摸鱼才是赚老板的钱",
+        8: "一起摸鱼吧",
+        9: "摸鱼中，期待下一个假日",
+        10: "小乌龟慢慢爬"
+    };
+    return num === 0 ? "节日快乐，万事大吉" : dic[r]
+}
+
+// https://github.com/chavyleung/scripts/blob/master/Env.min.js
+/*********************************** API *************************************/
+function Env(t, e) { class s { constructor(t) { this.env = t } send(t, e = "GET") { t = "string" == typeof t ? { url: t } : t; let s = this.get; return "POST" === e && (s = this.post), new Promise((e, i) => { s.call(this, t, (t, s, r) => { t ? i(t) : e(s) }) }) } get(t) { return this.send.call(this.env, t) } post(t) { return this.send.call(this.env, t, "POST") } } return new class { constructor(t, e) { this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `\ud83d\udd14${this.name}, \u5f00\u59cb!`) } isNode() { return "undefined" != typeof module && !!module.exports } isQuanX() { return "undefined" != typeof $task } isSurge() { return "undefined" != typeof $httpClient && "undefined" == typeof $loon } isLoon() { return "undefined" != typeof $loon } toObj(t, e = null) { try { return JSON.parse(t) } catch { return e } } toStr(t, e = null) { try { return JSON.stringify(t) } catch { return e } } getjson(t, e) { let s = e; const i = this.getdata(t); if (i) try { s = JSON.parse(this.getdata(t)) } catch { } return s } setjson(t, e) { try { return this.setdata(JSON.stringify(t), e) } catch { return !1 } } getScript(t) { return new Promise(e => { this.get({ url: t }, (t, s, i) => e(i)) }) } runScript(t, e) { return new Promise(s => { let i = this.getdata("@chavy_boxjs_userCfgs.httpapi"); i = i ? i.replace(/\n/g, "").trim() : i; let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout"); r = r ? 1 * r : 20, r = e && e.timeout ? e.timeout : r; const [o, h] = i.split("@"), a = { url: `http://${h}/v1/scripting/evaluate`, body: { script_text: t, mock_type: "cron", timeout: r }, headers: { "X-Key": o, Accept: "*/*" } }; this.post(a, (t, e, i) => s(i)) }).catch(t => this.logErr(t)) } loaddata() { if (!this.isNode()) return {}; { this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path"); const t = this.path.resolve(this.dataFile), e = this.path.resolve(process.cwd(), this.dataFile), s = this.fs.existsSync(t), i = !s && this.fs.existsSync(e); if (!s && !i) return {}; { const i = s ? t : e; try { return JSON.parse(this.fs.readFileSync(i)) } catch (t) { return {} } } } } writedata() { if (this.isNode()) { this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path"); const t = this.path.resolve(this.dataFile), e = this.path.resolve(process.cwd(), this.dataFile), s = this.fs.existsSync(t), i = !s && this.fs.existsSync(e), r = JSON.stringify(this.data); s ? this.fs.writeFileSync(t, r) : i ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r) } } lodash_get(t, e, s) { const i = e.replace(/\[(\d+)\]/g, ".$1").split("."); let r = t; for (const t of i) if (r = Object(r)[t], void 0 === r) return s; return r } lodash_set(t, e, s) { return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []), e.slice(0, -1).reduce((t, s, i) => Object(t[s]) === t[s] ? t[s] : t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] : {}, t)[e[e.length - 1]] = s, t) } getdata(t) { let e = this.getval(t); if (/^@/.test(t)) { const [, s, i] = /^@(.*?)\.(.*?)$/.exec(t), r = s ? this.getval(s) : ""; if (r) try { const t = JSON.parse(r); e = t ? this.lodash_get(t, i, "") : e } catch (t) { e = "" } } return e } setdata(t, e) { let s = !1; if (/^@/.test(e)) { const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e), o = this.getval(i), h = i ? "null" === o ? null : o || "{}" : "{}"; try { const e = JSON.parse(h); this.lodash_set(e, r, t), s = this.setval(JSON.stringify(e), i) } catch (e) { const o = {}; this.lodash_set(o, r, t), s = this.setval(JSON.stringify(o), i) } } else s = this.setval(t, e); return s } getval(t) { return this.isSurge() || this.isLoon() ? $persistentStore.read(t) : this.isQuanX() ? $prefs.valueForKey(t) : this.isNode() ? (this.data = this.loaddata(), this.data[t]) : this.data && this.data[t] || null } setval(t, e) { return this.isSurge() || this.isLoon() ? $persistentStore.write(t, e) : this.isQuanX() ? $prefs.setValueForKey(t, e) : this.isNode() ? (this.data = this.loaddata(), this.data[e] = t, this.writedata(), !0) : this.data && this.data[e] || null } initGotEnv(t) { this.got = this.got ? this.got : require("got"), this.cktough = this.cktough ? this.cktough : require("tough-cookie"), this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar, t && (t.headers = t.headers ? t.headers : {}, void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar)) } get(t, e = (() => { })) { t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"]), this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, { "X-Surge-Skip-Scripting": !1 })), $httpClient.get(t, (t, s, i) => { !t && s && (s.body = i, s.statusCode = s.status), e(t, s, i) })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, { hints: !1 })), $task.fetch(t).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t).on("redirect", (t, e) => { try { if (t.headers["set-cookie"]) { const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString(); this.ckjar.setCookieSync(s, null), e.cookieJar = this.ckjar } } catch (t) { this.logErr(t) } }).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => { const { message: s, response: i } = t; e(s, i, i && i.body) })) } post(t, e = (() => { })) { if (t.body && t.headers && !t.headers["Content-Type"] && (t.headers["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() || this.isLoon()) this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, { "X-Surge-Skip-Scripting": !1 })), $httpClient.post(t, (t, s, i) => { !t && s && (s.body = i, s.statusCode = s.status), e(t, s, i) }); else if (this.isQuanX()) t.method = "POST", this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, { hints: !1 })), $task.fetch(t).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => e(t)); else if (this.isNode()) { this.initGotEnv(t); const { url: s, ...i } = t; this.got.post(s, i).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => { const { message: s, response: i } = t; e(s, i, i && i.body) }) } } time(t) { let e = { "M+": (new Date).getMonth() + 1, "d+": (new Date).getDate(), "H+": (new Date).getHours(), "m+": (new Date).getMinutes(), "s+": (new Date).getSeconds(), "q+": Math.floor(((new Date).getMonth() + 3) / 3), S: (new Date).getMilliseconds() }; /(y+)/.test(t) && (t = t.replace(RegExp.$1, ((new Date).getFullYear() + "").substr(4 - RegExp.$1.length))); for (let s in e) new RegExp("(" + s + ")").test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? e[s] : ("00" + e[s]).substr(("" + e[s]).length))); return t } msg(e = t, s = "", i = "", r) { const o = t => { if (!t) return t; if ("string" == typeof t) return this.isLoon() ? t : this.isQuanX() ? { "open-url": t } : this.isSurge() ? { url: t } : void 0; if ("object" == typeof t) { if (this.isLoon()) { let e = t.openUrl || t.url || t["open-url"], s = t.mediaUrl || t["media-url"]; return { openUrl: e, mediaUrl: s } } if (this.isQuanX()) { let e = t["open-url"] || t.url || t.openUrl, s = t["media-url"] || t.mediaUrl; return { "open-url": e, "media-url": s } } if (this.isSurge()) { let e = t.url || t.openUrl || t["open-url"]; return { url: e } } } }; this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r))); let h = ["", "==============\ud83d\udce3\u7cfb\u7edf\u901a\u77e5\ud83d\udce3=============="]; h.push(e), s && h.push(s), i && h.push(i), console.log(h.join("\n")), this.logs = this.logs.concat(h) } log(...t) { t.length > 0 && (this.logs = [...this.logs, ...t]), console.log(t.join(this.logSeparator)) } logErr(t, e) { const s = !this.isSurge() && !this.isQuanX() && !this.isLoon(); s ? this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t.stack) : this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t) } wait(t) { return new Promise(e => setTimeout(e, t)) } done(t = {}) { const e = (new Date).getTime(), s = (e - this.startTime) / 1e3; this.log("", `\ud83d\udd14${this.name}, \u7ed3\u675f! \ud83d\udd5b ${s} \u79d2`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t) } }(t, e) }
+/*****************************************************************************/
