@@ -24,28 +24,28 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 </details>
 
 ## 导航
-哆啦A梦主题图标
+哆啦A梦主题图标（100pcs）
 --> [Doraemon](#doraemon)
 
-蜡笔小新主题图标
+蜡笔小新主题图标（100pcs）
 --> [shin-chan](#shin-chan)
 
-青青草原主题图标
+青青草原主题图标（100pcs）
 --> [Weslie-Wolffy](#weslie-wolffy)
 
-猫和老鼠主题图标
+猫和老鼠主题图标（100pcs）
 --> [Tom-Jerry](#tom-jerry)
 
-原神主题图标
+原神主题图标（100pcs）
 --> [Genshin](#genshin)
 
-新海诚宫崎骏动漫
+新海诚宫崎骏动漫（100pcs）
 --> [Shin-Miya](#shin-miya)
 
-海贼王主题图标
+海贼王主题图标（100pcs）
 --> [OnePiece](#onepiece)
 
-星际宝贝主题图标
+星际宝贝主题图标（100pcs）
 --> [Stitch](#stitch)
 
 【Doraemon】
