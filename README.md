@@ -28,7 +28,7 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 --> [Doraemon](#doraemon)
 
 蜡笔小新主题图标（100pcs）
---> [shin-chan](#shin-chan)
+--> [Shin-chan](#shin-chan)
 
 青青草原主题图标（100pcs）
 --> [Weslie-Wolffy](#weslie-wolffy)
