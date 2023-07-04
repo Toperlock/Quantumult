@@ -1,0 +1,230 @@
+{
+  "name": "Toperlock PokemonGif",
+  "description": "PokemonGif图标订阅",
+  "icons": [
+    {
+      "name": "PokemonGif-1001",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1001.gif"
+    },
+    {
+      "name": "PokemonGif-1002",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1002.gif"
+    },
+    {
+      "name": "PokemonGif-1003",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1003.gif"
+    },
+    {
+      "name": "PokemonGif-1004",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1004.gif"
+    },
+    {
+      "name": "PokemonGif-1005",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1005.gif"
+    },
+    {
+      "name": "PokemonGif-1006",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1006.gif"
+    },
+    {
+      "name": "PokemonGif-1007",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1007.gif"
+    },
+    {
+      "name": "PokemonGif-1008",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1008.gif"
+    },
+    {
+      "name": "PokemonGif-1009",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1009.gif"
+    },
+    {
+      "name": "PokemonGif-1010",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1010.gif"
+    },
+    {
+      "name": "PokemonGif-1011",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1011.gif"
+    },
+    {
+      "name": "PokemonGif-1012",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1012.gif"
+    },
+    {
+      "name": "PokemonGif-1013",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1013.gif"
+    },
+    {
+      "name": "PokemonGif-1014",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1014.gif"
+    },
+    {
+      "name": "PokemonGif-1015",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1015.gif"
+    },
+    {
+      "name": "PokemonGif-1016",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1016.gif"
+    },
+    {
+      "name": "PokemonGif-1017",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1017.gif"
+    },
+    {
+      "name": "PokemonGif-1018",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1018.gif"
+    },
+    {
+      "name": "PokemonGif-1019",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1019.gif"
+    },
+    {
+      "name": "PokemonGif-1020",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1020.gif"
+    },
+    {
+      "name": "PokemonGif-1021",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1021.gif"
+    },
+    {
+      "name": "PokemonGif-1022",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1022.gif"
+    },
+    {
+      "name": "PokemonGif-1023",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1023.gif"
+    },
+    {
+      "name": "PokemonGif-1024",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1024.gif"
+    },
+    {
+      "name": "PokemonGif-1025",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1025.gif"
+    },
+    {
+      "name": "PokemonGif-1026",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1026.gif"
+    },
+    {
+      "name": "PokemonGif-1027",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1027.gif"
+    },
+    {
+      "name": "PokemonGif-1028",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1028.gif"
+    },
+    {
+      "name": "PokemonGif-1029",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1029.gif"
+    },
+    {
+      "name": "PokemonGif-1030",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1030.gif"
+    },
+    {
+      "name": "PokemonGif-1031",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1031.gif"
+    },
+    {
+      "name": "PokemonGif-1032",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1032.gif"
+    },
+    {
+      "name": "PokemonGif-1033",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1033.gif"
+    },
+    {
+      "name": "PokemonGif-1034",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1034.gif"
+    },
+    {
+      "name": "PokemonGif-1035",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1035.gif"
+    },
+    {
+      "name": "PokemonGif-1036",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1036.gif"
+    },
+    {
+      "name": "PokemonGif-1037",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1037.gif"
+    },
+    {
+      "name": "PokemonGif-1038",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1038.gif"
+    },
+    {
+      "name": "PokemonGif-1039",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1039.gif"
+    },
+    {
+      "name": "PokemonGif-1040",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1040.gif"
+    },
+    {
+      "name": "PokemonGif-1041",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1041.gif"
+    },
+    {
+      "name": "PokemonGif-1042",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1042.gif"
+    },
+    {
+      "name": "PokemonGif-1043",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1043.gif"
+    },
+    {
+      "name": "PokemonGif-1044",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1044.gif"
+    },
+    {
+      "name": "PokemonGif-1045",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1045.gif"
+    },
+    {
+      "name": "PokemonGif-1046",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1046.gif"
+    },
+    {
+      "name": "PokemonGif-1047",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1047.gif"
+    },
+    {
+      "name": "PokemonGif-1048",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1048.gif"
+    },
+    {
+      "name": "PokemonGif-1049",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1049.gif"
+    },
+    {
+      "name": "PokemonGif-1050",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1050.gif"
+    },
+    {
+      "name": "PokemonGif-1051",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1051.gif"
+    },
+    {
+      "name": "PokemonGif-1052",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1052.gif"
+    },
+    {
+      "name": "PokemonGif-1053",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1053.gif"
+    },
+    {
+      "name": "PokemonGif-1054",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1054.gif"
+    },
+    {
+      "name": "PokemonGif-1055",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1055.gif"
+    },
+    {
+      "name": "PokemonGif-1056",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/PokemonGif/PokemonGif-1056.gif"
+    }
+  ]
+}
