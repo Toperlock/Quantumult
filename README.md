@@ -36,7 +36,7 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 猫和老鼠主题图标（100pcs）
 --> [Tom-Jerry](#tom-jerry)
 
-原神主题图标（100pcs）
+原神主题图标（160pcs）
 --> [Genshin](#genshin)
 
 新海诚宫崎骏动漫（100pcs）
@@ -71,7 +71,8 @@ https://raw.githubusercontent.com/Toperlock/Quantumult/main/T-J-icons.json
 【Genshin】
 -------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/Genshin-icons.json
-![3](https://github.com/Toperlock/Quantumult/assets/86833913/06a4609c-3893-4021-bfe0-0d193208cf38)
+![3](https://github.com/Toperlock/Quantumult/assets/86833913/0472de62-85e1-4fcd-bf07-e4dfe2d8c0c9)
+
 -------------
 【Shin-Miya】
 ------------
