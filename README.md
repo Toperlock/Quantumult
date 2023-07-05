@@ -48,48 +48,64 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 星际宝贝主题图标（100pcs）
 --> [Stitch](#stitch)
 
+宝可梦主题图标（112pcs）
+--> [Pokemon](#pokemon)
+
 【Doraemon】
 -----------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/D-icons.json
 ![Doraemon](https://github.com/Toperlock/Quantumult/assets/86833913/f4afbbe1-bf94-48d4-a985-351ace1bfac2)
+
 -----------------
 【Shin-chan】
 ----------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/Shin-icons.json
 ![Shin-chan](https://github.com/Toperlock/Quantumult/assets/86833913/340adeaf-3f12-496d-a516-826a7574b3ff)
+
 ----------------
 【Weslie-Wolffy】
 ---------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/Wolffy-icons.json
 ![1](https://github.com/Toperlock/Quantumult/assets/86833913/120743ca-eb2f-4366-b318-a52799ab56a1)
+
 ---------------
 【Tom-Jerry】
 --------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/T-J-icons.json
 ![2](https://github.com/Toperlock/Quantumult/assets/86833913/8efcb8b8-4bfd-4b37-898f-f8fe6ea6d184)
+
 --------------
 【Genshin】
 -------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/Genshin-icons.json
 ![3](https://github.com/Toperlock/Quantumult/assets/86833913/0472de62-85e1-4fcd-bf07-e4dfe2d8c0c9)
 
+
 -------------
 【Shin-Miya】
 ------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/ShinMiya-icons.json
 ![4](https://github.com/Toperlock/Quantumult/assets/86833913/716b28f6-8de8-4ca1-8781-e342fd1c4872)
+
 ------------
 【OnePiece】
 -----------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/OnePiece-icons.json
 ![5](https://github.com/Toperlock/Quantumult/assets/86833913/40b25370-75a2-4ced-bc67-13622c160381)
+
 -----------
 【Stitch】
 -----------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/Stitch-icons.json
 ![6](https://github.com/Toperlock/Quantumult/assets/86833913/17370780-da36-46a2-b355-9c36255f13c1)
------------
 
+-----------
+【Pokemon】
+----------
+https://raw.githubusercontent.com/Toperlock/Quantumult/main/Pokemon-icons.json
+![7](https://github.com/Toperlock/Quantumult/assets/86833913/c35baf6f-a56c-4be7-ac8d-5a028b4c69eb)
+
+----------
 
 
 
