@@ -1,0 +1,230 @@
+{
+  "name": "Toperlock Digimon",
+  "description": "Digimon图标订阅",
+  "icons": [
+    {
+      "name": "Digimon-1001",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1001.png"
+    },
+    {
+      "name": "Digimon-1002",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1002.png"
+    },
+    {
+      "name": "Digimon-1003",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1003.png"
+    },
+    {
+      "name": "Digimon-1004",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1004.png"
+    },
+    {
+      "name": "Digimon-1005",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1005.png"
+    },
+    {
+      "name": "Digimon-1006",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1006.png"
+    },
+    {
+      "name": "Digimon-1007",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1007.png"
+    },
+    {
+      "name": "Digimon-1008",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1008.png"
+    },
+    {
+      "name": "Digimon-1009",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1009.png"
+    },
+    {
+      "name": "Digimon-1010",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1010.png"
+    },
+    {
+      "name": "Digimon-1011",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1011.png"
+    },
+    {
+      "name": "Digimon-1012",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1012.png"
+    },
+    {
+      "name": "Digimon-1013",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1013.png"
+    },
+    {
+      "name": "Digimon-1014",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1014.png"
+    },
+    {
+      "name": "Digimon-1015",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1015.png"
+    },
+    {
+      "name": "Digimon-1016",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1016.png"
+    },
+    {
+      "name": "Digimon-1017",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1017.png"
+    },
+    {
+      "name": "Digimon-1018",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1018.png"
+    },
+    {
+      "name": "Digimon-1019",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1019.png"
+    },
+    {
+      "name": "Digimon-1020",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1020.png"
+    },
+    {
+      "name": "Digimon-1021",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1021.png"
+    },
+    {
+      "name": "Digimon-1022",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1022.png"
+    },
+    {
+      "name": "Digimon-1023",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1023.png"
+    },
+    {
+      "name": "Digimon-1024",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1024.png"
+    },
+    {
+      "name": "Digimon-1025",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1025.png"
+    },
+    {
+      "name": "Digimon-1026",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1026.png"
+    },
+    {
+      "name": "Digimon-1027",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1027.png"
+    },
+    {
+      "name": "Digimon-1028",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1028.png"
+    },
+    {
+      "name": "Digimon-1029",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1029.png"
+    },
+    {
+      "name": "Digimon-1030",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1030.png"
+    },
+    {
+      "name": "Digimon-1031",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1031.png"
+    },
+    {
+      "name": "Digimon-1032",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1032.png"
+    },
+    {
+      "name": "Digimon-1033",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1033.png"
+    },
+    {
+      "name": "Digimon-1034",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1034.png"
+    },
+    {
+      "name": "Digimon-1035",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1035.png"
+    },
+    {
+      "name": "Digimon-1036",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1036.png"
+    },
+    {
+      "name": "Digimon-1037",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1037.png"
+    },
+    {
+      "name": "Digimon-1038",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1038.png"
+    },
+    {
+      "name": "Digimon-1039",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1039.png"
+    },
+    {
+      "name": "Digimon-1040",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1040.png"
+    },
+    {
+      "name": "Digimon-1041",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1041.png"
+    },
+    {
+      "name": "Digimon-1042",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1042.png"
+    },
+    {
+      "name": "Digimon-1043",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1043.png"
+    },
+    {
+      "name": "Digimon-1044",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1044.png"
+    },
+    {
+      "name": "Digimon-1045",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1045.png"
+    },
+    {
+      "name": "Digimon-1046",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1046.png"
+    },
+    {
+      "name": "Digimon-1047",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1047.png"
+    },
+    {
+      "name": "Digimon-1048",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1048.png"
+    },
+    {
+      "name": "Digimon-1049",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1049.png"
+    },
+    {
+      "name": "Digimon-1050",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1050.png"
+    },
+    {
+      "name": "Digimon-1051",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1051.png"
+    },
+    {
+      "name": "Digimon-1052",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1052.png"
+    },
+    {
+      "name": "Digimon-1053",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1053.png"
+    },
+    {
+      "name": "Digimon-1054",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1054.png"
+    },
+    {
+      "name": "Digimon-1055",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1055.png"
+    },
+    {
+      "name": "Digimon-1056",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Digimon/Digimon-1056.png"
+    }
+  ]
+}
