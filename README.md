@@ -51,6 +51,9 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 宝可梦主题图标（112pcs）
 --> [Pokemon](#pokemon)
 
+宝可梦GIF主题图标（56pcs）
+--> [PokemonGif](#pokemongif)
+
 【Doraemon】
 -----------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/D-icons.json
@@ -106,6 +109,12 @@ https://raw.githubusercontent.com/Toperlock/Quantumult/main/Pokemon-icons.json
 ![7](https://github.com/Toperlock/Quantumult/assets/86833913/c35baf6f-a56c-4be7-ac8d-5a028b4c69eb)
 
 ----------
+【PokemonGif】
+---------
+https://raw.githubusercontent.com/Toperlock/Quantumult/main/PokemonGif-icons.json
+![PokemonGif](https://github.com/Toperlock/Quantumult/assets/86833913/f99c6cf0-db80-4d95-aab2-2d53a47fcb00)
+
+---------
 
 
 
