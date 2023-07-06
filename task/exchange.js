@@ -13,7 +13,7 @@ const digits = 2; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
-    CNY: ["人民币(CN¥)", "🇨🇳"],
+    CNY: ["人民币", "🇨🇳"],
     USD: ["美元($)", "🇺🇸"],
     HKD: ["港币(HK$)", "🇭🇰"],
     TWD: ["台币(NT$)", "🇭🇰"],
@@ -43,9 +43,9 @@ $.http.get({
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} 1${source[0]}\t{target[0]}: ${roundNumber(rate, digits)}\n`;
+                    line = `${target[1]} 1${source[0]}\t${target[0]}: ${roundNumber(rate, digits)}\n`;
                 } else {
-                    line = `${target[1]} 1${target[0]}    \tCNY: ${roundNumber(1 / rate, digits)}\n`;
+                    line = `${target[1]} 1${target[0]}   \tCNY: ${roundNumber(1 / rate, digits)}\n`;
                 }
             }
             return accumulator + line;
