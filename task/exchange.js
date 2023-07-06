@@ -52,6 +52,7 @@ $.http.get({
         }, "");
         $.notify(
             `${data.date}`,
+            `📈 汇率情况:`,
             `${info.replace(/\n$/g, "")}`
         );
     })
