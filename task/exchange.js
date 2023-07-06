@@ -15,18 +15,19 @@ const $ = API("exchange");
 const currencyNames = {
     CNY: ["人民币", "🇨🇳"],
     USD: ["美元($)", "🇺🇸"],
+    SGD: ["新元(S$)", "🇸🇬"],
+    MYR: ["令吉(RM)", "🇲🇾"],
+    EUR: ["欧元(€)", "🇪🇺"],
+    GBP: ["英镑(£)", "🇬🇧"],
     HKD: ["港币(HK$)", "🇭🇰"],
     TWD: ["台币(NT$)", "🇭🇰"],
     JPY: ["日元(JP¥)", "🇯🇵"],
     KRW: ["韩元(₩)", "🇰🇷"],
-    SGD: ["新元(S$)", "🇸🇬"],
+    PHP: ["比索(₱)", "🇵🇭"],
     THB: ["泰铢(฿)", "🇹🇭"],
     VND: ["越南盾(₫)", "🇻🇳"],
-    EUR: ["欧元(€)", "🇪🇺"],
-    GBP: ["英镑(£)", "🇬🇧"],
     RUB: ["卢布(₽)", "🇷🇺"],
     TRY: ["里拉(₺)", "🇹🇷"],
-    BRL: ["黑奥(R$)", "🇧🇷"],
 };
 
 
@@ -43,7 +44,7 @@ $.http.get({
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} 1${source[0]}\t${target[0]}: ${roundNumber(rate, digits)}\n`;
+                    line = `${target[1]} 1${source[0]}   \t${target[0]}: ${roundNumber(rate, digits)}\n`;
                 } else {
                     line = `${target[1]} 1${target[0]}   \tCNY: ${roundNumber(1 / rate, digits)}\n`;
                 }
