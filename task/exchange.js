@@ -43,20 +43,15 @@ $.http.get({
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} 1${source[0]}\t兑${roundNumber(rate, digits)}${
-                        target[0]
-                    }\n`;
+                    line = `${target[1]} 1${source[0]}\t{target[0]}: ${roundNumber(rate, digits)}\n`;
                 } else {
-                    line = `${target[1]} 1${target[0]}    \t兑${roundNumber(1 / rate, digits)}${
-                        source[0]
-                    }\n`;
+                    line = `${target[1]} 1${target[0]}    \tCNY: ${roundNumber(1 / rate, digits)}\n`;
                 }
             }
             return accumulator + line;
         }, "");
         $.notify(
-            `[今日汇率] 基准：${source[1]} ${source[0]}`,
-            `⏰ 更新时间：${data.date}`,
+            `${data.date}`,
             `${info.replace(/\n$/g, "")}`
         );
     })
