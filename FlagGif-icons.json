@@ -1,0 +1,246 @@
+{
+  "name": "Toperlock FlagGif",
+  "description": "FlagGif图标订阅",
+  "icons": [
+    {
+      "name": "AE",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/AE.gif"
+    },
+    {
+      "name": "AR",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/AR.gif"
+    },
+    {
+      "name": "AU",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/AU.gif"
+    },
+    {
+      "name": "BR",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/BR.gif"
+    },
+    {
+      "name": "CA",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/CA.gif"
+    },
+    {
+      "name": "CH",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/CH.gif"
+    },
+    {
+      "name": "CN",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/CN.gif"
+    },
+    {
+      "name": "DE",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/DE.gif"
+    },
+    {
+      "name": "DK",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/DK.gif"
+    },
+    {
+      "name": "ES",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/ES.gif"
+    },
+    {
+      "name": "FI",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/FI.gif"
+    },
+    {
+      "name": "FR",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/FR.gif"
+    },
+    {
+      "name": "HK",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/HK.gif"
+    },
+    {
+      "name": "HU",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/HU.gif"
+    },
+    {
+      "name": "ID",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/ID.gif"
+    },
+    {
+      "name": "IE",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/IE.gif"
+    },
+    {
+      "name": "IL",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/IL.gif"
+    },
+    {
+      "name": "IN",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/IN.gif"
+    },
+    {
+      "name": "IR",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/IR.gif"
+    },
+    {
+      "name": "IT",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/IT.gif"
+    },
+    {
+      "name": "JM",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/JM.gif"
+    },
+    {
+      "name": "JP",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/JP.gif"
+    },
+    {
+      "name": "KH",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/KH.gif"
+    },
+    {
+      "name": "KP",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/KP.gif"
+    },
+    {
+      "name": "KR",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/KR.gif"
+    },
+    {
+      "name": "LA",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/LA.gif"
+    },
+    {
+      "name": "LT",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/LT.gif"
+    },
+    {
+      "name": "LU",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/LU.gif"
+    },
+    {
+      "name": "MA",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/MA.gif"
+    },
+    {
+      "name": "MM",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/MM.gif"
+    },
+    {
+      "name": "MX",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/MX.gif"
+    },
+    {
+      "name": "MY",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/MY.gif"
+    },
+    {
+      "name": "NG",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/NG.gif"
+    },
+    {
+      "name": "NL",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/NL.gif"
+    },
+    {
+      "name": "NP",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/NP.gif"
+    },
+    {
+      "name": "NZ",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/NZ.gif"
+    },
+    {
+      "name": "PE",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/PE.gif"
+    },
+    {
+      "name": "PH",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/PH.gif"
+    },
+    {
+      "name": "PK",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/PK.gif"
+    },
+    {
+      "name": "PL",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/PL.gif"
+    },
+    {
+      "name": "PT",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/PT.gif"
+    },
+    {
+      "name": "QA",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/QA.gif"
+    },
+    {
+      "name": "RU",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/RU.gif"
+    },
+    {
+      "name": "SA",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/SA.gif"
+    },
+    {
+      "name": "SD",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/SD.gif"
+    },
+    {
+      "name": "SE",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/SE.gif"
+    },
+    {
+      "name": "SG",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/SG.gif"
+    },
+    {
+      "name": "SO",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/SO.gif"
+    },
+    {
+      "name": "SY",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/SY.gif"
+    },
+    {
+      "name": "TH",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/TH.gif"
+    },
+    {
+      "name": "TW",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/TW.gif"
+    },
+    {
+      "name": "UA",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/UA.gif"
+    },
+    {
+      "name": "UK",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/UK.gif"
+    },
+    {
+      "name": "US",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/US.gif"
+    },
+    {
+      "name": "UY",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/UY.gif"
+    },
+    {
+      "name": "VA",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/VA.gif"
+    },
+    {
+      "name": "VE",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/VE.gif"
+    },
+    {
+      "name": "VN",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/VN.gif"
+    },
+    {
+      "name": "ZA",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/ZA.gif"
+    },
+    {
+      "name": "ZW",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/FlagGif/ZW.gif"
+    }
+  ]
+}
