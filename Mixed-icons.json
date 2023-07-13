@@ -7,19 +7,27 @@
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/60s.png"
     },
     {
-      "name": "ChatGPT-2",
+      "name": "ChatGPT",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/ChatGPT-2.png"
     },
     {
-      "name": "ChatGPT-3",
+      "name": "ChatGPT",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/ChatGPT-3.png"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/ChatGPT.png"
+    },
+    {
+      "name": "NSFW",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/NSFW.png"
     },
     {
       "name": "Pixiv",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Pixiv.png"
     },
     {
-      "name": "Pixiv_2",
+      "name": "Pixiv",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Pixiv_2.png"
     },
     {
@@ -35,7 +43,7 @@
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/YellowCalendar.png"
     },
     {
-      "name": "YellowCalendar_2",
+      "name": "YellowCalendar",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/YellowCalendar_2.png"
     },
     {
@@ -64,6 +72,10 @@
     },
     {
       "name": "heiliao",
+      "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/heiliao-2.png"
+    },
+    {
+      "name": "heiliao",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/heiliao.png"
     },
     {
@@ -79,7 +91,7 @@
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/miao.png"
     },
     {
-      "name": "miao_2",
+      "name": "miao",
       "url": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/miao_2.png"
     },
     {
