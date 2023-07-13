@@ -54,6 +54,15 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 宝可梦GIF图标（56pcs）Loon专用
 --> [PokemonGif](#pokemongif)
 
+数码宝贝主题图标（56pcs）
+--> [Digimon](#digimon)
+
+变形金刚主题图标（48pcs）
+--> [Transformers](#transformers)
+
+樱桃小丸子主题图标（100pcs）
+--> [Maruko-chan](#maruko-chan)
+
 【Doraemon】
 -----------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/D-icons.json
@@ -115,6 +124,25 @@ https://raw.githubusercontent.com/Toperlock/Quantumult/main/PokemonGif-icons.jso
 ![PokemonGif](https://github.com/Toperlock/Quantumult/assets/86833913/f99c6cf0-db80-4d95-aab2-2d53a47fcb00)
 
 ---------
+【Digimon】
+--------
+https://raw.githubusercontent.com/Toperlock/Quantumult/main/Digimon-icons.json
+![Digimon](https://github.com/Toperlock/Quantumult/assets/86833913/834bba12-4501-413c-bd24-e9b4379db3cb)
+
+--------
+【Transformers】
+-------
+https://raw.githubusercontent.com/Toperlock/Quantumult/main/Transformers-icons.json
+![Transformers](https://github.com/Toperlock/Quantumult/assets/86833913/1b3e4ef8-37d1-43e3-8fd7-b357c756211c)
+
+-------
+【Maruko-chan】
+------
+https://raw.githubusercontent.com/Toperlock/Quantumult/main/Maruko-icons.json
+![Maruko-chan](https://github.com/Toperlock/Quantumult/assets/86833913/dca3196a-932a-476b-bd7b-41ec9b1d2c1e)
+
+------
+
 
 
 
