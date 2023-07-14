@@ -338,41 +338,47 @@ function getCoupon(dict) {
     let myRequest = getPostRequest(dict);
     // console.log(type + '-->'+ JSON.stringify(myRequest))
     return new Promise(async resolve => {
-        $task.fetch(myRequest, (err, resp, data) => {
+        $task.fetch(myRequest).then(response => {
             try {
-                dict.hotFlag = false
-                dict.needWait = false
-                dict.isSuccess = false
-                dataObj = JSON.parse(data)
-                if (err) {
-                    dict.errMsg = `抢券失败：${dataObj.errMsg}`
-                    console.log(dict.errMsg)
+                dict.hotFlag = false;
+                dict.needWait = false;
+                dict.isSuccess = false;
+                const dataObj = JSON.parse(response.body);
+                if (response.statusCode !== 200) {
+                    dict.errMsg = `抢券失败：${dataObj.errMsg}`;
+                    console.log(dict.errMsg);
                     if (dict.errMsg.indexOf('拥挤') > -1) {
-                        dict.hotFlag = true
+                        dict.hotFlag = true;
                     }
                     if (dict.errMsg.indexOf('流控检查') > -1) {
-                        dict.needWait = true
-                        dict.hotFlag = true
+                        dict.needWait = true;
+                        dict.hotFlag = true;
                     }
                 } else {
-                    dict.isSuccess = true
-                    if (data.indexOf('LIST') > -1) {
-                        console.log(`${time()}【${dict.phone}】抢券成功，获得 ${dict.couponName}`)
-                        dict.errMsg = `抢券成功！`
+                    dict.isSuccess = true;
+                    if (dataObj.indexOf('LIST') > -1) {
+                        console.log(`${time()}【${dict.phone}】抢券成功，获得 ${dict.couponName}`);
+                        dict.errMsg = `抢券成功！`;
                     }
-                    if (data.indexOf('coupMap') > -1) {
-                        console.log(`${time()}【${dict.phone}】已经抢过 ${dict.couponName}`)
-                        dict.errMsg = `已经抢过优惠券 `
+                    if (dataObj.indexOf('coupMap') > -1) {
+                        console.log(`${time()}【${dict.phone}】已经抢过 ${dict.couponName}`);
+                        dict.errMsg = `已经抢过优惠券 `;
                     }
                 }
             } catch (e) {
-                // console.log(data);
-                console.log(e, resp)
+                console.log(e, response);
             } finally {
                 resolve();
             }
-        })
-    })
+        }).catch(error => {
+            dict.hotFlag = false;
+            dict.needWait = false;
+            dict.isSuccess = false;
+            dict.errMsg = `抢券失败：${error}`;
+            console.log(dict.errMsg);
+            resolve();
+        });
+    });
 }
 
 function time() {
