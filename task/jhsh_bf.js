@@ -242,7 +242,15 @@ if (couponIds == '' || diff == -1) {
     return
 }
 couponIdArr = couponIds.split('&')
-$.url = 'https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341C040'
+//$.url = 'https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341C040'
+const myRequest = {
+    url: 'https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341C040',
+    headers: {
+        'referer': 'https://yunbusiness.ccb.com/',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
+    }
+};
+
 cookies = process.env.JHSH_COUPON_CKS ? process.env.JHSH_COUPON_CKS : ''
 if (cookies == '') {
     console.log('未填写建行生活抢券Cookie!')
