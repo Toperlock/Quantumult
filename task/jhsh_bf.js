@@ -301,43 +301,54 @@ $.promiseList = []
     })
 
 function main(cookie, couponId, couponName) {
-    return new Promise(async resolve => {
+    return new Promise((resolve, reject) => {
         let phone = cookie.split(';')[0]
         let userId = cookie.split(';')[1]
         console.log(`${time()} 账号【${phone}】开抢【${couponName}】`)
 
         let ua = `jdapp;iPhone;10.2.2;13.1.2;${uuid()};M/5.0;network/wifi;ADID/;model/iPhone8,1;addressid/2308460611;appBuild/167863;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;`
-        let dict = {}
-        dict.hotFlag = true
-        dict.needWait = false
-        dict.isSuccess = false
-        dict.errMsg = ''
-        dict.phone = phone
-        dict.userId = userId
-        dict.ua = ua
-        dict.couponId = couponId
-        dict.couponName = couponName
-        for (let count = 0; count < 20; count++) {
-            if (dict.hotFlag == true) {
-                console.log(`${time()} 账号【${phone}】开始尝试第${count + 1}次抢券~`)
-                await getCoupon(dict)
-                await $.wait(300)
-                if (dict.needWait == true) {
-                    await $.wait(500)
+        let dict = {
+            hotFlag: true,
+            needWait: false,
+            isSuccess: false,
+            errMsg: '',
+            phone: phone,
+            userId: userId,
+            ua: ua,
+            couponId: couponId,
+            couponName: couponName
+        };
+        let count = 0;
+
+        function attemptCoupon() {
+            if (dict.hotFlag === true && count < 20) {
+                console.log(`${time()} 账号【${phone}】开始尝试第${count + 1}次抢券~`);
+                getCoupon(dict)
+                    .then(() => {
+                        count++;
+                        setTimeout(attemptCoupon, 300);
+                    })
+                    .catch(error => {
+                        console.log(`${time()} 账号【${phone}】抢券失败：${error}`);
+                        resolve(`账号[${phone}] ${couponName} 抢券失败\n`);
+                    });
+                if (dict.needWait === true) {
+                    setTimeout(attemptCoupon, 500);
                 }
             } else {
-                break
+                console.log(`${time()} 账号【${phone}】抢券结果 ${dict.errMsg}`);
+                resolve(`账号[${phone}] ${couponName} ${dict.errMsg}\n`);
             }
         }
-        console.log(`${time()} 账号【${phone}】抢券结果 ${dict.errMsg}`)
-        resolve(`账号[${phone}] ${couponName} ${dict.errMsg}\n`)
-    })
+
+        attemptCoupon();
+    });
 }
 
 function getCoupon(dict) {
     let myRequest = getPostRequest(dict);
     // console.log(type + '-->'+ JSON.stringify(myRequest))
-    return new Promise(async resolve => {
+    return new Promise((resolve, reject) => {
         $task.fetch(myRequest).then(response => {
             try {
                 dict.hotFlag = false;
