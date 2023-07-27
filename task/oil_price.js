@@ -69,7 +69,7 @@ $task.fetch(myRequest).then(response => {
         }
     }
     
-    const friendly_tips = `${adjust_date}预计调整\t${adjust_trend} ${adjust_value}`;
+    const friendly_tips = `${adjust_date}调整\t${adjust_trend} ${adjust_value}`;
     if (prices.length !== 4) {
         console.log(`解析油价信息失败, URL=${query_addr}`);
         $notify("油价查询", "解析失败", "请检查脚本或反馈给开发者");
