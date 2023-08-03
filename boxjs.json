@@ -48,7 +48,7 @@
           "val": null,
           "type": "text",
           "autoGrow": false,
-          "rows": 10,
+          "rows": 1,
           "desc": "填写如国庆节此类固定日期，示例：10-1,1-1"
         },
         {
@@ -57,7 +57,7 @@
           "val": null,
           "type": "text",
           "autoGrow": false,
-          "rows": 10,
+          "rows": 1,
           "desc": "填写如国庆节此类固定日期的名称，示例：国庆节,元旦"
         },
         {
@@ -66,7 +66,7 @@
           "val": null,
           "type": "text",
           "autoGrow": false,
-          "rows": 10,
+          "rows": 1,
           "desc": "填写如母亲节此类浮动日期，示例：2022-5-8,2023-5-14"
         },
         {
@@ -75,7 +75,7 @@
           "val": null,
           "type": "text",
           "autoGrow": false,
-          "rows": 10,
+          "rows": 1,
           "desc": "填写如母亲节此类浮动日期的名称，示例：2022母亲节,2023母亲节"
         }
       ],
@@ -102,7 +102,7 @@
           "val": null,
           "type": "text",
           "autoGrow": false,
-          "rows": 10,
+          "rows": 1,
           "desc": "目前支持微博、知乎、微信、头条、抖音、百度、贴吧 bilibili、澎湃、36氪、少数派、财新、ZAKER、新京报、南方周末、科普中国、威锋网、起点小说、纵横小说、北美票房"
         },
         {
@@ -111,7 +111,7 @@
           "val": null,
           "type": "text",
           "autoGrow": false,
-          "rows": 10,
+          "rows": 1,
           "desc": "1，6，8之类的数字"
         }
       ],
