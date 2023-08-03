@@ -34,7 +34,7 @@
     {
       "id": "DaysMatter",
       "name": "倒数日",
-      "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/TimeCard.js?raw=true'><font class='red--text'>点我查看</font></a>】",
+      "desc_html": "【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/TimeCard.js?raw=true'><font class='red--text'>点我查看</font></a>】",
       "keys": [
         "@DaysMatter.userDays",
         "@DaysMatter.userDaysName",
