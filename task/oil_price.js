@@ -1,6 +1,6 @@
 /******************************************
  *转自https://raw.githubusercontent.com/RS0485/network-rules/main/scripts/gas-price.js
- *感谢 @chavyleung, @Keywos
+ *感谢 @Peng-YM, @Keywos
  *把'fujian'修改为其他地区拼音，支持省/市/区'fujian/fuzhou/gulou'
  *因为陕西和山西拼音一样，陕西需要改为"shanxi-3"
 ******************************************
