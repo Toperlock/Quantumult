@@ -8,6 +8,7 @@
     {
       "id": "oil_price",
       "name": "今日油价",
+      "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/oil_price.js?raw=true'><font class='red--text'>点我查看</font></a>】",
       "keys": [
         "地区"
       ],
@@ -23,8 +24,8 @@
         }
       ],
       "author": "@Toperlock",
-      "repo": "https://github.com/Toperlock/Quantumult",
-      "script": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/oil_price.js",
+      "repo": "https://github.com/Toperlock/Quantumult/blob/main/task/oil_price.js",
+      "script": "https://github.com/Toperlock/Quantumult/blob/main/task/oil_price.js?raw=true",
       "icons": [  
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oil.png",
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/oil.png"
@@ -33,6 +34,7 @@
     {
       "id": "DaysMatter",
       "name": "倒数日",
+      "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/TimeCard.js?raw=true'><font class='red--text'>点我查看</font></a>】",
       "keys": [
         "@DaysMatter.userDays",
         "@DaysMatter.userDaysName",
@@ -78,7 +80,8 @@
         }
       ],
       "author": "@Toperlock",
-      "repo": "https://github.com/Toperlock/Quantumult",
+      "repo": "https://github.com/Toperlock/Quantumult/blob/main/task/TimeCard.js",
+      "script": "https://github.com/Toperlock/Quantumult/blob/main/task/TimeCard.js?raw=true",
       "icons": [
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png",
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png"
@@ -87,6 +90,7 @@
     {
       "id": "hotday",
       "name": "今日热搜",
+      "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/hotday.js?raw=true'><font class='red--text'>点我查看</font></a>】",
       "keys": [
         "平台",
         "条数"
@@ -112,8 +116,8 @@
         }
       ],
       "author": "@Toperlock",
-      "repo": "https://github.com/Toperlock/Quantumult",
-      "script": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/hotday.js",
+      "repo": "https://github.com/Toperlock/Quantumult/blob/main/task/hotday.js",
+      "script": "https://github.com/Toperlock/Quantumult/blob/main/task/hotday.js?raw=true",
       "icons": [
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/hot.png",
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/hot.png"
