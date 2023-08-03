@@ -92,7 +92,7 @@
       "name": "今日热搜",
       "keys": [
         "平台",
-        "条数",
+        "条数"
       ],
       "settings": [
         {
@@ -112,7 +112,7 @@
           "autoGrow": false,
           "rows": 10,
           "desc": "1，6，8之类的数字"
-        },
+        }
       ],
       "author": "@Toperlock",
       "repo": "https://github.com/Toperlock/Quantumult",
