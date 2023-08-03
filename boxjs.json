@@ -103,7 +103,7 @@
         },
         {
           "id": "条数",
-          "name": "通知的热搜条数，默认8条",
+          "name": "通知的热搜数量，默认8条",
           "val": null,
           "type": "text",
           "autoGrow": false,
