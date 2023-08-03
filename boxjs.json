@@ -18,7 +18,7 @@
           "val": null,
           "type": "textarea",
           "autoGrow": true,
-          "rows": 10,
+          "rows": 1,
           "desc": "填写需要查询的地区拼音，例如fujian，或者fujian/fuzhou/gulou"
         }
       ],
