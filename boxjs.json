@@ -86,6 +86,41 @@
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png",
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png"
       ]
+    },
+    {
+      "id": "hotday",
+      "name": "今日热搜",
+      "keys": [
+        "平台",
+        "条数",
+      ],
+      "settings": [
+        {
+          "id": "平台",
+          "name": "通知的热搜平台，默认微博",
+          "val": null,
+          "type": "text",
+          "autoGrow": false,
+          "rows": 10,
+          "desc": "目前支持微博、知乎、微信、头条、抖音、百度、贴吧 bilibili、澎湃、36氪、少数派、财新、ZAKER、新京报、南方周末、科普中国、威锋网、起点小说、纵横小说、北美票房"
+        },
+        {
+          "id": "条数",
+          "name": "通知的热搜条数，默认8条",
+          "val": null,
+          "type": "text",
+          "autoGrow": false,
+          "rows": 10,
+          "desc": "1，6，8之类的数字"
+        },
+      ],
+      "author": "@Toperlock",
+      "repo": "https://github.com/Toperlock/Quantumult",
+      "script": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/hotday.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/hot.png",
+        "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/hot.png"
+      ]
     }
   ]
 }
