@@ -98,7 +98,7 @@
       "settings": [
         {
           "id": "平台",
-          "name": "通知的热搜平台，默认微博",
+          "name": "通知的热搜平台，默认随机平台",
           "val": null,
           "type": "text",
           "autoGrow": false,
