@@ -109,7 +109,7 @@
           "id": "条数",
           "name": "通知的热搜数量，默认8条",
           "val": null,
-          "type": "text",
+          "type": "number",
           "autoGrow": false,
           "rows": 1,
           "desc": "1，6，8之类的数字"
