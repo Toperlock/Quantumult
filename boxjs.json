@@ -34,7 +34,7 @@
     {
       "id": "DaysMatter",
       "name": "倒数日",
-      "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/TimeCard.js'><font class='red--text'>点我查看</font></a>】",
+      "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/TimeCard.js?raw=true'><font class='red--text'>点我查看</font></a>】",
       "keys": [
         "@DaysMatter.userDays",
         "@DaysMatter.userDaysName",
@@ -81,7 +81,7 @@
       ],
       "author": "@Toperlock",
       "repo": "https://github.com/Toperlock/Quantumult/blob/main/task/TimeCard.js",
-      "script": "https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/TimeCard.js",
+      "script": "https://github.com/Toperlock/Quantumult/blob/main/task/TimeCard.js?raw=true",
       "icons": [
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png",
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/date.png"
