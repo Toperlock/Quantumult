@@ -5,7 +5,7 @@
  * @author      @Toperlock
  * @thanks      @Peng-YM、@𝒀𝒖𝒉𝒆𝒏𝒈、@deezertidal
  * @use         可通过BoxJS修改通知的热搜平台与显示的热搜数量
- * @update      2023.08.03
+ * @update      2023.08.04
 ******************************************
 
 BoxJS订阅地址：https://raw.githubusercontent.com/Toperlock/Quantumult/main/boxjs.json
@@ -38,10 +38,10 @@ let platforms = [
   { name: '纵横小说', tag: 'b0vmYyJvB1' },
   { name: '北美票房', tag: 'n6YoVPadZa' },
 ];
-var platform = platforms[Math.floor(Math.random() * platforms.length)];
-var platformName = $.read("#平台") || `${platform.name}`;
+var platform_random = platforms[Math.floor(Math.random() * platforms.length)];
+var platformName = $.read("#platform") || `${platform_random.name}`;
 let New_platform = platforms.find(item => item.name === platformName);
-const count = $.read("#条数") || 8;
+const count = $.read("#counts") || 8;
 
 const query_addr = `https://tophub.today/n/${New_platform.tag}`;
 
@@ -64,7 +64,7 @@ $.http.get({
     $.notify(notificationTitle, '', notificationContent, {'open-url': query_addr});
   })
   .catch((error) => {
-    $.notify("获取热榜失败", error, '');
+    $.notify("获取热榜失败,请输入正确的平台名称", error, '');
   })
   .then(() => $.done());
 
