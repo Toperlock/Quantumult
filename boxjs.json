@@ -14,7 +14,7 @@
       ],
       "settings": [
         {
-          "id": "地区",
+          "id": "oilArea",
           "name": "今日油价查询地区",
           "val": null,
           "type": "textarea",
@@ -97,7 +97,7 @@
       ],
       "settings": [
         {
-          "id": "平台",
+          "id": "platform",
           "name": "通知的热搜平台，默认随机平台",
           "val": null,
           "type": "text",
@@ -106,7 +106,7 @@
           "desc": "目前支持微博、知乎、微信、头条、抖音、百度、贴吧 bilibili、澎湃、36氪、少数派、财新、ZAKER、新京报、南方周末、科普中国、威锋网、起点小说、纵横小说、北美票房"
         },
         {
-          "id": "条数",
+          "id": "counts",
           "name": "通知的热搜数量，默认8条",
           "val": null,
           "type": "number",
