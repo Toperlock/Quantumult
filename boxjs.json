@@ -10,7 +10,7 @@
       "name": "今日油价",
       "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/oil_price.js?raw=true'><font class='red--text'>点我查看</font></a>】",
       "keys": [
-        "地区"
+        "oilArea"
       ],
       "settings": [
         {
@@ -92,8 +92,8 @@
       "name": "今日热搜",
       "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/hotoday.js?raw=true'><font class='red--text'>点我查看</font></a>】",
       "keys": [
-        "平台",
-        "条数"
+        "platform",
+        "counts"
       ],
       "settings": [
         {
