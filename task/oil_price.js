@@ -15,7 +15,7 @@ BoxJs订阅地址：https://raw.githubusercontent.com/Toperlock/Quantumult/main/
 
 const $ = API("查询油价");
 // 默认福建
-var region = $.read("地区") || "fujian";
+var region = $.read("oilArea") || "fujian";
 
 $.http.get({
     url: `http://m.qiyoujiage.com/${region}.shtml`,
