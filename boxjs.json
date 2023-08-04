@@ -90,7 +90,7 @@
     {
       "id": "hotday",
       "name": "今日热搜",
-      "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/hotday.js?raw=true'><font class='red--text'>点我查看</font></a>】",
+      "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/Toperlock/Quantumult/blob/main/task/hotoday.js?raw=true'><font class='red--text'>点我查看</font></a>】",
       "keys": [
         "平台",
         "条数"
@@ -116,8 +116,8 @@
         }
       ],
       "author": "@Toperlock",
-      "repo": "https://github.com/Toperlock/Quantumult/blob/main/task/hotday.js",
-      "script": "https://github.com/Toperlock/Quantumult/blob/main/task/hotday.js?raw=true",
+      "repo": "https://github.com/Toperlock/Quantumult/blob/main/task/hotoday.js",
+      "script": "https://github.com/Toperlock/Quantumult/blob/main/task/hotoday.js?raw=true",
       "icons": [
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/hot.png",
         "https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/hot.png"
