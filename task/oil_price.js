@@ -22,14 +22,7 @@ $.http.get({
     headers:{
         'referer': 'http://m.qiyoujiage.com/',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
-    },
-    timeout: 100,
-      events: {
-        onTimeout: () => {
-          $.error("网络请求失败，请检查网络，地区是否填写正确"),
-          $.done()
-        }
-      }
+    }
   })
     .then((response) => {
         const data = response.body;
