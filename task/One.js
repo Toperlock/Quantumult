@@ -9,7 +9,7 @@ const $ = API("每日一言");
 
 $.http
     .get({
-    url: 'https://dict.youdao.com/infoline/style/cardList?mode=publish&client=mobile&style=daily&size=2',
+        url: 'https://dict.youdao.com/infoline/style/cardList?mode=publish&client=mobile&style=daily&size=2',
     })
     .then((response) => {
         let obj = JSON.parse(response.body);
