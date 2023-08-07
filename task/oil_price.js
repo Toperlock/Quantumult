@@ -17,13 +17,17 @@ const $ = API("查询油价");
 // 默认福建
 var region = $.read("#oilArea") || "fujian";
 
-$.http.get({
-    url: `http://m.qiyoujiage.com/${region}.shtml`,
-    headers:{
-        'referer': 'http://m.qiyoujiage.com/',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
-    }
-  })
+const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
+
+const myRequest = {
+  url: query_addr,
+  headers: {
+    'referer': 'http://m.qiyoujiage.com/',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
+  }
+};
+
+$.http.get(myRequest)
     .then((response) => {
         const data = response.body;
         const reg_price = /<dl>[\s\S]+?<dt>(.*油)<\/dt>[\s\S]+?<dd>(.*)\(元\)<\/dd>/gm;
