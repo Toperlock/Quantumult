@@ -1,6 +1,7 @@
 /*
  * 每日一言（有道词典）
- * @author: githubdulong
+ * @author: @githubdulong
+ * @thanks: @Peng-YM
  * 更新地址：https://raw.githubusercontent.com/githubdulong/Script/master/One.js
  * 修改内容：添加图片，去除支付宝蚂蚁能量跳转
 */
