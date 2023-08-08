@@ -68,12 +68,14 @@ $.get(myRequest, (error, response, data) => {
     const friendly_tips = `${adjust_date}调整\t${adjust_trend} ${adjust_value}`;
     if (prices.length !== 4) {
         $.log(`解析油价信息失败, URL=${query_addr}`);
-        $.msg("油价查询", "解析失败", "请检查脚本或反馈给开发者")
+        $.msg("油价查询", "解析失败", "请检查脚本或反馈给开发者");
+        $.done()
     } else {
         const content = `${prices[0].name}\t\t\t${prices[0].value}\n${prices[1].name}\t\t\t${prices[1].value}\n${prices[2].name}\t\t\t${prices[2].value}\n${prices[3].name}\t\t\t${prices[3].value}`;
         $.msg("油价查询", `${friendly_tips}`, content);
-        $.log("油价查询成功")
-        //$.log(`油价查询结果：\n${friendly_tips}\n${content}`)
+        $.log("油价查询成功");
+        //$.log(`油价查询结果：\n${friendly_tips}\n${content}`);
+        $.done()
     }
 })
 
