@@ -66,7 +66,7 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 进击的巨人主题图标（84pcs）
 --> [AttackOnTitan](https://raw.githubusercontent.com/Toperlock/Quantumult/main/AOT-icons.json)
 
-火影忍者主题图标（84pcs）
+火影忍者主题图标（284pcs）
 --> [Naruto](https://raw.githubusercontent.com/Toperlock/Quantumult/main/Naruto-icons.json)
 
 【Doraemon】
