@@ -63,6 +63,12 @@ Toperlock 项目内所涉及图标、LOGO 仅为资源共享、学习参考之�
 樱桃小丸子主题图标（100pcs）
 --> [Maruko-chan](#maruko-chan)
 
+进击的巨人主题图标（84pcs）
+--> [AttackOnTitan](https://raw.githubusercontent.com/Toperlock/Quantumult/main/AOT-icons.json)
+
+火影忍者主题图标（84pcs）
+--> [Naruto](https://raw.githubusercontent.com/Toperlock/Quantumult/main/Naruto-icons.json)
+
 【Doraemon】
 -----------------
 https://raw.githubusercontent.com/Toperlock/Quantumult/main/D-icons.json
