@@ -17,7 +17,7 @@
         "30 9 * * * https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/douban.js, tag=豆瓣每日推荐, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/douban.png",
         "0 8 * * * https://raw.githubusercontent.com/Toperlock/Quantumult/main/task/jhsh_bf.js, tag=建行生活, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/jhsh.png",
         "0 12 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js, tag=美团签到, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/meituan.png",
-        "0-59/10 0-6 10 * * * https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/bingSearch.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png",
+        "0-59/3 30-32 9 * * * https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/Bing/bingSearch/bingSearch.js, tag=Bing签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png",
         "0 9,15 * * * https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/hlbdy.js, tag=黑料不打烊, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/heiliao.png",
         "30 21 * * * https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/mnck.js, tag=猛男仓库最新猛料, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/NSFW.png",
         "30 8 * * * https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, tag=每天60s读懂世界, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/60s.png",
