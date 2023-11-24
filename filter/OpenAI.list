@@ -4,7 +4,6 @@ HOST-SUFFIX, auth0.com, proxy
 HOST, challenges.cloudflare.com, proxy
 
 # >> OpenAI Related
-HOST-SUFFIX, ai.com, proxy
 HOST-SUFFIX, openai.com, proxy
 HOST-SUFFIX, sentry.io, proxy
 HOST-SUFFIX, intercom.io, proxy
