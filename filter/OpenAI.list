@@ -1,30 +1,35 @@
 # > OpenAI
 # >> OpenAI Challenge & SSO
-host-suffix, auth0.com
-host, challenges.cloudflare.com
+HOST-SUFFIX, auth0.com, proxy
+HOST, challenges.cloudflare.com, proxy
 
 # >> OpenAI Related
-host-suffix, ai.com
-host-suffix, openai.com
-host-suffix, intercom.io
-host-suffix, intercomcdn.com
-host-suffix, identrust.com
+HOST-SUFFIX, ai.com, proxy
+HOST-SUFFIX, openai.com, proxy
+HOST-SUFFIX, sentry.io, proxy
+HOST-SUFFIX, intercom.io, proxy
+HOST-SUFFIX, intercomcdn.com, proxy
+HOST-SUFFIX, identrust.com, proxy
 
 # >> OpenAI CDN
-host-suffix, chat.openai.com.cdn.cloudflare.net
-host, openaiapi-site.azureedge.net
-host-suffix, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+HOST-SUFFIX, chat.openai.com.cdn.cloudflare.net, proxy
+HOST, openaiapi-site.azureedge.net, proxy
+HOST-SUFFIX, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net, proxy
 
 # >> OpenAI Other
-host-suffix, stripe.com
-host-suffix, poe.com
-host-suffix, segment.io
-host-suffix, client-api.arkoselabs.com
-host-suffix, events.statsigapi.net
-host-suffix, featuregates.org
-host-suffix, googleapis.com
-host-suffix, launchdarkly.com
-host-suffix, oaistatic.com
-host-suffix, oaiusercontent.com
-host-suffix, openaicom.imgix.net
-host-suffix, openaicomproductionae4b.blob.core.windows.net
+HOST-SUFFIX, stripe.com, proxy
+HOST-SUFFIX, poe.com, proxy
+HOST-SUFFIX, segment.io, proxy
+HOST-SUFFIX, observeit.net, proxy
+HOST-SUFFIX, algolia.net, proxy
+HOST, openai-api.arkoselabs.com, proxy
+HOST-SUFFIX, client-api.arkoselabs.com, proxy
+HOST-SUFFIX, events.statsigapi.net, proxy
+HOST-SUFFIX, featuregates.org, proxy
+HOST-SUFFIX, launchdarkly.com, proxy
+HOST-SUFFIX, oaistatic.com, proxy
+HOST-SUFFIX, oaiusercontent.com, proxy
+HOST-SUFFIX, openaicom.imgix.net, proxy
+HOST-SUFFIX, openaicomproductionae4b.blob.core.windows.net, proxy
+HOST-KEYWORD, openaicom-api, proxy
+# HOST-SUFFIX, googleapis.com, proxy
