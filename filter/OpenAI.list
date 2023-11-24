@@ -1,19 +1,30 @@
 # > OpenAI
 # >> OpenAI Challenge & SSO
-host,cdn.auth0.com,OpenAI
-host,challenges.cloudflare.com,OpenAI
+host-suffix, auth0.com
+host, challenges.cloudflare.com
 
 # >> OpenAI Related
-host-suffix,ai.com,OpenAI
-host-suffix,openai.com,OpenAI
-host-suffix,intercom.io,OpenAI
-host-suffix,identrust.com,OpenAI
+host-suffix, ai.com
+host-suffix, openai.com
+host-suffix, intercom.io
+host-suffix, intercomcdn.com
+host-suffix, identrust.com
 
 # >> OpenAI CDN
-host-suffix,chat.openai.com.cdn.cloudflare.net,OpenAI
-host,openaiapi-site.azureedge.net,OpenAI
+host-suffix, chat.openai.com.cdn.cloudflare.net
+host, openaiapi-site.azureedge.net
+host-suffix, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 
 # >> OpenAI Other
-host-suffix,invoice.stripe.com,OpenAI
-host-suffix,stripe.com,OpenAI
-host-suffix,poe.com,OpenAI
+host-suffix, stripe.com
+host-suffix, poe.com
+host-suffix, segment.io
+host-suffix, client-api.arkoselabs.com
+host-suffix, events.statsigapi.net
+host-suffix, featuregates.org
+host-suffix, googleapis.com
+host-suffix, launchdarkly.com
+host-suffix, oaistatic.com
+host-suffix, oaiusercontent.com
+host-suffix, openaicom.imgix.net
+host-suffix, openaicomproductionae4b.blob.core.windows.net
