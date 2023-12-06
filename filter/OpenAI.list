@@ -1,34 +1,52 @@
-# > OpenAI
-# >> OpenAI Challenge & SSO
-HOST-SUFFIX, auth0.com, proxy
-HOST, challenges.cloudflare.com, proxy
-
-# >> OpenAI Related
-HOST-SUFFIX, openai.com, proxy
-HOST-SUFFIX, sentry.io, proxy
-HOST-SUFFIX, intercom.io, proxy
-HOST-SUFFIX, intercomcdn.com, proxy
-HOST-SUFFIX, identrust.com, proxy
-
-# >> OpenAI CDN
-HOST-SUFFIX, chat.openai.com.cdn.cloudflare.net, proxy
-HOST, openaiapi-site.azureedge.net, proxy
-HOST-SUFFIX, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net, proxy
-
-# >> OpenAI Other
-HOST-SUFFIX, stripe.com, proxy
-HOST-SUFFIX, poe.com, proxy
-HOST-SUFFIX, segment.io, proxy
-HOST-SUFFIX, observeit.net, proxy
-HOST-SUFFIX, algolia.net, proxy
-HOST, openai-api.arkoselabs.com, proxy
-HOST-SUFFIX, client-api.arkoselabs.com, proxy
-HOST-SUFFIX, events.statsigapi.net, proxy
-HOST-SUFFIX, featuregates.org, proxy
-HOST-SUFFIX, launchdarkly.com, proxy
-HOST-SUFFIX, oaistatic.com, proxy
-HOST-SUFFIX, oaiusercontent.com, proxy
-HOST-SUFFIX, openaicom.imgix.net, proxy
-HOST-SUFFIX, openaicomproductionae4b.blob.core.windows.net, proxy
-HOST-KEYWORD, openaicom-api, proxy
-# HOST-SUFFIX, googleapis.com, proxy
+# 2023-12-06 18:15:33
+DOMAIN,api.statsig.com
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,cdn.openai.com
+DOMAIN,chat.openai.com
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,ios.chat.openai.com
+DOMAIN,o33249.ingest.sentry.io
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN,static.cloudflareinsights.com
+DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,cdn.cloudflare.net
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,HOST.livekit.cloud
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,observeit.net
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,turn.livekit.cloud
+DOMAIN-KEYWORD,openaicom-api
+IP-CIDR,24.199.123.28/32,no-resolve
+IP-CIDR,45.76.214.191/32,no-resolve
+IP-CIDR,45.32.12.145/32,no-resolve
+IP-CIDR,64.23.132.171/32,no-resolve
+IP-CIDR,104.238.150.13/32,no-resolve
+IP-CIDR,143.198.200.27/32,no-resolve
+IP-CIDR,143.110.232.239/32,no-resolve
+IP-CIDR,159.89.204.203/32,no-resolve
+IP-CIDR,164.92.71.155/32,no-resolve
+IP-CIDR,164.92.115.213/32,no-resolve
+IP-CIDR6,2001:19f0:7001:55b3:5400:4ff:feab:ba8f/128,no-resolve
+IP-CIDR6,2001:19f0:7001:8e6:5400:4ff:feab:b953/128,no-resolve
+IP-ASN,14061,no-resolve
+IP-ASN,20473,no-resolve
