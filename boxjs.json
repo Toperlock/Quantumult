@@ -128,138 +128,31 @@
       "name": "网络信息面板",
       "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/xream/scripts/tree/main/surge/modules/network-info'><font class='red--text'>点我查看</font></a>】",
       "keys": [
-        "LAN",
-        "SSID",
-        "IPv6",
-        "MASK",
-        "DOMESTIC_IPv4",
-        "DOMESTIC_IPv6",
-        "LANDING_IPv4",
-        "LANDING_IPv6",
-        "PRIVACY",
-        "FLAG",
-        "TIMEOUT",
-        "ENTRANCE_DELAY",
-        "EVENT_DELAY",
-        "UPDATE-INTERVAL"
+        "network-info"
       ],
       "settings": [
         {
-          "id": "LAN",
-          "name": "显示 LAN IP",
-          "val": 1,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "0:关闭, 1:开启"
-        },
-        {
-          "id": "SSID",
-          "name": "显示 SSID",
-          "val": 1,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "0:关闭, 1:开启"
-        },
-        {
-          "id": "IPv6",
-          "name": "显示 IPv6 地址",
-          "val": 1,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "0:关闭, 1:开启"
-        },
-        {
-          "id": "MASK",
-          "name": "打码 保护隐私",
-          "val": 1,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "0:关闭, 1:开启"
-        },
-        {
-          "id": "DOMESTIC_IPv4",
-          "name": "国内 IPv4 来源",
-          "val": "ipip",
+          "id": "network-info",
+          "name": "显示节点信息",
+          "val": {
+            "LAN":1,
+            "SSID":1,
+            "IPv6":1,
+            "MASK":0,
+            "DOMESTIC_IPv4":"spcn",
+            "DOMESTIC_IPv6":"ddnspod",
+            "LANDING_IPv4":"ipapi",
+            "LANDING_IPv6":"ipsb",
+            "PRIVACY":0,
+            "FLAG":1,
+            "TIMEOUT":5,
+            "ENTRANCE_DELAY":0,
+            "EVENT_DELAY":3
+          },
           "type": "text",
           "autoGrow": false,
           "rows": 1,
-          "desc": "可选 spcn, cip, bilibili, 126, ipip, ip233"
-        },
-        {
-          "id": "DOMESTIC_IPv6",
-          "name": "国内 IPv6 来源",
-          "val": "ddnspod",
-          "type": "text",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "可选 ddnspod, neu6"
-        },
-        {
-          "id": "LANDING_IPv4",
-          "name": "落地 IPv4 来源",
-          "val": "ipinfo",
-          "type": "text",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "可选 ipapi, ipsb, ipinfo, ipscore, ipwhois"
-        },
-        {
-          "id": "LANDING_IPv6",
-          "name": "落地 IPv6 来源",
-          "val": "ipsb",
-          "type": "text",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "可选 ipsb, ident"
-        },
-        {
-          "id": "PRIVACY",
-          "name": "显示 Privacy/Security",
-          "val": 1,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "0:关闭, 1:开启 注：(当落地为 ipwhois, ipinfo 时)显示 Privacy/Security 等信息"
-        },
-        {
-          "id": "FLAG",
-          "name": "是否显示国旗",
-          "val": 1,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
           "desc": "0:关闭, 1:开启"
-        },
-        {
-          "id": "TIMEOUT",
-          "name": "超时限制",
-          "val": 5,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "超时时间设置(单位: 秒)"
-        },
-        {
-          "id": "ENTRANCE_DELAY",
-          "name": "查询入口延时",
-          "val": 0,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "查询落地之后紧接着查询入口可能会导致请求太频繁而风控可适当调节此延时(单位: 秒)"
-        },
-        {
-          "id": "EVENT_DELAY",
-          "name": "延后查询信息",
-          "val": 3,
-          "type": "number",
-          "autoGrow": false,
-          "rows": 1,
-          "desc": "网络变化时, 延后查询信息(单位: 秒)"
         }
       ],
       "author": "@xream",
