@@ -134,11 +134,12 @@
         {
           "id": "network-info",
           "name": "显示节点信息",
-          "val": "{\"LAN\":1,\"SSID\":1,\"IPv6\":1,\"MASK\":0,\"DOMESTIC_IPv4\":\"spcn\",\"DOMESTIC_IPv6\":\"ddnspod\",\"LANDING_IPv4\":\"ipapi\",\"LANDING_IPv6\":\"ipsb\",\"PRIVACY\":0,\"FLAG\":1,\"TIMEOUT\":5,\"ENTRANCE_DELAY\":0,\"EVENT_DELAY\":3}",
-          "type": "text",
+          "val": "{\n\t\"LAN\":1,\n\t\"SSID\":1,\n\t\"IPv6\":1,\n\t\"MASK\":0,\n\t\"DOMESTIC_IPv4\":\"spcn\",\n\t\"DOMESTIC_IPv6\":\"ddnspod\",\n\t\"LANDING_IPv4\":\"ipapi\",\n\t\"LANDING_IPv6\":\"ipsb\",\n\t\"PRIVACY\":0,\n\t\"FLAG\":1,\n\t\"TIMEOUT\":5,\n\t\"ENTRANCE_DELAY\":0,\n\t\"EVENT_DELAY\":3}",
+          "type": "textarea",
           "autoGrow": true,
-          "rows": 3,
-          "desc": "0:关闭, 1:开启"
+          "rows": 5,
+          "desc": "0:关闭, 1:开启;\nDOMESTIC_IPv4:国内 IPv4 来源, 可选 spcn, cip, bilibili, 126, ipip, ip233;\nDOMESTIC_IPv6:国内 IPv6 来源, 可选 ddnspod, neu6;\nLANDING_IPv4:落地 IPv4 来源, 可选 ipapi, ipsb, ipinfo, ipscore, ipwhois;\nLANDING_IPv6:落地 IPv6 来源, 可选 ipsb, ident;\nPRIVACY:(当落地为 ipwhois, ipinfo 时)显示 Privacy/Security 等信息;\nEVENT_DELAY:
+网络变化时, 延后查询信息(单位: 秒)"
         }
       ],
       "author": "@xream",
