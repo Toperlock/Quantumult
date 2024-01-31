@@ -136,8 +136,8 @@
           "name": "显示节点信息",
           "val": "{\"LAN\":1,\"SSID\":1,\"IPv6\":1,\"MASK\":0,\"DOMESTIC_IPv4\":\"spcn\",\"DOMESTIC_IPv6\":\"ddnspod\",\"LANDING_IPv4\":\"ipapi\",\"LANDING_IPv6\":\"ipsb\",\"PRIVACY\":0,\"FLAG\":1,\"TIMEOUT\":5,\"ENTRANCE_DELAY\":0,\"EVENT_DELAY\":3}",
           "type": "text",
-          "autoGrow": false,
-          "rows": 1,
+          "autoGrow": true,
+          "rows": 3,
           "desc": "0:关闭, 1:开启"
         }
       ],
