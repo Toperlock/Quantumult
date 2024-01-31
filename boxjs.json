@@ -138,8 +138,7 @@
           "type": "textarea",
           "autoGrow": true,
           "rows": 5,
-          "desc": "0:关闭, 1:开启;\nDOMESTIC_IPv4:国内 IPv4 来源, 可选 spcn, cip, bilibili, 126, ipip, ip233;\nDOMESTIC_IPv6:国内 IPv6 来源, 可选 ddnspod, neu6;\nLANDING_IPv4:落地 IPv4 来源, 可选 ipapi, ipsb, ipinfo, ipscore, ipwhois;\nLANDING_IPv6:落地 IPv6 来源, 可选 ipsb, ident;\nPRIVACY:(当落地为 ipwhois, ipinfo 时)显示 Privacy/Security 等信息;\nEVENT_DELAY:
-网络变化时, 延后查询信息(单位: 秒)"
+          "desc": "0:关闭, 1:开启;\nDOMESTIC_IPv4:国内 IPv4 来源, 可选 spcn, cip, bilibili, 126, ipip, ip233;\nDOMESTIC_IPv6:国内 IPv6 来源, 可选 ddnspod, neu6;\nLANDING_IPv4:落地 IPv4 来源, 可选 ipapi, ipsb, ipinfo, ipscore, ipwhois;\nLANDING_IPv6:落地 IPv6 来源, 可选 ipsb, ident;\nPRIVACY:(当落地为 ipwhois, ipinfo 时)显示 Privacy/Security 等信息;\nEVENT_DELAY:网络变化时, 延后查询信息(单位: 秒)"
         }
       ],
       "author": "@xream",
