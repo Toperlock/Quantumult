@@ -134,7 +134,7 @@
         {
           "id": "network-info",
           "name": "显示节点信息",
-          "val": "{\n\t\"LAN\":1,\n\t\"SSID\":1,\n\t\"IPv6\":1,\n\t\"MASK\":0,\n\t\"DOMESTIC_IPv4\":\"spcn\",\n\t\"DOMESTIC_IPv6\":\"ddnspod\",\n\t\"LANDING_IPv4\":\"ipapi\",\n\t\"LANDING_IPv6\":\"ipsb\",\n\t\"PRIVACY\":0,\n\t\"FLAG\":1,\n\t\"TIMEOUT\":5,\n\t\"ENTRANCE_DELAY\":0,\n\t\"EVENT_DELAY\":3\n\n}",
+          "val": "{\n\t\"LAN\":1,\n\t\"SSID\":1,\n\t\"IPv6\":1,\n\t\"MASK\":0,\n\t\"DOMESTIC_IPv4\":\"spcn\",\n\t\"DOMESTIC_IPv6\":\"ddnspod\",\n\t\"LANDING_IPv4\":\"ipapi\",\n\t\"LANDING_IPv6\":\"ipsb\",\n\t\"PRIVACY\":0,\n\t\"FLAG\":1,\n\t\"TIMEOUT\":5,\n\t\"ENTRANCE_DELAY\":0,\n\t\"EVENT_DELAY\":3\n}",
           "type": "textarea",
           "autoGrow": true,
           "rows": 5,
