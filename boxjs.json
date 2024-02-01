@@ -141,6 +141,8 @@
         "@network-info.TIMEOUT",
         "@network-info.ENTRANCE_DELAY",
         "@network-info.EVENT_DELAY",
+        "@network-info.RETRIES",
+        "@network-info.RETRY_DELAY",
         "@network-info.UPDATE-INTERVAL"
       ],
       "settings": [
@@ -262,9 +264,27 @@
           "desc": "网络变化时, 延后查询信息(单位: 秒)"
         },
         {
+          "id": "@network-info.RETRIES",
+          "name": "请求重试次数",
+          "val": 1,
+          "type": "number",
+          "autoGrow": false,
+          "rows": 1,
+          "desc": "网络变化时网络不好重新请求"
+        },
+        {
+          "id": "@network-info.RETRY_DELAY",
+          "name": "请求重试等待时间",
+          "val": 1,
+          "type": "number",
+          "autoGrow": false,
+          "rows": 1,
+          "desc": "网络变化时网络不好请求重试等待时间(单位: 秒)"
+        },
+        {
           "id": "@network-info.UPDATE-INTERVAL",
           "name": "面板刷新时间",
-          "val": 3,
+          "val": 1,
           "type": "number",
           "autoGrow": false,
           "rows": 1,
