@@ -236,7 +236,7 @@
           "type": "text",
           "autoGrow": false,
           "rows": 1,
-          "desc": "可选 ipsb, ident"
+          "desc": "可选 ipsb, ident, ipify"
         },
         {
           "id": "@network-info.PRIVACY",
