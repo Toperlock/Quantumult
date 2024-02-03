@@ -128,6 +128,7 @@
       "name": "网络信息面板",
       "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/xream/scripts/tree/main/surge/modules/network-info'><font class='red--text'>点我查看</font></a>】",
       "keys": [
+        "@network-info.ORG",
         "@network-info.LAN",
         "@network-info.SSID",
         "@network-info.IPv6",
@@ -146,6 +147,15 @@
         "@network-info.UPDATE-INTERVAL"
       ],
       "settings": [
+        {
+          "id": "@network-info.ORG",
+          "name": "显示 ORG",
+          "val": 1,
+          "type": "number",
+          "autoGrow": false,
+          "rows": 1,
+          "desc": "0:关闭, 1:开启"
+        },
         {
           "id": "@network-info.LAN",
           "name": "显示 LAN IP",
@@ -189,7 +199,7 @@
           "type": "text",
           "autoGrow": false,
           "rows": 1,
-          "desc": "可选 spcn, cip, bilibili, 126, ipip, ip233"
+          "desc": "可选 spcn(请设置分流speedtest.cn直连), cip, bilibili, 126, ipip, ip233, pingan, muhan, ipim(请设置DOMAIN-SUFFIX,ip.im直连)"
         },
         {
           "id": "@network-info.DOMESTIC_IPv6",
