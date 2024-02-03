@@ -149,7 +149,7 @@
       "settings": [
         {
           "id": "@network-info.ORG",
-          "name": "显示 ORG",
+          "name": "显示 组织",
           "val": 1,
           "type": "number",
           "autoGrow": false,
@@ -199,7 +199,7 @@
           "type": "text",
           "autoGrow": false,
           "rows": 1,
-          "desc": "可选 spcn(请设置分流speedtest.cn直连), cip, bilibili, 126, ipip, ip233, pingan, muhan, ipim(请设置DOMAIN-SUFFIX,ip.im直连)"
+          "desc": "可选 spcn(请设置分流 DOMAIN-SUFFIX speedtest.cn 直连), cip, bilibili, 126, ipip, ip233, pingan, muhan, ipim(请设置分流 DOMAIN-SUFFIX ip.im 直连)"
         },
         {
           "id": "@network-info.DOMESTIC_IPv6",
