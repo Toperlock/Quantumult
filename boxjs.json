@@ -129,6 +129,7 @@
       "desc_html": "</br>⚠️使用说明</br>详情【<a href='https://github.com/xream/scripts/tree/main/surge/modules/network-info'><font class='red--text'>点我查看</font></a>】",
       "keys": [
         "@network-info.ORG",
+        "@network-info.ASN",
         "@network-info.LAN",
         "@network-info.SSID",
         "@network-info.IPv6",
@@ -151,6 +152,15 @@
         {
           "id": "@network-info.ORG",
           "name": "显示 组织",
+          "val": 1,
+          "type": "number",
+          "autoGrow": false,
+          "rows": 1,
+          "desc": "0:关闭, 1:开启"
+        },
+        {
+          "id": "@network-info.ASN",
+          "name": "显示 ASN 信息",
           "val": 1,
           "type": "number",
           "autoGrow": false,
