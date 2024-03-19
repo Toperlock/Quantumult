@@ -197,7 +197,7 @@
         {
           "id": "@network-info.MASK",
           "name": "打码 保护隐私",
-          "val": 1,
+          "val": 0,
           "type": "number",
           "autoGrow": false,
           "rows": 1,
@@ -269,7 +269,7 @@
         {
           "id": "@network-info.TIMEOUT",
           "name": "超时限制",
-          "val": 5,
+          "val": null,
           "type": "number",
           "autoGrow": false,
           "rows": 1,
@@ -278,7 +278,7 @@
         {
           "id": "@network-info.ENTRANCE_DELAY",
           "name": "查询入口延时",
-          "val": 0,
+          "val": null,
           "type": "number",
           "autoGrow": false,
           "rows": 1,
@@ -287,7 +287,7 @@
         {
           "id": "@network-info.EVENT_DELAY",
           "name": "延后查询信息",
-          "val": 3,
+          "val": null,
           "type": "number",
           "autoGrow": false,
           "rows": 1,
@@ -296,7 +296,7 @@
         {
           "id": "@network-info.RETRIES",
           "name": "请求重试次数",
-          "val": 1,
+          "val": null,
           "type": "number",
           "autoGrow": false,
           "rows": 1,
@@ -305,7 +305,7 @@
         {
           "id": "@network-info.RETRY_DELAY",
           "name": "请求重试等待时间",
-          "val": 1,
+          "val": null,
           "type": "number",
           "autoGrow": false,
           "rows": 1,
@@ -314,7 +314,7 @@
         {
           "id": "@network-info.UPDATE-INTERVAL",
           "name": "面板刷新时间",
-          "val": 1,
+          "val": null,
           "type": "number",
           "autoGrow": false,
           "rows": 1,
